@@ -36,6 +36,14 @@ body {
   background: #f8f9fa;
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white; // hero text override
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -55,50 +63,60 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  overflow-x: hidden;
+  flex-wrap: wrap;
 
-  /* Logo only */
   .logo-area {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    gap: 0.5rem;
 
     .logo-link {
-      display: block;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
 
-      img.logo {
+      &:hover,
+      &:focus {
+        color: var(--gold);
+      }
+
+      .logo {
         height: 48px;
         width: auto;
+      }
+
+      .logo-text {
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #1a1a1a;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--gold);
+      margin-left: 1rem;
+
+      @media (max-width: 768px) {
+        display: block;
       }
     }
   }
 
-  /* Right side: hamburger + nav */
   .top-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    flex-shrink: 0;
 
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 24px;
-      height: 18px;
-      cursor: pointer;
-
-      span {
-        display: block;
-        height: 3px;
-        width: 100%;
-        background-color: #1a1a1a;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-      }
-    }
-
-    /* Desktop nav */
     .main-nav {
       display: flex;
       gap: 2rem;
@@ -117,77 +135,18 @@ body {
           outline-offset: 2px;
         }
       }
-    }
-  }
 
-  /* -------------------------
-     Mobile Styles
-  ------------------------- */
-  @media (max-width: 768px) {
-    padding: 1rem;
-    flex-wrap: wrap;
+      @media (max-width: 768px) {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
 
-    .top-right {
-      gap: 0;
-      position: relative;
-      flex: 1 1 auto;
-      justify-content: flex-end;
-    }
-
-    /* Hamburger visible */
-    .hamburger {
-      display: flex;
-      margin-left: auto;
-    }
-
-    /* Hide nav by default */
-    .main-nav {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      background: #fff;
-      padding: 1rem 0;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    /* Show nav when hamburger clicked */
-    .main-nav.show {
-      display: flex;
-    }
-
-    .main-nav a {
-      word-break: break-word;
-      padding: 0.5rem 1rem;
-    }
-  }
-}
-
-/* -------------------------
-   Hero Section
-------------------------- */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 4rem 2rem;
-
-  .hero-content {
-    max-width: 800px;
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-stat {
-      font-size: 1rem;
-      margin-bottom: 2rem;
+        &.open {
+          display: flex;
+        }
+      }
     }
 
     .cta-button {
@@ -196,12 +155,24 @@ body {
       padding: 0.75rem 1.5rem;
       border-radius: 6px;
       font-weight: 600;
+      font-size: 0.9rem;
       text-decoration: none;
       transition: all 0.2s;
+      flex-shrink: 0;
 
       &:hover {
         transform: translateY(-1px);
         box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+      }
+
+      &:focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+        text-align: center;
       }
     }
   }
@@ -214,12 +185,11 @@ body {
   background: #000;
   color: white;
   padding: 2rem 2rem 1rem;
-  position: relative;
   font-family: 'Montserrat', sans-serif;
 
   .footer-inner {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
@@ -238,21 +208,30 @@ body {
         color: var(--gold);
       }
 
-      .footer-contact p {
-        margin: 0;
+      .footer-contact address {
+        font-style: normal;
         opacity: 0.9;
         font-size: 0.85rem;
+        line-height: 1.4;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          &:hover { color: var(--gold); }
+        }
       }
     }
   }
 
   .footer-right {
-    position: absolute;
-    right: 2rem;
-    bottom: 0.5rem;
+    text-align: left;
     opacity: 0.7;
     font-size: 0.85rem;
-    white-space: nowrap;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
   }
 
   .footer-legal {
@@ -263,35 +242,19 @@ body {
     color: #ccc;
     font-size: 0.7rem;
     line-height: 1.2;
-
-    small {
-      font-size: 0.65rem;
-      opacity: 0.8;
+    text-align: left;
+    @media (max-width: 768px) {
+      text-align: center; // keep centered on mobile
     }
 
-    p {
-      margin: 0.2rem 0;
-    }
+    small { font-size: 0.65rem; opacity: 0.8; }
+
+    p { margin: 0.2rem 0; }
   }
 
   @media (max-width: 768px) {
-    padding: 2rem 1rem 1rem;
-
-    .footer-inner {
-      flex-direction: column;
-      text-align: center;
-      gap: 0.5rem;
-    }
-
-    .footer-right {
-      position: static;
-      margin-top: 0.5rem;
-      text-align: center;
-    }
-
-    .footer-legal {
-      text-align: center;
-    }
+    padding: 2rem 1rem;
+    .footer-inner { flex-direction: column; text-align: center; gap: 0.5rem; }
   }
 }
 

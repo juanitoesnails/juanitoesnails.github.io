@@ -8,95 +8,100 @@
 </head>
 <body>
 
+  <!-- Skip to content link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   <!-- Header -->
   <header class="top-bar">
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
+        <span class="logo-text">GOLD PEARL Organisations</span>
       </a>
+
+      <!-- Hamburger menu for mobile -->
+      <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     </div>
 
     <div class="top-right">
-      <!-- Hamburger Menu for Mobile -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Navigation Links -->
       <nav class="main-nav">
         <a href="#why">Why Coaching</a>
         <a href="#pilot">Pilot Program</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a href="#contact" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Empower Communities Through Financial Education</h1>
-      <p class="hero-stat">
-        Helping people gain confidence, knowledge, and control over their finances, especially in underserved communities.
-      </p>
-      <a href="#contact" class="cta-button" id="hero-cta">Join the Pilot</a>
-    </div>
-  </section>
+  <!-- Main Content Wrapper -->
+  <main id="main-content">
 
-  <!-- Why Section -->
-  <section class="benefits" id="why">
-    <div class="section-inner">
-      <h2>Why Financial Literacy Matters</h2>
-      <p class="intro">
-        Financial literacy is a critical skill for communities facing economic challenges. By providing guidance and practical tools, we can reduce financial stress, build confidence, and enable long-term independence.
-      </p>
-      <ul>
-        <li>Empowers individuals to make informed financial decisions</li>
-        <li>Reduces debt and financial stress in communities</li>
-        <li>Encourages saving and planning for the future</li>
-        <li>Strengthens local economies through financial knowledge</li>
-        <li>Supports inclusion for underserved or marginalized groups</li>
-        <li>Builds trust between organisations and the communities they serve</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Empower Communities Through Financial Education</h1>
+        <p class="hero-stat">
+          Helping people gain confidence, knowledge, and control over their finances, especially in underserved communities.
+        </p>
+        <a href="#contact" class="cta-button" id="hero-cta">Join the Pilot</a>
+      </div>
+    </section>
 
-  <!-- Pilot Program Section -->
-  <section class="pilot" id="pilot">
-    <div class="section-inner">
-      <h2>Community Financial Coaching Pilot</h2>
-      <p>
-        We are currently running a pilot program targeting communities with low financial literacy. Our approach is flexible: we can <strong>create tailored plans for different communities</strong>, reflecting their cultural and financial realities.
-      </p>
-      <p>
-        We plan to offer <strong>interactive workshops, online courses, and educational materials</strong> that organisations can use directly with their communities. Our goal is to equip participants with practical skills, confidence, and long-term financial autonomy.
-      </p>
-      <a href="#contact" class="cta-button">Sign Up to Participate</a>
-    </div>
-  </section>
+    <!-- Why Section -->
+    <section class="benefits" id="why">
+      <div class="section-inner">
+        <h2>Why Financial Literacy Matters</h2>
+        <p class="intro">
+          Financial literacy is a critical skill for communities facing economic challenges. By providing guidance and practical tools, we can reduce financial stress, build confidence, and enable long-term independence.
+        </p>
+        <ul>
+          <li>Empowers individuals to make informed financial decisions</li>
+          <li>Reduces debt and financial stress in communities</li>
+          <li>Encourages saving and planning for the future</li>
+          <li>Strengthens local economies through financial knowledge</li>
+          <li>Supports inclusion for underserved or marginalized groups</li>
+          <li>Builds trust between organisations and the communities they serve</li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="section-inner">
-      <h2>Partner With Us / Join the Pilot</h2>
-      <form id="organisations-form">
-        <label for="company">Organisation Name</label>
-        <input type="text" id="company" placeholder="Your Organisation" required>
+    <!-- Pilot Program Section -->
+    <section class="pilot" id="pilot">
+      <div class="section-inner">
+        <h2>Community Financial Coaching Pilot</h2>
+        <p>
+          We are currently running a pilot program targeting communities with low financial literacy. Our approach is flexible: we can <strong>create tailored plans for different communities</strong>, reflecting their cultural and financial realities.
+        </p>
+        <p>
+          We plan to offer <strong>interactive workshops, online courses, and educational materials</strong> that organisations can use directly with their communities. Our goal is to equip participants with practical skills, confidence, and long-term financial autonomy.
+        </p>
+        <a href="#contact" class="cta-button">Sign Up to Participate</a>
+      </div>
+    </section>
 
-        <label for="name">Contact Name</label>
-        <input type="text" id="name" placeholder="John Doe" required>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <h2>Partner With Us / Join the Pilot</h2>
+        <form id="organisations-form">
+          <label for="company">Organisation Name</label>
+          <input type="text" id="company" placeholder="Your Organisation" required>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="john@example.com" required>
+          <label for="name">Contact Name</label>
+          <input type="text" id="name" placeholder="John Doe" required>
 
-        <label for="message">Message / Notes</label>
-        <textarea id="message" rows="4" placeholder="Any additional notes"></textarea>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" required>
 
-        <button type="submit" class="cta-button">Send Email</button>
-      </form>
-    </div>
-  </section>
+          <label for="message">Message / Notes</label>
+          <textarea id="message" rows="4" placeholder="Any additional notes"></textarea>
+
+          <button type="submit" class="cta-button">Send Email</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -104,8 +109,11 @@
       <div class="footer-left">
         <div class="footer-brand-small">Gold Pearl Organisations</div>
         <div class="footer-contact">
-          <p>Amsterdam, Netherlands</p>
-          <p>+31 [Organisations number] | hello@goldpearlorganisations.nl</p>
+          <address>
+            Amsterdam, Netherlands<br>
+            <a href="tel:+31XXXXXXXXXX">+31 [Organisations number]</a> | 
+            <a href="mailto:hello@goldpearlorganisations.nl">hello@goldpearlorganisations.nl</a>
+          </address>
         </div>
       </div>
     </div>
@@ -123,15 +131,15 @@
 
   <!-- JavaScript -->
   <script>
-    // Hamburger Menu Toggle
-    const hamburger = document.getElementById('hamburger');
+    // Hamburger menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
 
-    hamburger.addEventListener('click', () => {
-      mainNav.classList.toggle('show');
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
     });
 
-    // Prefilled Email Function
+    // Prefilled email form
     function sendOrganisationsEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
       const name = encodeURIComponent(document.getElementById('name').value || '');
@@ -148,6 +156,11 @@ Message: ${message}`;
     }
 
     document.getElementById('organisations-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendOrganisationsEmail();
+    });
+
+    document.getElementById('top-cta').addEventListener('click', function (e) {
       e.preventDefault();
       sendOrganisationsEmail();
     });
