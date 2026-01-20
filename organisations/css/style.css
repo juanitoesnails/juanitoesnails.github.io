@@ -96,8 +96,8 @@ body {
   top: 0;
   z-index: 100;
   overflow-x: hidden;
-  /* Logo area only */
-  /* Hamburger + Nav */
+  /* Logo only */
+  /* Right side: hamburger + nav */
   /* -------------------------
      Mobile Styles
   ------------------------- */
@@ -117,11 +117,12 @@ body {
 .top-bar .top-right {
   display: flex;
   align-items: center;
-  /* Hamburger icon */
-  /* Nav links (hidden by default on mobile) */
+  gap: 1rem;
+  /* Hamburger */
+  /* Desktop nav */
 }
 .top-bar .top-right .hamburger {
-  display: none; /* hidden on desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 24px;
@@ -156,16 +157,19 @@ body {
   .top-bar {
     padding: 1rem;
     flex-wrap: wrap;
-    /* Hamburger visible on mobile */
-    /* Hide nav links by default on mobile */
-    /* Show nav when hamburger toggled */
+    /* Hamburger visible */
+    /* Hide nav by default */
+    /* Show nav when hamburger clicked */
   }
   .top-bar .top-right {
-    width: auto;
     gap: 0;
+    position: relative;
+    flex: 1 1 auto;
+    justify-content: flex-end;
   }
   .top-bar .hamburger {
     display: flex;
+    margin-left: auto;
   }
   .top-bar .main-nav {
     display: none;
@@ -174,15 +178,58 @@ body {
     width: 100%;
     background: #fff;
     padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   .top-bar .main-nav.show {
     display: flex;
   }
+  .top-bar .main-nav a {
+    word-break: break-word;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* -------------------------
+   Hero Section
+------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+.hero .hero-content {
+  max-width: 800px;
+}
+.hero .hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .hero-content .hero-stat {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.hero .hero-content .cta-button {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero .hero-content .cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
 
 /* -------------------------
    Footer
-   (unchanged from previous version)
 ------------------------- */
 .site-footer {
   background: #000;
@@ -257,6 +304,16 @@ body {
   .site-footer .footer-legal {
     text-align: center;
   }
+}
+
+/* -------------------------
+   Sticky CTA Buttons
+------------------------- */
+.sticky-cta {
+  position: sticky;
+  bottom: 2rem;
+  margin: 0 auto;
+  z-index: 50;
 }
 
 /* -------------------------
@@ -460,8 +517,8 @@ body {
   top: 0;
   z-index: 100;
   overflow-x: hidden;
-  /* Logo area only */
-  /* Hamburger + Nav */
+  /* Logo only */
+  /* Right side: hamburger + nav */
   /* -------------------------
      Mobile Styles
   ------------------------- */
@@ -481,11 +538,12 @@ body {
 .top-bar .top-right {
   display: flex;
   align-items: center;
-  /* Hamburger icon */
-  /* Nav links (hidden by default on mobile) */
+  gap: 1rem;
+  /* Hamburger */
+  /* Desktop nav */
 }
 .top-bar .top-right .hamburger {
-  display: none; /* hidden on desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 24px;
@@ -520,16 +578,19 @@ body {
   .top-bar {
     padding: 1rem;
     flex-wrap: wrap;
-    /* Hamburger visible on mobile */
-    /* Hide nav links by default on mobile */
-    /* Show nav when hamburger toggled */
+    /* Hamburger visible */
+    /* Hide nav by default */
+    /* Show nav when hamburger clicked */
   }
   .top-bar .top-right {
-    width: auto;
     gap: 0;
+    position: relative;
+    flex: 1 1 auto;
+    justify-content: flex-end;
   }
   .top-bar .hamburger {
     display: flex;
+    margin-left: auto;
   }
   .top-bar .main-nav {
     display: none;
@@ -538,15 +599,58 @@ body {
     width: 100%;
     background: #fff;
     padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   .top-bar .main-nav.show {
     display: flex;
   }
+  .top-bar .main-nav a {
+    word-break: break-word;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* -------------------------
+   Hero Section
+------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+.hero .hero-content {
+  max-width: 800px;
+}
+.hero .hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .hero-content .hero-stat {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.hero .hero-content .cta-button {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero .hero-content .cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
 
 /* -------------------------
    Footer
-   (unchanged from previous version)
 ------------------------- */
 .site-footer {
   background: #000;
@@ -621,6 +725,16 @@ body {
   .site-footer .footer-legal {
     text-align: center;
   }
+}
+
+/* -------------------------
+   Sticky CTA Buttons
+------------------------- */
+.sticky-cta {
+  position: sticky;
+  bottom: 2rem;
+  margin: 0 auto;
+  z-index: 50;
 }
 
 /* -------------------------
