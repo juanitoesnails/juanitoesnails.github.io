@@ -1,0 +1,11 @@
+/* style.scss */
+@import 'base';
+@import 'layout';
+@import 'components';
+
+/* Pages */
+@import 'pages/index';
+@import 'pages/services';
+@import 'pages/faq';
+@import 'pages/prices';
+@import 'pages/book';

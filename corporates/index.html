@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="page-home">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Financial Coaching Pilot</title>
+
+  <!-- Corporate CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="top-bar">
+    <div class="logo-area">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Gold Pearl Corporate" class="logo">
+        <span class="logo-text">GOLD PEARL CORPORATE</span>
+      </a>
+    </div>
+
+    <div class="top-right">
+      <nav class="main-nav">
+        <a href="#why">Why Coaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Empower Your Employees with Financial Coaching</h1>
+      <p class="hero-stat">
+        Financial wellbeing is becoming one of the most valued benefits in modern workplaces.
+      </p>
+      <a href="#" class="cta-button" id="hero-cta">Join the Pilot</a>
+    </div>
+  </section>
+
+  <!-- Why Section -->
+  <section class="benefits" id="why">
+    <div class="section-inner">
+      <h2>Financial Coaching as a Benefit</h2>
+
+      <p class="intro">
+        Financial coaching is rapidly emerging as a high-impact employee benefit.
+        Companies that support <strong>financial wellbeing</strong> see stronger engagement, improved trust,
+        and healthier workplace cultures.
+      </p>
+
+      <ul>
+        <li><strong>Builds trust</strong> by showing genuine care for employees’ financial wellbeing</li>
+        <li><strong>Reduces stress</strong>-related absenteeism and burnout</li>
+        <li><strong>Improves retention</strong> by supporting employees beyond salary alone</li>
+        <li><strong>Enhances employer brand</strong> and attractiveness to top talent</li>
+        <li><strong>Strengthens company culture</strong> through transparency and empowerment</li>
+        <li><strong>Helps employees make confident decisions</strong> about saving, spending, and planning</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Pilot Program Section -->
+  <section class="pilot">
+    <div class="section-inner">
+      <h2>Corporate Financial Coaching Pilot</h2>
+      <p>
+        We are currently running a pilot program for companies.
+        Soon, we will offer interactive workshops and one-on-one financial coaching sessions
+        for employees — designed to build trust, confidence, and long-term financial wellness.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <h2>Contact Us to Join the Pilot</h2>
+
+      <form id="corporate-form">
+        <label for="company">Company Name</label>
+        <input type="text" id="company" placeholder="Your Company" required>
+
+        <label for="name">Contact Name</label>
+        <input type="text" id="name" placeholder="John Doe" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john@example.com" required>
+
+        <label for="message">Message / Notes</label>
+        <textarea id="message" rows="4" placeholder="Any additional notes"></textarea>
+
+        <button type="submit" class="cta-button">Send Email</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand-small">Gold Pearl Corporate</div>
+        <div class="footer-contact">
+          <p>Amsterdam, Netherlands</p>
+          <p>+31 [corporate number] | hello@goldpearlcorporate.nl</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p>© 2026 Gold Pearl Corporate. Family-run with care.</p>
+    </div>
+
+    <div class="footer-legal">
+      <p>KVK: [corporate KVK] / VAT: [corporate VAT]</p>
+      <p><small>Keizersgracht 123, 1015 CJ Amsterdam</small></p>
+      <p><small>Email: hello@goldpearlcorporate.nl</small></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript: Pre-filled Email -->
+  <script>
+    function sendCorporateEmail() {
+      const company = encodeURIComponent(document.getElementById('company').value || '');
+      const name = encodeURIComponent(document.getElementById('name').value || '');
+      const email = encodeURIComponent(document.getElementById('email').value || '');
+      const message = encodeURIComponent(document.getElementById('message').value || '');
+
+      const mailtoLink =
+        `mailto:hello@goldpearlcorporate.nl?subject=Corporate Pilot Program Inquiry&body=` +
+        `Company: ${company}%0D%0A` +
+        `Contact Name: ${name}%0D%0A` +
+        `Email: ${email}%0D%0A` +
+        `Message: ${message}`;
+
+      window.location.href = mailtoLink;
+    }
+
+    document.getElementById('corporate-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendCorporateEmail();
+    });
+
+    document.getElementById('top-cta').addEventListener('click', function (e) {
+      e.preventDefault();
+      sendCorporateEmail();
+    });
+
+    document.getElementById('hero-cta').addEventListener('click', function (e) {
+      e.preventDefault();
+      sendCorporateEmail();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* _components.scss */
+
+/* Corporate Call-to-Action Button */
+.cta-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;           // more subtle than 6px
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+  border: none;
+
+  &:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-light); // subtle shadow only
+  }
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+  }
+}
+
+/* Corporate Promise/Feature Card */
+.promise-item {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--background-color); // clean white
+  border-radius: 8px;                  // smaller corner radius
+  box-shadow: var(--shadow-light);     // subtle shadow
+  transition: all 0.3s;
+  border-top: 4px solid transparent;
+
+  &:hover {
+    transform: translateY(-4px);       // less dramatic
+    box-shadow: var(--shadow-hover);   // subtle hover shadow
+    border-top-color: var(--primary-color); // corporate accent
+  }
+
+  &:focus-within {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+  }
+}

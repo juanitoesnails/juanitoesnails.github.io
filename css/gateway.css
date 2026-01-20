@@ -1,0 +1,178 @@
+/* ===============================
+   Gold Pearl Gateway — Split Screen
+   =============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Root Variables ===== */
+
+:root {
+  --gold: #d4af37;
+  --gold-dark: #b8960b;
+
+  --grey-dark: #1a1a1a;
+  --grey-medium: #3a3c42;
+  --grey-light: #718096;
+
+  --white: #ffffff;
+
+  --shadow-hover: 0 15px 40px rgba(212,175,55,0.3);
+}
+
+/* ===== Base ===== */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--grey-dark);
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* ===== Gateway Layout ===== */
+
+.gateway {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ===== Left Content Panel ===== */
+
+.content-panel {
+  flex: 1;
+  background: var(--white);
+  padding: 2.25rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ===== Text ===== */
+
+.welcome {
+  font-size: clamp(2rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold);
+  text-align: center;
+}
+
+.subtext {
+  font-size: clamp(1rem, 2.3vw, 1.15rem);
+  font-weight: 400;
+  color: var(--grey-medium);
+  text-align: center;
+  max-width: 420px;
+}
+
+.prompt {
+  font-size: clamp(1.4rem, 3vw, 1.6rem);
+  font-weight: 600;
+  text-align: center;
+  margin: 0.75rem 0;
+}
+
+/* ===== Buttons ===== */
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.btn {
+  width: 100%;
+  max-width: 340px;
+  min-height: clamp(64px, 8vh, 86px);
+
+  padding: 0.75rem 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  color: var(--grey-dark);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.btn-subtext {
+  font-size: 0.75rem;
+  color: var(--grey-light);
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+/* ===== Hover ===== */
+
+.btn:hover {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--white);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn:hover .btn-subtext {
+  color: rgba(255,255,255,0.9);
+}
+
+/* ===== Right Image Panel ===== */
+
+.image-panel {
+  flex: 1;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)),
+    url('../images/gateway.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 40vh;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 900px) {
+  .gateway {
+    flex-direction: column;
+  }
+
+  .image-panel {
+    height: 40vh;
+    width: 100%;
+  }
+
+  .content-panel {
+    height: 60vh;
+    padding: 2rem 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-panel {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .btn {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,258 @@
+/* =========================
+   index.scss - Organisations Landing
+========================= */
+
+/* Import base, components, layout */
+@import '../base-organisations';
+@import '../components-organisations';
+@import '../layout-organisations';
+
+/* -------------------------
+   Hero Section
+------------------------- */
+.page-home .hero {
+  min-height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("../images/herobanner.png") center/cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0 15rem;
+
+  .hero-content {
+    max-width: 600px;
+    text-align: left;
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-stat {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 3rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* -------------------------
+   Benefits Section
+------------------------- */
+.benefits {
+  padding: 4rem 2rem;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+
+  .intro {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+
+    li {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      padding-left: 1.5rem;
+      position: relative;
+
+      &:before {
+        content: "✓";
+        color: var(--primary-color);
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+/* -------------------------
+   Pilot Program Section
+------------------------- */
+.pilot {
+  background: #f2f2f2; /* Grey background to stand out */
+  padding: 4rem 2rem;
+  width: 100%;
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin: 1.5rem auto 5 auto;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+      }
+    }
+  }
+}
+
+/* -------------------------
+   Contact Section
+------------------------- */
+.contact {
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+
+  .section-inner {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+
+      label {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      input, textarea {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        width: 100%;
+
+        &:focus {
+          outline: var(--focus-outline);
+          border-color: var(--primary-color);
+        }
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      button {
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        border: none;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------
+   Footer tweaks
+------------------------- */
+.site-footer {
+  padding: 2rem 2rem 1rem;
+}
+
+/* -------------------------
+   Responsive tweaks
+------------------------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .benefits, .pilot, .contact {
+    padding: 2rem 1rem;
+
+    form {
+      padding: 2rem 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .contact form {
+    padding: 1.5rem 1rem;
+  }
+}

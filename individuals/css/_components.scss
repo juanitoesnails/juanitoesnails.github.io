@@ -1,0 +1,45 @@
+/* _components.scss */
+
+.cta-button {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+  }
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+  }
+}
+
+.promise-item {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s;
+  border-top: 4px solid transparent;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-top-color: var(--gold);
+  }
+
+  &:focus-within {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+  }
+}

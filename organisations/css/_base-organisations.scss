@@ -1,0 +1,39 @@
+/* _base.scss */
+
+/* Variables */
+:root {
+  --primary-color: #b8860b;       // Deep Gold for corporate feel
+  --primary-hover: #000000;       // Darker shade for hover states
+  --accent-color: #f5a623;        // Subtle accent (like for links/buttons)
+  --shadow-light: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-hover: 0 8px 24px rgba(0,0,0,0.1);
+  --focus-outline: 2px solid var(--primary-color);
+  --background-color: #ffffff;
+  --text-color: #222;
+}
+
+/* Reset + Box sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 400;
+  background: var(--background-color);
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--primary-color);
+}

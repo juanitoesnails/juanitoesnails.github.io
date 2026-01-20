@@ -1,0 +1,200 @@
+/* _faq.scss */
+
+/* =========================
+   Hero Section
+========================= */
+
+.page-faq {
+  .hero {
+    min-height: 40vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url('../images/faq.png') center / cover;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0 15rem;
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtext {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+/* =========================
+   FAQ Section
+========================= */
+
+#faq {
+  padding: 4rem 0;
+  background: #fff;
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: #fafafa;
+    border: 1px solid #e9ecef;
+
+    input[type='checkbox'] {
+      display: none;
+
+      &:checked ~ .faq-answer {
+        max-height: 1000px;
+        padding-top: 1rem;
+      }
+
+      &:checked + label::after {
+        transform: rotate(45deg);
+      }
+    }
+
+    label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      padding-right: 2.5rem;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--gold);
+      }
+
+      &::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 1.5rem;
+        line-height: 1;
+        transition: transform 0.25s ease;
+      }
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      font-size: 1rem;
+      line-height: 1.6;
+      padding: 0;
+
+      p {
+        margin-bottom: 0.75rem;
+      }
+
+      ul {
+        margin-left: 1.5rem;
+        margin-bottom: 0.75rem;
+
+        li {
+          position: relative;
+          padding-left: 1.2rem;
+          margin-bottom: 0.5rem;
+
+          &::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================
+   FAQ Contact / CTA Section
+========================= */
+
+.faq-contact {
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+  background: #f8f9fa;
+  text-align: center;
+  border-radius: 8px;
+
+  /* All links default to gold */
+  a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* CTA button override */
+  .cta-button {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #fff; // FIX: force white text on gold button
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+  }
+}
+
+/* =========================
+   Responsive Adjustments
+========================= */
+
+@media screen and (max-width: 768px) {
+  .page-faq .hero .hero-content {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  #faq .faq-item label {
+    font-size: 1.1rem;
+  }
+
+  #faq .faq-answer {
+    font-size: 0.95rem;
+  }
+
+  .faq-contact p {
+    font-size: 0.9rem;
+  }
+}
+
+.site-footer {
+  padding: 2rem 2rem 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .page-faq .hero .hero-content h1 {
+    font-size: 1.75rem;
+  }
+}
