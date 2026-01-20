@@ -40,8 +40,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-corporate.scss
-   Corporate layout: header, footer, containers
+   _layout-Organisation.scss
+   Organisation layout: header, footer, containers
 ========================= */
 /* -------------------------
    Variables
@@ -112,13 +112,13 @@ body {
 .top-bar .logo-area .logo-link {
   display: flex;
   align-items: center;
-  text-decoration: none; /* remove underline */
+  text-decoration: none;
   color: inherit;
   gap: 0.5rem;
 }
 .top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
   text-decoration: none;
-  color: var(--gold); /* subtle hover */
+  color: var(--gold);
 }
 .top-bar .logo-area .logo-link .logo {
   height: 48px;
@@ -172,19 +172,54 @@ body {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
+
+/* -------------------------
+   Mobile Header Fix
+------------------------- */
 @media (max-width: 768px) {
   .top-bar {
-    flex-wrap: wrap;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
   }
-  .top-bar .top-right {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 1.5rem;
+  /* Hide desktop nav + CTA */
+  .top-right {
+    display: none;
+  }
+  /* Mobile menu toggle button */
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: #1a1a1a;
+  }
+  /* Mobile dropdown nav */
+  .mobile-nav {
+    display: none;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .mobile-nav a {
+    display: block;
+    padding: 0.85rem 1.5rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+  .mobile-nav a:hover {
+    background: rgba(212, 175, 55, 0.1);
+  }
+  .mobile-nav .cta-button {
+    margin: 1rem 1.5rem;
+    display: block;
+    text-align: center;
+  }
+  /* Show mobile nav when active */
+  .mobile-nav.active {
+    display: block;
   }
 }
-
 /* -------------------------
    Footer
 ------------------------- */
@@ -214,7 +249,7 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Corporate"; /* update branding */
+  content: "Gold Pearl Organisation";
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;
@@ -419,8 +454,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-corporate.scss
-   Corporate layout: header, footer, containers
+   _layout-Organisation.scss
+   Organisation layout: header, footer, containers
 ========================= */
 /* -------------------------
    Variables
@@ -491,13 +526,13 @@ body {
 .top-bar .logo-area .logo-link {
   display: flex;
   align-items: center;
-  text-decoration: none; /* remove underline */
+  text-decoration: none;
   color: inherit;
   gap: 0.5rem;
 }
 .top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
   text-decoration: none;
-  color: var(--gold); /* subtle hover */
+  color: var(--gold);
 }
 .top-bar .logo-area .logo-link .logo {
   height: 48px;
@@ -551,19 +586,54 @@ body {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
+
+/* -------------------------
+   Mobile Header Fix
+------------------------- */
 @media (max-width: 768px) {
   .top-bar {
-    flex-wrap: wrap;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
   }
-  .top-bar .top-right {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 1.5rem;
+  /* Hide desktop nav + CTA */
+  .top-right {
+    display: none;
+  }
+  /* Mobile menu toggle button */
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: #1a1a1a;
+  }
+  /* Mobile dropdown nav */
+  .mobile-nav {
+    display: none;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .mobile-nav a {
+    display: block;
+    padding: 0.85rem 1.5rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+  .mobile-nav a:hover {
+    background: rgba(212, 175, 55, 0.1);
+  }
+  .mobile-nav .cta-button {
+    margin: 1rem 1.5rem;
+    display: block;
+    text-align: center;
+  }
+  /* Show mobile nav when active */
+  .mobile-nav.active {
+    display: block;
   }
 }
-
 /* -------------------------
    Footer
 ------------------------- */
@@ -593,7 +663,7 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Corporate"; /* update branding */
+  content: "Gold Pearl Organisation";
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;

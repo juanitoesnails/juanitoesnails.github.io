@@ -25,7 +25,24 @@
       </nav>
       <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
+
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button
+      class="mobile-menu-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
+
+  <!-- MOBILE NAVIGATION (hidden by default) -->
+  <nav class="mobile-nav" aria-hidden="true">
+    <a href="#why">Why Coaching</a>
+    <a href="#pilot">Pilot Program</a>
+    <a href="#contact">Contact</a>
+    <a href="#" class="cta-button" id="mobile-cta">Join Pilot</a>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -115,7 +132,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript: Prefilled Email -->
+  <!-- JavaScript: Prefilled Email + Mobile Menu Toggle -->
   <script>
     function sendOrganisationsEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
@@ -143,6 +160,22 @@ Message: ${message}`;
     });
 
     document.getElementById('hero-cta').addEventListener('click', function (e) {
+      e.preventDefault();
+      sendOrganisationsEmail();
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      mobileNav.setAttribute('aria-hidden', !isOpen);
+    });
+
+    // Mobile CTA uses same email function
+    document.getElementById('mobile-cta').addEventListener('click', function (e) {
       e.preventDefault();
       sendOrganisationsEmail();
     });
