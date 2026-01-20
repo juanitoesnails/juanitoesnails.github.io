@@ -1,6 +1,12 @@
-/* _base.scss */
+/* =========================
+   _base.scss
+   Global variables, resets, and base styles
+   Mobile-friendly adjustments included
+========================= */
 
-/* Variables */
+/* -------------------------
+   Variables
+------------------------- */
 :root {
   --primary-color: #b8860b;       // Deep Gold for corporate feel
   --primary-hover: #000000;       // Darker shade for hover states
@@ -12,7 +18,9 @@
   --text-color: #222;
 }
 
-/* Reset + Box sizing */
+/* -------------------------
+   Reset + Box sizing
+------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,10 +38,176 @@ body {
   font-size: 16px;
   font-weight: 400;
   background: var(--background-color);
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+    line-height: 1.5;
+  }
 }
 
-/* Headings */
+/* -------------------------
+   Headings
+------------------------- */
 h1, h2, h3 {
   font-weight: 700;
   color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+/* -------------------------
+   Paragraphs
+------------------------- */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+}
+
+/* -------------------------
+   Links & Buttons
+------------------------- */
+a, button {
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: var(--primary-color);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--primary-hover);
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+  }
+}
+
+button, .cta-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: #fff;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* -------------------------
+   Lists
+------------------------- */
+ul, ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    margin-left: 1rem;
+  }
+}
+
+/* -------------------------
+   Spacing Utilities (Mobile-friendly)
+------------------------- */
+@media (max-width: 768px) {
+  .mb-1 { margin-bottom: 0.5rem !important; }
+  .mb-2 { margin-bottom: 1rem !important; }
+  .mb-3 { margin-bottom: 1.5rem !important; }
+
+  .pt-1 { padding-top: 0.5rem !important; }
+  .pt-2 { padding-top: 1rem !important; }
+  .pt-3 { padding-top: 1.5rem !important; }
+}
+
+/* -------------------------
+   Images
+------------------------- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* -------------------------
+   Forms
+------------------------- */
+input, textarea, select {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+}
+
+/* -------------------------
+   Dark Mode Support (optional)
+------------------------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #eee;
+  }
+
+  h1, h2, h3 {
+    color: #f5a623;
+  }
+
+  a {
+    color: var(--accent-color);
+  }
+
+  input, textarea, select, button {
+    background: #1e1e1e;
+    color: #eee;
+    border-color: #333;
+  }
+}
+
+/* -------------------------
+   Accessibility: Reduced Motion
+------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

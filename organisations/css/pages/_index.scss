@@ -8,6 +8,24 @@
 @import '../layout-organisations';
 
 /* -------------------------
+   Skip link
+------------------------- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  transition: top 0.3s;
+
+  &:focus {
+    top: 0; // only visible on keyboard focus
+  }
+}
+
+/* -------------------------
    Hero Section
 ------------------------- */
 .page-home .hero {
@@ -16,12 +34,16 @@
   background-attachment: fixed;
   display: flex;
   align-items: center;
-  color: white;
-  padding: 0 15rem;
+  text-align: left;
+  color: white; // ensure hero text is white
 
   .hero-content {
     max-width: 600px;
-    text-align: left;
+    padding-top: 4rem; // 
+
+    h1, .hero-stat {
+      color: white; // override global heading colors
+    }
 
     h1 {
       font-size: clamp(2rem, 4vw, 3.2rem);
@@ -49,6 +71,24 @@
     padding: 0 2rem;
     text-align: center;
     justify-content: center;
+    background-attachment: scroll; // fix mobile background issue
+
+    .hero-content {
+      max-width: 100%;
+
+      h1 { font-size: clamp(1.6rem, 5vw, 2rem); }
+      .hero-stat { font-size: clamp(0.95rem, 3vw, 1.1rem); }
+      .cta-button { width: 100%; padding: 0.9rem 1rem; }
+    }
+  }
+
+  @media (max-width: 480px) {
+    min-height: 50vh;
+
+    .hero-content {
+      h1 { font-size: 1.5rem; }
+      .hero-stat { font-size: 0.9rem; }
+    }
   }
 }
 
@@ -98,13 +138,23 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    ul { max-width: 100%; }
+    li { font-size: 0.95rem; padding-left: 1.2rem; }
+  }
+
+  @media (max-width: 480px) {
+    li { font-size: 0.9rem; }
+  }
 }
 
 /* -------------------------
    Pilot Program Section
 ------------------------- */
 .pilot {
-  background: #f2f2f2; /* Grey background to stand out */
+  background: #f2f2f2;
   padding: 4rem 2rem;
   width: 100%;
 
@@ -117,7 +167,6 @@
       font-size: 2rem;
       color: var(--primary-color);
       margin-bottom: 1.5rem;
-      text-align: center;
     }
 
     p {
@@ -142,6 +191,17 @@
         box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+
+    .cta-button { width: 100%; padding: 0.9rem 1rem; font-size: 0.95rem; }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem;
+    .cta-button { font-size: 0.9rem; }
   }
 }
 
@@ -171,12 +231,9 @@
       border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.08);
 
-      label {
-        font-weight: 600;
-        font-size: 0.95rem;
-      }
-
       input, textarea {
+        background: #fff; // ensure white background
+        color: #222;      // ensure dark text
         padding: 0.75rem;
         border: 1px solid #ccc;
         border-radius: 6px;
@@ -189,10 +246,7 @@
         }
       }
 
-      textarea {
-        min-height: 120px;
-        resize: vertical;
-      }
+      textarea { min-height: 120px; resize: vertical; }
 
       button {
         background: linear-gradient(135deg, var(--gold), var(--gold-dark));
@@ -212,6 +266,15 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    form { padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    form { padding: 1.5rem 1rem; }
+  }
 }
 
 /* -------------------------
@@ -219,40 +282,4 @@
 ------------------------- */
 .site-footer {
   padding: 2rem 2rem 1rem;
-}
-
-/* -------------------------
-   Responsive tweaks
-------------------------- */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-
-  .benefits, .pilot, .contact {
-    padding: 2rem 1rem;
-
-    form {
-      padding: 2rem 1.5rem;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.75rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .contact form {
-    padding: 1.5rem 1rem;
-  }
 }
