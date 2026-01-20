@@ -8,7 +8,9 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- =========================
+       Header / Top Bar
+  ========================== -->
   <header class="top-bar">
     <!-- Logo -->
     <div class="logo-area">
@@ -18,8 +20,8 @@
       </a>
     </div>
 
-    <!-- Desktop Nav -->
-    <div class="top-right">
+    <!-- Desktop Navigation -->
+    <div class="desktop-nav">
       <nav class="main-nav">
         <a href="#why">Why Coaching</a>
         <a href="#pilot">Pilot Program</a>
@@ -28,7 +30,7 @@
       <a href="#contact" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
 
-    <!-- Mobile Nav (hamburger + links inside) -->
+    <!-- Mobile Navigation -->
     <div class="mobile-nav">
       <div class="hamburger">&#9776;</div>
       <div class="mobile-links">
@@ -40,7 +42,9 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- =========================
+       Hero Section
+  ========================== -->
   <section class="hero">
     <div class="hero-content">
       <h1>Empower Communities Through Financial Education</h1>
@@ -51,7 +55,9 @@
     </div>
   </section>
 
-  <!-- Why Section -->
+  <!-- =========================
+       Why Section
+  ========================== -->
   <section class="benefits" id="why">
     <div class="section-inner">
       <h2>Why Financial Literacy Matters</h2>
@@ -69,7 +75,9 @@
     </div>
   </section>
 
-  <!-- Pilot Program Section -->
+  <!-- =========================
+       Pilot Program Section
+  ========================== -->
   <section class="pilot" id="pilot">
     <div class="section-inner">
       <h2>Community Financial Coaching Pilot</h2>
@@ -83,7 +91,9 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- =========================
+       Contact Section
+  ========================== -->
   <section class="contact" id="contact">
     <div class="section-inner">
       <h2>Partner With Us / Join the Pilot</h2>
@@ -105,7 +115,9 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- =========================
+       Footer
+  ========================== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-left">
@@ -128,17 +140,25 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- =========================
+       JavaScript
+  ========================== -->
   <script>
     // Mobile Hamburger Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const mobileLinks = document.querySelector('.mobile-links');
+    const hamburger = document.querySelector('.mobile-nav .hamburger');
+    const mobileLinks = document.querySelector('.mobile-nav .mobile-links');
 
     hamburger.addEventListener('click', () => {
       mobileLinks.classList.toggle('open');
     });
 
-    // Form submission and CTA buttons
+    // Close mobile menu after clicking mobile CTA
+    const mobileCTA = document.getElementById('mobile-cta');
+    mobileCTA.addEventListener('click', () => {
+      mobileLinks.classList.remove('open');
+    });
+
+    // Form submission for CTA buttons
     function sendOrganisationsEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
       const name = encodeURIComponent(document.getElementById('name').value || '');
@@ -154,25 +174,17 @@ Message: ${message}`;
       window.location.href = mailtoLink;
     }
 
-    document.getElementById('organisations-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      sendOrganisationsEmail();
-    });
+    // Desktop & Hero CTA buttons
+    const topCTA = document.getElementById('top-cta');
+    const heroCTA = document.getElementById('hero-cta');
 
-    document.getElementById('top-cta').addEventListener('click', function (e) {
-      e.preventDefault();
-      sendOrganisationsEmail();
-    });
+    topCTA?.addEventListener('click', (e) => { e.preventDefault(); sendOrganisationsEmail(); });
+    heroCTA?.addEventListener('click', (e) => { e.preventDefault(); sendOrganisationsEmail(); });
 
-    document.getElementById('hero-cta').addEventListener('click', function (e) {
+    // Form submission
+    document.getElementById('organisations-form').addEventListener('submit', function(e) {
       e.preventDefault();
       sendOrganisationsEmail();
-    });
-
-    document.getElementById('mobile-cta').addEventListener('click', function (e) {
-      e.preventDefault();
-      sendOrganisationsEmail();
-      mobileLinks.classList.remove('open'); // close mobile menu
     });
   </script>
 
