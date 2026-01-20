@@ -40,8 +40,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-organisations.scss
-   Organisations layout: header, footer, containers
+   _layout-corporate.scss
+   Corporate layout: header, footer, containers
 ========================= */
 /* -------------------------
    Variables
@@ -76,32 +76,18 @@ body {
   background: #f8f9fa;
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  color: white; /* Force hero text white */
+  flex-direction: column;
+  text-align: center;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-}
-
-/* -------------------------
-   Hero Section
-------------------------- */
-.hero {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  min-height: 80vh;
-  color: white;
-  /* Force hero text + CTA to white */
-}
-.hero .hero-content {
-  color: white;
-  text-align: center;
-}
-.hero h1,
-.hero p,
-.hero a {
-  color: white !important;
 }
 
 /* -------------------------
@@ -117,6 +103,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  /* Logo Area */
+  /* Desktop Nav */
+  /* Mobile Nav */
 }
 .top-bar .logo-area {
   display: flex;
@@ -131,7 +120,6 @@ body {
   gap: 0.5rem;
 }
 .top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
-  text-decoration: none;
   color: var(--gold);
 }
 .top-bar .logo-area .logo-link .logo {
@@ -186,63 +174,64 @@ body {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
-
-/* -------------------------
-   Mobile Header & Hero Fixes
-------------------------- */
+.top-bar .mobile-nav {
+  display: none; /* hidden by default */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.top-bar .mobile-nav .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.top-bar .mobile-nav .logo-area .logo {
+  height: 40px;
+  width: auto;
+}
+.top-bar .mobile-nav .logo-area .logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+.top-bar .mobile-nav .hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.top-bar .mobile-nav .mobile-links {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.top-bar .mobile-nav .mobile-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.top-bar .mobile-nav .mobile-links a:hover, .top-bar .mobile-nav .mobile-links a:focus {
+  color: var(--gold);
+}
+.top-bar .mobile-nav .mobile-links .cta-button {
+  margin-top: 0.5rem;
+}
 @media (max-width: 768px) {
   .top-bar {
-    padding: 0.75rem 1rem;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem;
+    /* Hide desktop nav on mobile */
+    /* Show mobile nav with logo + hamburger in one row */
   }
-  /* Hide desktop nav + CTA completely */
   .top-bar .top-right {
-    display: none !important;
-    width: 0;
-    overflow: hidden;
-  }
-  /* Mobile menu toggle button */
-  .mobile-menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.75rem;
-    cursor: pointer;
-    color: #1a1a1a;
-    margin: 0.5rem 1rem;
-  }
-  /* Mobile dropdown nav */
-  .mobile-nav {
     display: none;
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
-  .mobile-nav a {
-    display: block;
-    padding: 0.85rem 1.5rem;
-    text-decoration: none;
-    color: #1a1a1a;
-    font-weight: 500;
-  }
-  .mobile-nav a:hover {
-    background: rgba(212, 175, 55, 0.1);
-  }
-  .mobile-nav .cta-button {
-    margin: 1rem 1.5rem;
-    display: block;
-    text-align: center;
-  }
-  .mobile-nav.active {
-    display: block;
-  }
-  /* Force hero text white */
-  .hero h1,
-  .hero p,
-  .hero a {
-    color: white !important;
+  .top-bar .mobile-nav {
+    display: flex;
   }
 }
+
 /* -------------------------
    Footer
 ------------------------- */
@@ -272,7 +261,6 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Organisations";
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;
@@ -477,8 +465,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-organisations.scss
-   Organisations layout: header, footer, containers
+   _layout-corporate.scss
+   Corporate layout: header, footer, containers
 ========================= */
 /* -------------------------
    Variables
@@ -513,32 +501,18 @@ body {
   background: #f8f9fa;
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  color: white; /* Force hero text white */
+  flex-direction: column;
+  text-align: center;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-}
-
-/* -------------------------
-   Hero Section
-------------------------- */
-.hero {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  min-height: 80vh;
-  color: white;
-  /* Force hero text + CTA to white */
-}
-.hero .hero-content {
-  color: white;
-  text-align: center;
-}
-.hero h1,
-.hero p,
-.hero a {
-  color: white !important;
 }
 
 /* -------------------------
@@ -554,6 +528,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  /* Logo Area */
+  /* Desktop Nav */
+  /* Mobile Nav */
 }
 .top-bar .logo-area {
   display: flex;
@@ -568,7 +545,6 @@ body {
   gap: 0.5rem;
 }
 .top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
-  text-decoration: none;
   color: var(--gold);
 }
 .top-bar .logo-area .logo-link .logo {
@@ -623,63 +599,64 @@ body {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
-
-/* -------------------------
-   Mobile Header & Hero Fixes
-------------------------- */
+.top-bar .mobile-nav {
+  display: none; /* hidden by default */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.top-bar .mobile-nav .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.top-bar .mobile-nav .logo-area .logo {
+  height: 40px;
+  width: auto;
+}
+.top-bar .mobile-nav .logo-area .logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+.top-bar .mobile-nav .hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.top-bar .mobile-nav .mobile-links {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.top-bar .mobile-nav .mobile-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.top-bar .mobile-nav .mobile-links a:hover, .top-bar .mobile-nav .mobile-links a:focus {
+  color: var(--gold);
+}
+.top-bar .mobile-nav .mobile-links .cta-button {
+  margin-top: 0.5rem;
+}
 @media (max-width: 768px) {
   .top-bar {
-    padding: 0.75rem 1rem;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem;
+    /* Hide desktop nav on mobile */
+    /* Show mobile nav with logo + hamburger in one row */
   }
-  /* Hide desktop nav + CTA completely */
   .top-bar .top-right {
-    display: none !important;
-    width: 0;
-    overflow: hidden;
-  }
-  /* Mobile menu toggle button */
-  .mobile-menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.75rem;
-    cursor: pointer;
-    color: #1a1a1a;
-    margin: 0.5rem 1rem;
-  }
-  /* Mobile dropdown nav */
-  .mobile-nav {
     display: none;
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
-  .mobile-nav a {
-    display: block;
-    padding: 0.85rem 1.5rem;
-    text-decoration: none;
-    color: #1a1a1a;
-    font-weight: 500;
-  }
-  .mobile-nav a:hover {
-    background: rgba(212, 175, 55, 0.1);
-  }
-  .mobile-nav .cta-button {
-    margin: 1rem 1.5rem;
-    display: block;
-    text-align: center;
-  }
-  .mobile-nav.active {
-    display: block;
-  }
-  /* Force hero text white */
-  .hero h1,
-  .hero p,
-  .hero a {
-    color: white !important;
+  .top-bar .mobile-nav {
+    display: flex;
   }
 }
+
 /* -------------------------
    Footer
 ------------------------- */
@@ -709,7 +686,6 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Organisations";
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;
@@ -854,22 +830,24 @@ body {
 .benefits ul {
   list-style: none;
   padding: 0;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 100%;
 }
 .benefits ul li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr; /* Checkmark + text */
+  gap: 0.75rem; /* space between checkmark and text */
+  align-items: start;
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.6;
+  padding-left: 1rem; /* moves checks slightly to the right on desktop */
 }
 .benefits ul li:before {
   content: "✓";
   color: var(--primary-color);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 2px; /* vertically aligns checkmark with text */
 }
 
 /* -------------------------
@@ -994,6 +972,11 @@ body {
   .contact form {
     padding: 2rem 1.5rem;
   }
+  .benefits ul li {
+    padding-left: 0.75rem; /* tablet padding */
+    gap: 0.6rem;
+    font-size: 0.95rem;
+  }
 }
 @media (max-width: 480px) {
   .hero h1 {
@@ -1006,6 +989,8 @@ body {
     padding: 2rem 1.25rem;
   }
   .benefits ul li {
+    padding-left: 0.5rem; /* safe space from edges */
+    gap: 0.5rem;
     font-size: 0.9rem;
     line-height: 1.5;
   }

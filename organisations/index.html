@@ -10,6 +10,7 @@
 
   <!-- Header -->
   <header class="top-bar">
+    <!-- Desktop logo + nav -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
@@ -25,24 +26,24 @@
       </nav>
       <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav">
+      <div class="logo-area">
+        <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
+        <span class="logo-text">GOLD PEARL Organisations</span>
+      </div>
+      <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+    </div>
   </header>
 
-  <!-- MOBILE HAMBURGER BUTTON -->
-  <button
-    class="mobile-menu-toggle"
-    aria-label="Open menu"
-    aria-expanded="false"
-  >
-    ☰
-  </button>
-
-  <!-- MOBILE NAVIGATION -->
-  <nav class="mobile-nav" aria-hidden="true">
+  <!-- Mobile links (hidden by default) -->
+  <div class="mobile-links">
     <a href="#why">Why Coaching</a>
     <a href="#pilot">Pilot Program</a>
     <a href="#contact">Contact</a>
-    <a href="#" class="cta-button" id="mobile-cta">Join Pilot</a>
-  </nav>
+    <a href="#" class="cta-button">Join Pilot</a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -132,8 +133,9 @@
     </div>
   </footer>
 
-  <!-- JavaScript: Prefilled Email + Mobile Menu Toggle -->
+  <!-- JavaScript: Prefilled Email & Mobile Menu Toggle -->
   <script>
+    // Email form
     function sendOrganisationsEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
       const name = encodeURIComponent(document.getElementById('name').value || '');
@@ -165,19 +167,11 @@ Message: ${message}`;
     });
 
     // Mobile menu toggle
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileNav = document.querySelector('.mobile-nav');
+    const hamburger = document.querySelector('.hamburger');
+    const mobileLinks = document.querySelector('.mobile-links');
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      mobileNav.setAttribute('aria-hidden', !isOpen);
-    });
-
-    // Mobile CTA uses same email function
-    document.getElementById('mobile-cta').addEventListener('click', function (e) {
-      e.preventDefault();
-      sendOrganisationsEmail();
+    hamburger.addEventListener('click', () => {
+      mobileLinks.style.display = mobileLinks.style.display === 'flex' ? 'none' : 'flex';
     });
   </script>
 
