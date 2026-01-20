@@ -17,6 +17,11 @@
         <img src="images/logo.png" alt="Gold Pearl Corporate" class="logo">
         <span class="logo-text">GOLD PEARL CORPORATE</span>
       </a>
+
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" aria-label="Open menu">
+        ☰
+      </button>
     </div>
 
     <div class="top-right">
@@ -24,77 +29,82 @@
         <a href="#why">Why Coaching</a>
         <a href="#contact">Contact</a>
       </nav>
+
       <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Empower Your Employees with Financial Coaching</h1>
-      <p class="hero-stat">
-        Financial wellbeing is becoming one of the most valued benefits in modern workplaces.
-      </p>
-      <a href="#" class="cta-button" id="hero-cta">Join the Pilot</a>
-    </div>
-  </section>
+  <main>
 
-  <!-- Why Section -->
-  <section class="benefits" id="why">
-    <div class="section-inner">
-      <h2>Financial Coaching as a Benefit</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Empower Your Employees with Financial Coaching</h1>
+        <p class="hero-stat">
+          Financial wellbeing is becoming one of the most valued benefits in modern workplaces.
+        </p>
+        <a href="#" class="cta-button" id="hero-cta">Join the Pilot</a>
+      </div>
+    </section>
 
-      <p class="intro">
-        Financial coaching is rapidly emerging as a high-impact employee benefit.
-        Companies that support <strong>financial wellbeing</strong> see stronger engagement, improved trust,
-        and healthier workplace cultures.
-      </p>
+    <!-- Why Section -->
+    <section class="benefits" id="why">
+      <div class="section-inner">
+        <h2>Financial Coaching as a Benefit</h2>
 
-      <ul>
-        <li><strong>Builds trust</strong> by showing genuine care for employees’ financial wellbeing</li>
-        <li><strong>Reduces stress</strong>-related absenteeism and burnout</li>
-        <li><strong>Improves retention</strong> by supporting employees beyond salary alone</li>
-        <li><strong>Enhances employer brand</strong> and attractiveness to top talent</li>
-        <li><strong>Strengthens company culture</strong> through transparency and empowerment</li>
-        <li><strong>Helps employees make confident decisions</strong> about saving, spending, and planning</li>
-      </ul>
-    </div>
-  </section>
+        <p class="intro">
+          Financial coaching is rapidly emerging as a high-impact employee benefit.
+          Companies that support <strong>financial wellbeing</strong> see stronger engagement,
+          improved trust, and healthier workplace cultures.
+        </p>
 
-  <!-- Pilot Program Section -->
-  <section class="pilot">
-    <div class="section-inner">
-      <h2>Corporate Financial Coaching Pilot</h2>
-      <p>
-        We are currently running a pilot program for companies.
-        Soon, we will offer interactive workshops and one-on-one financial coaching sessions
-        for employees — designed to build trust, confidence, and long-term financial wellness.
-      </p>
-    </div>
-  </section>
+        <ul>
+          <li><strong>Builds trust</strong> by showing genuine care for employees’ financial wellbeing</li>
+          <li><strong>Reduces stress</strong>-related absenteeism and burnout</li>
+          <li><strong>Improves retention</strong> by supporting employees beyond salary alone</li>
+          <li><strong>Enhances employer brand</strong> and attractiveness to top talent</li>
+          <li><strong>Strengthens company culture</strong> through transparency and empowerment</li>
+          <li><strong>Helps employees make confident decisions</strong> about saving, spending, and planning</li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="section-inner">
-      <h2>Contact Us to Join the Pilot</h2>
+    <!-- Pilot Program Section -->
+    <section class="pilot">
+      <div class="section-inner">
+        <h2>Corporate Financial Coaching Pilot</h2>
+        <p>
+          We are currently running a pilot program for companies.
+          Soon, we will offer interactive workshops and one-on-one financial coaching sessions
+          for employees — designed to build trust, confidence, and long-term financial wellness.
+        </p>
+      </div>
+    </section>
 
-      <form id="corporate-form">
-        <label for="company">Company Name</label>
-        <input type="text" id="company" placeholder="Your Company" required>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <h2>Contact Us to Join the Pilot</h2>
 
-        <label for="name">Contact Name</label>
-        <input type="text" id="name" placeholder="John Doe" required>
+        <form id="corporate-form">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" placeholder="Your Company" required>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="john@example.com" required>
+          <label for="name">Contact Name</label>
+          <input type="text" id="name" placeholder="John Doe" required>
 
-        <label for="message">Message / Notes</label>
-        <textarea id="message" rows="4" placeholder="Any additional notes"></textarea>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" required>
 
-        <button type="submit" class="cta-button">Send Email</button>
-      </form>
-    </div>
-  </section>
+          <label for="message">Message / Notes</label>
+          <textarea id="message" rows="4" placeholder="Any additional notes"></textarea>
+
+          <button type="submit" class="cta-button">Send Email</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -119,7 +129,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript: Pre-filled Email -->
+  <!-- JavaScript -->
   <script>
     function sendCorporateEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
