@@ -106,7 +106,6 @@ body {
   /* Logo Area */
   /* Desktop Nav */
   /* Mobile Nav */
-  /* Mobile links (hidden by default) */
 }
 .top-bar .logo-area {
   display: flex;
@@ -177,33 +176,33 @@ body {
 }
 .top-bar .mobile-nav {
   display: none; /* hidden on desktop/tablet */
-  justify-content: flex-end; /* hamburger to right */
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
   width: 100%;
 }
 .top-bar .mobile-nav .hamburger {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.top-bar .mobile-links {
+.top-bar .mobile-nav .mobile-links {
   display: none;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
-.top-bar .mobile-links a {
+.top-bar .mobile-nav .mobile-links a {
   text-decoration: none;
   color: #1a1a1a;
   font-weight: 500;
   font-size: 1rem;
 }
-.top-bar .mobile-links a:hover, .top-bar .mobile-links a:focus {
+.top-bar .mobile-nav .mobile-links a:hover, .top-bar .mobile-nav .mobile-links a:focus {
   color: var(--gold);
 }
-.top-bar .mobile-links .cta-button {
+.top-bar .mobile-nav .mobile-links .cta-button {
   margin-top: 0.5rem;
 }
-.top-bar .mobile-links.open {
+.top-bar .mobile-nav .mobile-links.open {
   display: flex;
 }
 
@@ -271,11 +270,9 @@ body {
    Responsive breakpoints
 ------------------------- */
 @media (max-width: 768px) {
-  /* Hide desktop nav on mobile */
   .top-right {
     display: none;
   }
-  /* Show mobile nav */
   .mobile-nav {
     display: flex;
   }
@@ -501,7 +498,6 @@ body {
   /* Logo Area */
   /* Desktop Nav */
   /* Mobile Nav */
-  /* Mobile links (hidden by default) */
 }
 .top-bar .logo-area {
   display: flex;
@@ -572,33 +568,33 @@ body {
 }
 .top-bar .mobile-nav {
   display: none; /* hidden on desktop/tablet */
-  justify-content: flex-end; /* hamburger to right */
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
   width: 100%;
 }
 .top-bar .mobile-nav .hamburger {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.top-bar .mobile-links {
+.top-bar .mobile-nav .mobile-links {
   display: none;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
-.top-bar .mobile-links a {
+.top-bar .mobile-nav .mobile-links a {
   text-decoration: none;
   color: #1a1a1a;
   font-weight: 500;
   font-size: 1rem;
 }
-.top-bar .mobile-links a:hover, .top-bar .mobile-links a:focus {
+.top-bar .mobile-nav .mobile-links a:hover, .top-bar .mobile-nav .mobile-links a:focus {
   color: var(--gold);
 }
-.top-bar .mobile-links .cta-button {
+.top-bar .mobile-nav .mobile-links .cta-button {
   margin-top: 0.5rem;
 }
-.top-bar .mobile-links.open {
+.top-bar .mobile-nav .mobile-links.open {
   display: flex;
 }
 
@@ -666,11 +662,9 @@ body {
    Responsive breakpoints
 ------------------------- */
 @media (max-width: 768px) {
-  /* Hide desktop nav on mobile */
   .top-right {
     display: none;
   }
-  /* Show mobile nav */
   .mobile-nav {
     display: flex;
   }
