@@ -8,11 +8,8 @@
 </head>
 <body>
 
-  <!-- =========================
-       Header / Top Bar
-  ========================== -->
+  <!-- Header -->
   <header class="top-bar">
-    <!-- Logo -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
@@ -20,46 +17,28 @@
       </a>
     </div>
 
-    <!-- Desktop Navigation -->
-    <div class="desktop-nav">
+    <div class="top-right">
       <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="why.html">Why Coaching</a>
-        <a href="pilot.html">Pilot Program</a>
-        <a href="contact.html">Contact</a>
+        <a href="#why">Why Coaching</a>
+        <a href="#pilot">Pilot Program</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a href="contact.html" class="cta-button" id="top-cta">Join Pilot</a>
-    </div>
-
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-      <div class="hamburger">&#9776;</div>
-      <div class="mobile-links">
-        <a href="index.html">Home</a>
-        <a href="why.html">Why Coaching</a>
-        <a href="pilot.html">Pilot Program</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="cta-button" id="mobile-cta">Join Pilot</a>
-      </div>
+      <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
   </header>
 
-  <!-- =========================
-       Hero Section
-  ========================== -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Empower Communities Through Financial Education</h1>
       <p class="hero-stat">
         Helping people gain confidence, knowledge, and control over their finances, especially in underserved communities.
       </p>
-      <a href="contact.html" class="cta-button" id="hero-cta">Join the Pilot</a>
+      <a href="#contact" class="cta-button" id="hero-cta">Join the Pilot</a>
     </div>
   </section>
 
-  <!-- =========================
-       Why Section
-  ========================== -->
+  <!-- Why Section -->
   <section class="benefits" id="why">
     <div class="section-inner">
       <h2>Why Financial Literacy Matters</h2>
@@ -77,9 +56,7 @@
     </div>
   </section>
 
-  <!-- =========================
-       Pilot Program Section
-  ========================== -->
+  <!-- Pilot Program Section -->
   <section class="pilot" id="pilot">
     <div class="section-inner">
       <h2>Community Financial Coaching Pilot</h2>
@@ -89,13 +66,11 @@
       <p>
         We plan to offer <strong>interactive workshops, online courses, and educational materials</strong> that organisations can use directly with their communities. Our goal is to equip participants with practical skills, confidence, and long-term financial autonomy.
       </p>
-      <a href="contact.html" class="cta-button">Sign Up to Participate</a>
+      <a href="#contact" class="cta-button">Sign Up to Participate</a>
     </div>
   </section>
 
-  <!-- =========================
-       Contact Section
-  ========================== -->
+  <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="section-inner">
       <h2>Partner With Us / Join the Pilot</h2>
@@ -117,9 +92,7 @@
     </div>
   </section>
 
-  <!-- =========================
-       Footer
-  ========================== -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-left">
@@ -142,25 +115,8 @@
     </div>
   </footer>
 
-  <!-- =========================
-       JavaScript
-  ========================== -->
+  <!-- JavaScript: Prefilled Email -->
   <script>
-    // Mobile Hamburger Toggle
-    const hamburger = document.querySelector('.mobile-nav .hamburger');
-    const mobileLinks = document.querySelector('.mobile-nav .mobile-links');
-
-    hamburger.addEventListener('click', () => {
-      mobileLinks.classList.toggle('open');
-    });
-
-    // Close mobile menu after clicking mobile CTA
-    const mobileCTA = document.getElementById('mobile-cta');
-    mobileCTA.addEventListener('click', () => {
-      mobileLinks.classList.remove('open');
-    });
-
-    // Form submission and CTA handling
     function sendOrganisationsEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
       const name = encodeURIComponent(document.getElementById('name').value || '');
@@ -176,15 +132,17 @@ Message: ${message}`;
       window.location.href = mailtoLink;
     }
 
-    // Desktop & Hero CTA buttons
-    const topCTA = document.getElementById('top-cta');
-    const heroCTA = document.getElementById('hero-cta');
+    document.getElementById('organisations-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendOrganisationsEmail();
+    });
 
-    topCTA?.addEventListener('click', (e) => { e.preventDefault(); sendOrganisationsEmail(); });
-    heroCTA?.addEventListener('click', (e) => { e.preventDefault(); sendOrganisationsEmail(); });
+    document.getElementById('top-cta').addEventListener('click', function (e) {
+      e.preventDefault();
+      sendOrganisationsEmail();
+    });
 
-    // Form submission
-    document.getElementById('organisations-form').addEventListener('submit', function(e) {
+    document.getElementById('hero-cta').addEventListener('click', function (e) {
       e.preventDefault();
       sendOrganisationsEmail();
     });
