@@ -40,7 +40,7 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-Organisation.scss
+   _layout-organisation.scss
    Organisation layout: header, footer, containers
 ========================= */
 /* -------------------------
@@ -79,9 +79,12 @@ body {
 .hero {
   display: flex;
   align-items: center;
-  color: white;
+  color: white; /* LOCK HERO TEXT TO WHITE */
   flex-direction: column;
   text-align: center;
+}
+.hero .hero-content {
+  color: white; /* Ensure hero content inherits white on mobile */
 }
 
 .container {
@@ -184,7 +187,7 @@ body {
   .top-right {
     display: none;
   }
-  /* Mobile menu toggle button */
+  /* Mobile menu toggle button (can be outside header) */
   .mobile-menu-toggle {
     display: block;
     background: none;
@@ -192,6 +195,7 @@ body {
     font-size: 1.75rem;
     cursor: pointer;
     color: #1a1a1a;
+    margin: 0.5rem 1rem; /* space below header */
   }
   /* Mobile dropdown nav */
   .mobile-nav {
@@ -454,7 +458,7 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-Organisation.scss
+   _layout-organisation.scss
    Organisation layout: header, footer, containers
 ========================= */
 /* -------------------------
@@ -493,9 +497,12 @@ body {
 .hero {
   display: flex;
   align-items: center;
-  color: white;
+  color: white; /* LOCK HERO TEXT TO WHITE */
   flex-direction: column;
   text-align: center;
+}
+.hero .hero-content {
+  color: white; /* Ensure hero content inherits white on mobile */
 }
 
 .container {
@@ -598,7 +605,7 @@ body {
   .top-right {
     display: none;
   }
-  /* Mobile menu toggle button */
+  /* Mobile menu toggle button (can be outside header) */
   .mobile-menu-toggle {
     display: block;
     background: none;
@@ -606,6 +613,7 @@ body {
     font-size: 1.75rem;
     cursor: pointer;
     color: #1a1a1a;
+    margin: 0.5rem 1rem; /* space below header */
   }
   /* Mobile dropdown nav */
   .mobile-nav {
