@@ -1,13 +1,7 @@
 @charset "UTF-8";
 /* style.scss */
-/* =========================
-   _base.scss
-   Global variables, resets, and base styles
-   Mobile-friendly adjustments included
-========================= */
-/* -------------------------
-   Variables
-------------------------- */
+/* _base.scss */
+/* Variables */
 :root {
   --primary-color: #b8860b;
   --primary-hover: #000000;
@@ -19,9 +13,7 @@
   --text-color: #222;
 }
 
-/* -------------------------
-   Reset + Box sizing
-------------------------- */
+/* Reset + Box sizing */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,189 +32,13 @@ body {
   font-weight: 400;
   background: var(--background-color);
 }
-@media (max-width: 768px) {
-  body {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-}
 
-/* -------------------------
-   Headings
-------------------------- */
+/* Headings */
 h1, h2, h3 {
   font-weight: 700;
   color: var(--primary-color);
-  margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-}
-
-h2 {
-  font-size: 2rem;
-}
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-@media (max-width: 768px) {
-  h3 {
-    font-size: 1.2rem;
-  }
-}
-
-/* -------------------------
-   Paragraphs
-------------------------- */
-p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-@media (max-width: 768px) {
-  p {
-    font-size: 0.95rem;
-  }
-}
-
-/* -------------------------
-   Links & Buttons
-------------------------- */
-a, button {
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-  color: var(--primary-color);
-}
-a:hover, a:focus-visible, button:hover, button:focus-visible {
-  color: var(--primary-hover);
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-
-button, .cta-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: none;
-  font-weight: 600;
-  background: var(--primary-color);
-  color: #fff;
-}
-button:hover, .cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-hover);
-}
-@media (max-width: 768px) {
-  button, .cta-button {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.95rem;
-  }
-}
-
-/* -------------------------
-   Lists
-------------------------- */
-ul, ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-@media (max-width: 768px) {
-  ul, ol {
-    margin-left: 1rem;
-  }
-}
-
-/* -------------------------
-   Spacing Utilities (Mobile-friendly)
-------------------------- */
-@media (max-width: 768px) {
-  .mb-1 {
-    margin-bottom: 0.5rem !important;
-  }
-  .mb-2 {
-    margin-bottom: 1rem !important;
-  }
-  .mb-3 {
-    margin-bottom: 1.5rem !important;
-  }
-  .pt-1 {
-    padding-top: 0.5rem !important;
-  }
-  .pt-2 {
-    padding-top: 1rem !important;
-  }
-  .pt-3 {
-    padding-top: 1.5rem !important;
-  }
-}
-/* -------------------------
-   Images
-------------------------- */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* -------------------------
-   Forms
-------------------------- */
-input, textarea, select {
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-@media (max-width: 768px) {
-  input, textarea, select {
-    font-size: 0.95rem;
-  }
-}
-
-/* -------------------------
-   Dark Mode Support (optional)
-------------------------- */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #121212;
-    color: #eee;
-  }
-  h1, h2, h3 {
-    color: #f5a623;
-  }
-  a {
-    color: var(--accent-color);
-  }
-  input, textarea, select, button {
-    background: #1e1e1e;
-    color: #eee;
-    border-color: #333;
-  }
-}
-/* -------------------------
-   Accessibility: Reduced Motion
-------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
 /* =========================
    _layout-corporate.scss
    Corporate layout: header, footer, containers
@@ -263,9 +79,9 @@ body {
 .hero {
   display: flex;
   align-items: center;
+  color: white;
   flex-direction: column;
   text-align: center;
-  color: white;
 }
 
 .container {
@@ -287,21 +103,24 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  flex-wrap: wrap;
+  /* -------------------------
+     Mobile Styles
+  ------------------------- */
 }
 .top-bar .logo-area {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  gap: 0.5rem;
 }
 .top-bar .logo-area .logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: inherit;
+  gap: 0.5rem;
 }
 .top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
+  text-decoration: none;
   color: var(--gold);
 }
 .top-bar .logo-area .logo-link .logo {
@@ -315,39 +134,12 @@ body {
   letter-spacing: 1px;
   color: #1a1a1a;
 }
-.top-bar .logo-area .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: var(--gold);
-  margin-left: 1rem;
-  z-index: 101;
-  position: relative;
-}
-@media (max-width: 768px) {
-  .top-bar .logo-area .menu-toggle {
-    display: block;
-  }
-}
-@media (max-width: 768px) {
-  .top-bar .main-nav {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    text-align: center;
-  }
-  .top-bar .main-nav.open {
-    display: flex;
-  }
-}
 .top-bar .top-right {
   display: flex;
   align-items: center;
   gap: 2rem;
   flex-shrink: 0;
+  /* Hamburger Menu Icon */
 }
 .top-bar .top-right .main-nav {
   display: flex;
@@ -364,18 +156,6 @@ body {
   color: var(--gold);
   outline: var(--focus-outline);
   outline-offset: 2px;
-}
-@media (max-width: 768px) {
-  .top-bar .top-right .main-nav {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    text-align: center;
-  }
-  .top-bar .top-right .main-nav.open {
-    display: flex;
-  }
 }
 .top-bar .top-right .cta-button {
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
@@ -396,10 +176,48 @@ body {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
+.top-bar .top-right .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+.top-bar .top-right .hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #1a1a1a;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
 @media (max-width: 768px) {
-  .top-bar .top-right .cta-button {
+  .top-bar {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .top-bar .top-right {
+    order: 3;
     width: 100%;
-    text-align: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+  .top-bar .main-nav,
+  .top-bar .cta-button {
+    display: none; /* Hide desktop nav & button on mobile */
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    padding: 1rem 0;
+  }
+  .top-bar .main-nav.show,
+  .top-bar .cta-button.show {
+    display: flex; /* Show when hamburger is clicked */
+  }
+  .top-bar .hamburger {
+    display: flex; /* Show hamburger on mobile */
   }
 }
 
@@ -410,11 +228,12 @@ body {
   background: #000;
   color: white;
   padding: 2rem 2rem 1rem;
+  position: relative;
   font-family: "Montserrat", sans-serif;
 }
 .site-footer .footer-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
@@ -431,30 +250,20 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
+  content: "Gold Pearl Corporate";
 }
-.site-footer .footer-inner .footer-left .footer-contact address {
-  font-style: normal;
+.site-footer .footer-inner .footer-left .footer-contact p {
+  margin: 0;
   opacity: 0.9;
   font-size: 0.85rem;
-  line-height: 1.4;
-}
-.site-footer .footer-inner .footer-left .footer-contact address a {
-  color: #fff;
-  text-decoration: none;
-}
-.site-footer .footer-inner .footer-left .footer-contact address a:hover {
-  color: var(--gold);
 }
 .site-footer .footer-right {
-  text-align: left;
+  position: absolute;
+  right: 2rem;
+  bottom: 0.5rem;
   opacity: 0.7;
   font-size: 0.85rem;
-}
-@media (max-width: 768px) {
-  .site-footer .footer-right {
-    text-align: center;
-    margin-top: 0.5rem;
-  }
+  white-space: nowrap;
 }
 .site-footer .footer-legal {
   max-width: 1200px;
@@ -464,12 +273,6 @@ body {
   color: #ccc;
   font-size: 0.7rem;
   line-height: 1.2;
-  text-align: left;
-}
-@media (max-width: 768px) {
-  .site-footer .footer-legal {
-    text-align: center;
-  }
 }
 .site-footer .footer-legal small {
   font-size: 0.65rem;
@@ -480,12 +283,20 @@ body {
 }
 @media (max-width: 768px) {
   .site-footer {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem;
   }
   .site-footer .footer-inner {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+  }
+  .site-footer .footer-right {
+    position: static;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .site-footer .footer-legal {
+    text-align: center;
   }
 }
 
@@ -509,15 +320,10 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
-/* =========================
-   _components.scss
-   Corporate components: buttons, cards, forms
-========================= */
-/* -------------------------
-   Corporate Call-to-Action Button
-------------------------- */
+/* _components.scss */
+/* Corporate Call-to-Action Button */
 .cta-button {
-  background-color: var(--gold);
+  background-color: var(--primary-color);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
@@ -528,10 +334,9 @@ body {
   white-space: nowrap;
   display: inline-block;
   border: none;
-  cursor: pointer;
 }
 .cta-button:hover {
-  background-color: var(--gold-dark);
+  background-color: var(--primary-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-light);
 }
@@ -539,28 +344,12 @@ body {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
-@media (max-width: 768px) {
-  .cta-button {
-    width: 100%;
-    text-align: center;
-    padding: 0.9rem 1rem;
-    font-size: 0.95rem;
-  }
-}
-@media (max-width: 480px) {
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 0.8rem 1rem;
-  }
-}
 
-/* -------------------------
-   Corporate Promise / Feature Card
-------------------------- */
+/* Corporate Promise/Feature Card */
 .promise-item {
   text-align: center;
   padding: 2.5rem 2rem;
-  background: #fff;
+  background: var(--background-color);
   border-radius: 8px;
   box-shadow: var(--shadow-light);
   transition: all 0.3s;
@@ -569,101 +358,9 @@ body {
 .promise-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-top-color: var(--gold);
+  border-top-color: var(--primary-color);
 }
 .promise-item:focus-within {
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-@media (max-width: 768px) {
-  .promise-item {
-    padding: 2rem 1.5rem;
-  }
-}
-@media (max-width: 480px) {
-  .promise-item {
-    padding: 1.5rem 1rem;
-  }
-}
-
-/* -------------------------
-   Forms
-------------------------- */
-form input,
-form textarea,
-form select {
-  background: #fff;
-  color: #222;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  width: 100%;
-}
-form input:focus,
-form textarea:focus,
-form select:focus {
-  outline: var(--focus-outline);
-  border-color: var(--gold);
-}
-form input::-moz-placeholder, form textarea::-moz-placeholder, form select::-moz-placeholder {
-  color: #888;
-}
-form input::placeholder,
-form textarea::placeholder,
-form select::placeholder {
-  color: #888;
-}
-
-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-form button {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  border: none;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-form button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-}
-@media (max-width: 768px) {
-  form button {
-    width: 100%;
-  }
-}
-@media (max-width: 480px) {
-  form button {
-    font-size: 0.95rem;
-    padding: 0.7rem 1rem;
-  }
-}
-
-/* -------------------------
-   Form field spacing
-------------------------- */
-form label {
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 0.25rem;
-  display: block;
-}
-
-/* -------------------------
-   General Accessibility
-------------------------- */
-input:focus,
-textarea:focus,
-select:focus,
-button:focus {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
@@ -673,14 +370,8 @@ button:focus {
    index.scss - Organisations Landing
 ========================= */
 /* Import base, components, layout */
-/* =========================
-   _base.scss
-   Global variables, resets, and base styles
-   Mobile-friendly adjustments included
-========================= */
-/* -------------------------
-   Variables
-------------------------- */
+/* _base.scss */
+/* Variables */
 :root {
   --primary-color: #b8860b;
   --primary-hover: #000000;
@@ -692,9 +383,7 @@ button:focus {
   --text-color: #222;
 }
 
-/* -------------------------
-   Reset + Box sizing
-------------------------- */
+/* Reset + Box sizing */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -713,198 +402,17 @@ body {
   font-weight: 400;
   background: var(--background-color);
 }
-@media (max-width: 768px) {
-  body {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-}
 
-/* -------------------------
-   Headings
-------------------------- */
+/* Headings */
 h1, h2, h3 {
   font-weight: 700;
   color: var(--primary-color);
-  margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-}
-
-h2 {
-  font-size: 2rem;
-}
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-@media (max-width: 768px) {
-  h3 {
-    font-size: 1.2rem;
-  }
-}
-
-/* -------------------------
-   Paragraphs
-------------------------- */
-p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-@media (max-width: 768px) {
-  p {
-    font-size: 0.95rem;
-  }
-}
-
-/* -------------------------
-   Links & Buttons
-------------------------- */
-a, button {
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-  color: var(--primary-color);
-}
-a:hover, a:focus-visible, button:hover, button:focus-visible {
-  color: var(--primary-hover);
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-
-button, .cta-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: none;
-  font-weight: 600;
-  background: var(--primary-color);
-  color: #fff;
-}
-button:hover, .cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-hover);
-}
-@media (max-width: 768px) {
-  button, .cta-button {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.95rem;
-  }
-}
-
-/* -------------------------
-   Lists
-------------------------- */
-ul, ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-@media (max-width: 768px) {
-  ul, ol {
-    margin-left: 1rem;
-  }
-}
-
-/* -------------------------
-   Spacing Utilities (Mobile-friendly)
-------------------------- */
-@media (max-width: 768px) {
-  .mb-1 {
-    margin-bottom: 0.5rem !important;
-  }
-  .mb-2 {
-    margin-bottom: 1rem !important;
-  }
-  .mb-3 {
-    margin-bottom: 1.5rem !important;
-  }
-  .pt-1 {
-    padding-top: 0.5rem !important;
-  }
-  .pt-2 {
-    padding-top: 1rem !important;
-  }
-  .pt-3 {
-    padding-top: 1.5rem !important;
-  }
-}
-/* -------------------------
-   Images
-------------------------- */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* -------------------------
-   Forms
-------------------------- */
-input, textarea, select {
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-@media (max-width: 768px) {
-  input, textarea, select {
-    font-size: 0.95rem;
-  }
-}
-
-/* -------------------------
-   Dark Mode Support (optional)
-------------------------- */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #121212;
-    color: #eee;
-  }
-  h1, h2, h3 {
-    color: #f5a623;
-  }
-  a {
-    color: var(--accent-color);
-  }
-  input, textarea, select, button {
-    background: #1e1e1e;
-    color: #eee;
-    border-color: #333;
-  }
-}
-/* -------------------------
-   Accessibility: Reduced Motion
-------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-/* =========================
-   _components.scss
-   Corporate components: buttons, cards, forms
-========================= */
-/* -------------------------
-   Corporate Call-to-Action Button
-------------------------- */
+/* _components.scss */
+/* Corporate Call-to-Action Button */
 .cta-button {
-  background-color: var(--gold);
+  background-color: var(--primary-color);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
@@ -915,10 +423,9 @@ input, textarea, select {
   white-space: nowrap;
   display: inline-block;
   border: none;
-  cursor: pointer;
 }
 .cta-button:hover {
-  background-color: var(--gold-dark);
+  background-color: var(--primary-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-light);
 }
@@ -926,28 +433,12 @@ input, textarea, select {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
-@media (max-width: 768px) {
-  .cta-button {
-    width: 100%;
-    text-align: center;
-    padding: 0.9rem 1rem;
-    font-size: 0.95rem;
-  }
-}
-@media (max-width: 480px) {
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 0.8rem 1rem;
-  }
-}
 
-/* -------------------------
-   Corporate Promise / Feature Card
-------------------------- */
+/* Corporate Promise/Feature Card */
 .promise-item {
   text-align: center;
   padding: 2.5rem 2rem;
-  background: #fff;
+  background: var(--background-color);
   border-radius: 8px;
   box-shadow: var(--shadow-light);
   transition: all 0.3s;
@@ -956,101 +447,9 @@ input, textarea, select {
 .promise-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-top-color: var(--gold);
+  border-top-color: var(--primary-color);
 }
 .promise-item:focus-within {
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-@media (max-width: 768px) {
-  .promise-item {
-    padding: 2rem 1.5rem;
-  }
-}
-@media (max-width: 480px) {
-  .promise-item {
-    padding: 1.5rem 1rem;
-  }
-}
-
-/* -------------------------
-   Forms
-------------------------- */
-form input,
-form textarea,
-form select {
-  background: #fff;
-  color: #222;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  width: 100%;
-}
-form input:focus,
-form textarea:focus,
-form select:focus {
-  outline: var(--focus-outline);
-  border-color: var(--gold);
-}
-form input::-moz-placeholder, form textarea::-moz-placeholder, form select::-moz-placeholder {
-  color: #888;
-}
-form input::placeholder,
-form textarea::placeholder,
-form select::placeholder {
-  color: #888;
-}
-
-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-form button {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  border: none;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-form button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-}
-@media (max-width: 768px) {
-  form button {
-    width: 100%;
-  }
-}
-@media (max-width: 480px) {
-  form button {
-    font-size: 0.95rem;
-    padding: 0.7rem 1rem;
-  }
-}
-
-/* -------------------------
-   Form field spacing
-------------------------- */
-form label {
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 0.25rem;
-  display: block;
-}
-
-/* -------------------------
-   General Accessibility
-------------------------- */
-input:focus,
-textarea:focus,
-select:focus,
-button:focus {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
@@ -1095,9 +494,9 @@ body {
 .hero {
   display: flex;
   align-items: center;
+  color: white;
   flex-direction: column;
   text-align: center;
-  color: white;
 }
 
 .container {
@@ -1119,21 +518,24 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  flex-wrap: wrap;
+  /* -------------------------
+     Mobile Styles
+  ------------------------- */
 }
 .top-bar .logo-area {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  gap: 0.5rem;
 }
 .top-bar .logo-area .logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: inherit;
+  gap: 0.5rem;
 }
 .top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
+  text-decoration: none;
   color: var(--gold);
 }
 .top-bar .logo-area .logo-link .logo {
@@ -1147,39 +549,12 @@ body {
   letter-spacing: 1px;
   color: #1a1a1a;
 }
-.top-bar .logo-area .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: var(--gold);
-  margin-left: 1rem;
-  z-index: 101;
-  position: relative;
-}
-@media (max-width: 768px) {
-  .top-bar .logo-area .menu-toggle {
-    display: block;
-  }
-}
-@media (max-width: 768px) {
-  .top-bar .main-nav {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    text-align: center;
-  }
-  .top-bar .main-nav.open {
-    display: flex;
-  }
-}
 .top-bar .top-right {
   display: flex;
   align-items: center;
   gap: 2rem;
   flex-shrink: 0;
+  /* Hamburger Menu Icon */
 }
 .top-bar .top-right .main-nav {
   display: flex;
@@ -1196,18 +571,6 @@ body {
   color: var(--gold);
   outline: var(--focus-outline);
   outline-offset: 2px;
-}
-@media (max-width: 768px) {
-  .top-bar .top-right .main-nav {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    text-align: center;
-  }
-  .top-bar .top-right .main-nav.open {
-    display: flex;
-  }
 }
 .top-bar .top-right .cta-button {
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
@@ -1228,10 +591,48 @@ body {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
+.top-bar .top-right .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+.top-bar .top-right .hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #1a1a1a;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
 @media (max-width: 768px) {
-  .top-bar .top-right .cta-button {
+  .top-bar {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .top-bar .top-right {
+    order: 3;
     width: 100%;
-    text-align: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+  .top-bar .main-nav,
+  .top-bar .cta-button {
+    display: none; /* Hide desktop nav & button on mobile */
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    padding: 1rem 0;
+  }
+  .top-bar .main-nav.show,
+  .top-bar .cta-button.show {
+    display: flex; /* Show when hamburger is clicked */
+  }
+  .top-bar .hamburger {
+    display: flex; /* Show hamburger on mobile */
   }
 }
 
@@ -1242,11 +643,12 @@ body {
   background: #000;
   color: white;
   padding: 2rem 2rem 1rem;
+  position: relative;
   font-family: "Montserrat", sans-serif;
 }
 .site-footer .footer-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
@@ -1263,30 +665,20 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
+  content: "Gold Pearl Corporate";
 }
-.site-footer .footer-inner .footer-left .footer-contact address {
-  font-style: normal;
+.site-footer .footer-inner .footer-left .footer-contact p {
+  margin: 0;
   opacity: 0.9;
   font-size: 0.85rem;
-  line-height: 1.4;
-}
-.site-footer .footer-inner .footer-left .footer-contact address a {
-  color: #fff;
-  text-decoration: none;
-}
-.site-footer .footer-inner .footer-left .footer-contact address a:hover {
-  color: var(--gold);
 }
 .site-footer .footer-right {
-  text-align: left;
+  position: absolute;
+  right: 2rem;
+  bottom: 0.5rem;
   opacity: 0.7;
   font-size: 0.85rem;
-}
-@media (max-width: 768px) {
-  .site-footer .footer-right {
-    text-align: center;
-    margin-top: 0.5rem;
-  }
+  white-space: nowrap;
 }
 .site-footer .footer-legal {
   max-width: 1200px;
@@ -1296,12 +688,6 @@ body {
   color: #ccc;
   font-size: 0.7rem;
   line-height: 1.2;
-  text-align: left;
-}
-@media (max-width: 768px) {
-  .site-footer .footer-legal {
-    text-align: center;
-  }
 }
 .site-footer .footer-legal small {
   font-size: 0.65rem;
@@ -1312,12 +698,20 @@ body {
 }
 @media (max-width: 768px) {
   .site-footer {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem;
   }
   .site-footer .footer-inner {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+  }
+  .site-footer .footer-right {
+    position: static;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .site-footer .footer-legal {
+    text-align: center;
   }
 }
 
@@ -1342,23 +736,6 @@ body {
   }
 }
 /* -------------------------
-   Skip link
-------------------------- */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-color);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  z-index: 100;
-  transition: top 0.3s;
-}
-.skip-link:focus {
-  top: 0;
-}
-
-/* -------------------------
    Hero Section
 ------------------------- */
 .page-home .hero {
@@ -1367,15 +744,12 @@ body {
   background-attachment: fixed;
   display: flex;
   align-items: center;
-  text-align: left;
   color: white;
+  padding: 0 15rem;
 }
 .page-home .hero .hero-content {
   max-width: 600px;
-  padding-top: 4rem;
-}
-.page-home .hero .hero-content h1, .page-home .hero .hero-content .hero-stat {
-  color: white !important;
+  text-align: left;
 }
 .page-home .hero .hero-content h1 {
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -1401,31 +775,6 @@ body {
     padding: 0 2rem;
     text-align: center;
     justify-content: center;
-    background-attachment: scroll;
-  }
-  .page-home .hero .hero-content {
-    max-width: 100%;
-  }
-  .page-home .hero .hero-content h1 {
-    font-size: clamp(1.6rem, 5vw, 2rem);
-  }
-  .page-home .hero .hero-content .hero-stat {
-    font-size: clamp(0.95rem, 3vw, 1.1rem);
-  }
-  .page-home .hero .hero-content .cta-button {
-    width: 100%;
-    padding: 0.9rem 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .page-home .hero {
-    min-height: 50vh;
-  }
-  .page-home .hero .hero-content h1 {
-    font-size: 1.5rem;
-  }
-  .page-home .hero .hero-content .hero-stat {
-    font-size: 0.9rem;
   }
 }
 
@@ -1461,39 +810,22 @@ body {
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.6;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   position: relative;
 }
 .benefits ul li:before {
   content: "✓";
   color: var(--primary-color);
   position: absolute;
-  left: 0.1;
+  left: 0;
   font-weight: 700;
-}
-@media (max-width: 768px) {
-  .benefits {
-    padding: 2rem 1rem;
-  }
-  .benefits ul {
-    max-width: 100%;
-  }
-  .benefits li {
-    font-size: 0.95rem;
-    padding-left: 1.2rem;
-  }
-}
-@media (max-width: 480px) {
-  .benefits li {
-    font-size: 0.9rem;
-  }
 }
 
 /* -------------------------
    Pilot Program Section
 ------------------------- */
 .pilot {
-  background: #f2f2f2;
+  background: #f2f2f2; /* Grey background to stand out */
   padding: 4rem 2rem;
   width: 100%;
 }
@@ -1506,6 +838,7 @@ body {
   font-size: 2rem;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 .pilot .section-inner p {
   font-size: 1rem;
@@ -1526,24 +859,6 @@ body {
 .pilot .section-inner .cta-button:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-}
-@media (max-width: 768px) {
-  .pilot {
-    padding: 2rem 1rem;
-  }
-  .pilot .cta-button {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    font-size: 0.95rem;
-  }
-}
-@media (max-width: 480px) {
-  .pilot {
-    padding: 1.5rem 1rem;
-  }
-  .pilot .cta-button {
-    font-size: 0.9rem;
-  }
 }
 
 /* -------------------------
@@ -1570,9 +885,11 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
+.contact .section-inner form label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
 .contact .section-inner form input, .contact .section-inner form textarea {
-  background: #fff;
-  color: #222;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -1602,23 +919,40 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
-@media (max-width: 768px) {
-  .contact {
-    padding: 2rem 1rem;
-  }
-  .contact form {
-    padding: 2rem 1.5rem;
-  }
-}
-@media (max-width: 480px) {
-  .contact form {
-    padding: 1.5rem 1rem;
-  }
-}
 
 /* -------------------------
    Footer tweaks
 ------------------------- */
 .site-footer {
   padding: 2rem 2rem 1rem;
+}
+
+/* -------------------------
+   Responsive tweaks
+------------------------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .benefits, .pilot, .contact {
+    padding: 2rem 1rem;
+  }
+  .benefits form, .pilot form, .contact form {
+    padding: 2rem 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+  .contact form {
+    padding: 1.5rem 1rem;
+  }
 }/*# sourceMappingURL=style.css.map */
