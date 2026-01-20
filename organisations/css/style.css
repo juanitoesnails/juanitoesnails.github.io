@@ -323,10 +323,24 @@ body {
   cursor: pointer;
   color: var(--gold);
   margin-left: 1rem;
+  z-index: 101;
+  position: relative;
 }
 @media (max-width: 768px) {
   .top-bar .logo-area .menu-toggle {
     display: block;
+  }
+}
+@media (max-width: 768px) {
+  .top-bar .main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  .top-bar .main-nav.open {
+    display: flex;
   }
 }
 .top-bar .top-right {
@@ -1141,10 +1155,24 @@ body {
   cursor: pointer;
   color: var(--gold);
   margin-left: 1rem;
+  z-index: 101;
+  position: relative;
 }
 @media (max-width: 768px) {
   .top-bar .logo-area .menu-toggle {
     display: block;
+  }
+}
+@media (max-width: 768px) {
+  .top-bar .main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  .top-bar .main-nav.open {
+    display: flex;
   }
 }
 .top-bar .top-right {
@@ -1347,7 +1375,7 @@ body {
   padding-top: 4rem;
 }
 .page-home .hero .hero-content h1, .page-home .hero .hero-content .hero-stat {
-  color: white;
+  color: white !important;
 }
 .page-home .hero .hero-content h1 {
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -1433,14 +1461,14 @@ body {
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.6;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
   position: relative;
 }
 .benefits ul li:before {
   content: "✓";
   color: var(--primary-color);
   position: absolute;
-  left: 0;
+  left: 0.1;
   font-weight: 700;
 }
 @media (max-width: 768px) {

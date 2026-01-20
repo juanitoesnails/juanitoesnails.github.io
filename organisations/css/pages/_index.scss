@@ -42,7 +42,7 @@
     padding-top: 4rem; // 
 
     h1, .hero-stat {
-      color: white; // override global heading colors
+      color: white !important
     }
 
     h1 {
@@ -126,14 +126,14 @@
       margin-bottom: 1rem;
       font-size: 1rem;
       line-height: 1.6;
-      padding-left: 1.5rem;
+      padding-left: 2rem;
       position: relative;
 
       &:before {
         content: "✓";
         color: var(--primary-color);
         position: absolute;
-        left: 0;
+        left: 0.1;
         font-weight: 700;
       }
     }
