@@ -10,7 +10,7 @@
 
   <!-- Header -->
   <header class="top-bar">
-    <!-- Desktop logo + nav -->
+    <!-- Logo (Desktop and Mobile share styling) -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
@@ -18,32 +18,33 @@
       </a>
     </div>
 
+    <!-- Desktop Nav -->
     <div class="top-right">
       <nav class="main-nav">
         <a href="#why">Why Coaching</a>
         <a href="#pilot">Pilot Program</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
+      <a href="#contact" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
 
-    <!-- Mobile nav -->
+    <!-- Mobile Nav -->
     <div class="mobile-nav">
       <div class="logo-area">
         <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
         <span class="logo-text">GOLD PEARL Organisations</span>
       </div>
-      <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+      <div class="hamburger">&#9776;</div>
+    </div>
+
+    <!-- Mobile Links (hidden by default, toggled by JS) -->
+    <div class="mobile-links">
+      <a href="#why">Why Coaching</a>
+      <a href="#pilot">Pilot Program</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="cta-button" id="mobile-cta">Join Pilot</a>
     </div>
   </header>
-
-  <!-- Mobile links (hidden by default) -->
-  <div class="mobile-links">
-    <a href="#why">Why Coaching</a>
-    <a href="#pilot">Pilot Program</a>
-    <a href="#contact">Contact</a>
-    <a href="#" class="cta-button">Join Pilot</a>
-  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -133,9 +134,19 @@
     </div>
   </footer>
 
-  <!-- JavaScript: Prefilled Email & Mobile Menu Toggle -->
+  <!-- -------------------------
+       JavaScript
+  ------------------------- -->
   <script>
-    // Email form
+    // Mobile Hamburger Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileLinks = document.querySelector('.mobile-links');
+
+    hamburger.addEventListener('click', () => {
+      mobileLinks.classList.toggle('open');
+    });
+
+    // Form submission via desktop and hero CTA
     function sendOrganisationsEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
       const name = encodeURIComponent(document.getElementById('name').value || '');
@@ -166,12 +177,10 @@ Message: ${message}`;
       sendOrganisationsEmail();
     });
 
-    // Mobile menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const mobileLinks = document.querySelector('.mobile-links');
-
-    hamburger.addEventListener('click', () => {
-      mobileLinks.style.display = mobileLinks.style.display === 'flex' ? 'none' : 'flex';
+    document.getElementById('mobile-cta').addEventListener('click', function (e) {
+      e.preventDefault();
+      sendOrganisationsEmail();
+      mobileLinks.classList.remove('open'); // close mobile menu
     });
   </script>
 

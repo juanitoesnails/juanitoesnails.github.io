@@ -106,6 +106,7 @@ body {
   /* Logo Area */
   /* Desktop Nav */
   /* Mobile Nav */
+  /* Mobile links (hidden by default) */
 }
 .top-bar .logo-area {
   display: flex;
@@ -175,7 +176,7 @@ body {
   outline-offset: 2px;
 }
 .top-bar .mobile-nav {
-  display: none; /* hidden by default */
+  display: none; /* hidden on desktop/tablet */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -199,37 +200,26 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.top-bar .mobile-nav .mobile-links {
+.top-bar .mobile-links {
   display: none;
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
 }
-.top-bar .mobile-nav .mobile-links a {
+.top-bar .mobile-links a {
   text-decoration: none;
   color: #1a1a1a;
   font-weight: 500;
   font-size: 1rem;
 }
-.top-bar .mobile-nav .mobile-links a:hover, .top-bar .mobile-nav .mobile-links a:focus {
+.top-bar .mobile-links a:hover, .top-bar .mobile-links a:focus {
   color: var(--gold);
 }
-.top-bar .mobile-nav .mobile-links .cta-button {
+.top-bar .mobile-links .cta-button {
   margin-top: 0.5rem;
 }
-@media (max-width: 768px) {
-  .top-bar {
-    flex-wrap: wrap;
-    padding: 1rem;
-    /* Hide desktop nav on mobile */
-    /* Show mobile nav with logo + hamburger in one row */
-  }
-  .top-bar .top-right {
-    display: none;
-  }
-  .top-bar .mobile-nav {
-    display: flex;
-  }
+.top-bar .mobile-links.open {
+  display: flex;
 }
 
 /* -------------------------
@@ -291,25 +281,20 @@ body {
 .site-footer .footer-legal p {
   margin: 0.2rem 0;
 }
+
+/* -------------------------
+   Responsive breakpoints
+------------------------- */
 @media (max-width: 768px) {
-  .site-footer {
-    padding: 2rem 1rem 1rem;
+  /* Hide desktop nav on mobile */
+  .top-right {
+    display: none;
   }
-  .site-footer .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-  .site-footer .footer-right {
-    position: static;
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-  .site-footer .footer-legal {
-    text-align: center;
+  /* Show mobile nav */
+  .mobile-nav {
+    display: flex;
   }
 }
-
 /* -------------------------
    Sticky CTA Buttons
 ------------------------- */
@@ -531,6 +516,7 @@ body {
   /* Logo Area */
   /* Desktop Nav */
   /* Mobile Nav */
+  /* Mobile links (hidden by default) */
 }
 .top-bar .logo-area {
   display: flex;
@@ -600,7 +586,7 @@ body {
   outline-offset: 2px;
 }
 .top-bar .mobile-nav {
-  display: none; /* hidden by default */
+  display: none; /* hidden on desktop/tablet */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -624,37 +610,26 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.top-bar .mobile-nav .mobile-links {
+.top-bar .mobile-links {
   display: none;
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
 }
-.top-bar .mobile-nav .mobile-links a {
+.top-bar .mobile-links a {
   text-decoration: none;
   color: #1a1a1a;
   font-weight: 500;
   font-size: 1rem;
 }
-.top-bar .mobile-nav .mobile-links a:hover, .top-bar .mobile-nav .mobile-links a:focus {
+.top-bar .mobile-links a:hover, .top-bar .mobile-links a:focus {
   color: var(--gold);
 }
-.top-bar .mobile-nav .mobile-links .cta-button {
+.top-bar .mobile-links .cta-button {
   margin-top: 0.5rem;
 }
-@media (max-width: 768px) {
-  .top-bar {
-    flex-wrap: wrap;
-    padding: 1rem;
-    /* Hide desktop nav on mobile */
-    /* Show mobile nav with logo + hamburger in one row */
-  }
-  .top-bar .top-right {
-    display: none;
-  }
-  .top-bar .mobile-nav {
-    display: flex;
-  }
+.top-bar .mobile-links.open {
+  display: flex;
 }
 
 /* -------------------------
@@ -716,25 +691,20 @@ body {
 .site-footer .footer-legal p {
   margin: 0.2rem 0;
 }
+
+/* -------------------------
+   Responsive breakpoints
+------------------------- */
 @media (max-width: 768px) {
-  .site-footer {
-    padding: 2rem 1rem 1rem;
+  /* Hide desktop nav on mobile */
+  .top-right {
+    display: none;
   }
-  .site-footer .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-  .site-footer .footer-right {
-    position: static;
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-  .site-footer .footer-legal {
-    text-align: center;
+  /* Show mobile nav */
+  .mobile-nav {
+    display: flex;
   }
 }
-
 /* -------------------------
    Sticky CTA Buttons
 ------------------------- */
@@ -764,6 +734,7 @@ body {
   background-attachment: fixed;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   text-align: center;
   color: white;
@@ -777,6 +748,7 @@ body {
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.3;
   margin-bottom: 1.5rem;
+  color: white;
 }
 .page-home .hero .hero-content .hero-stat {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
