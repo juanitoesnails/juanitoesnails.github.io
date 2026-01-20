@@ -76,14 +76,6 @@ body {
   background: #f8f9fa;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  color: white;
-  flex-direction: column;
-  text-align: center;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -103,6 +95,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  overflow-x: hidden;
+  /* Logo only */
+  /* Right side: hamburger + nav */
   /* -------------------------
      Mobile Styles
   ------------------------- */
@@ -113,68 +108,18 @@ body {
   flex-shrink: 0;
 }
 .top-bar .logo-area .logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  gap: 0.5rem;
+  display: block;
 }
-.top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
-  text-decoration: none;
-  color: var(--gold);
-}
-.top-bar .logo-area .logo-link .logo {
+.top-bar .logo-area .logo-link img.logo {
   height: 48px;
   width: auto;
-}
-.top-bar .logo-area .logo-link .logo-text {
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #1a1a1a;
 }
 .top-bar .top-right {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  flex-shrink: 0;
-  /* Hamburger Menu Icon */
-}
-.top-bar .top-right .main-nav {
-  display: flex;
-  gap: 2rem;
-}
-.top-bar .top-right .main-nav a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.2s;
-}
-.top-bar .top-right .main-nav a:hover, .top-bar .top-right .main-nav a:focus-visible {
-  color: var(--gold);
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-.top-bar .top-right .cta-button {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: all 0.2s;
-  flex-shrink: 0;
-}
-.top-bar .top-right .cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-}
-.top-bar .top-right .cta-button:focus-visible {
-  outline: var(--focus-outline);
-  outline-offset: 2px;
+  gap: 1rem;
+  /* Hamburger */
+  /* Desktop nav */
 }
 .top-bar .top-right .hamburger {
   display: none;
@@ -192,44 +137,95 @@ body {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+.top-bar .top-right .main-nav {
+  display: flex;
+  gap: 2rem;
+}
+.top-bar .top-right .main-nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+.top-bar .top-right .main-nav a:hover, .top-bar .top-right .main-nav a:focus-visible {
+  color: var(--gold);
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
 @media (max-width: 768px) {
   .top-bar {
-    flex-wrap: wrap;
     padding: 1rem;
-    overflow-x: hidden; /* prevent horizontal scroll */
-    /* Remove header CTA on mobile */
-  }
-  .top-bar .logo-area {
-    flex: 1 1 auto;
-    min-width: 0;
+    flex-wrap: wrap;
+    /* Hamburger visible */
+    /* Hide nav by default */
+    /* Show nav when hamburger clicked */
   }
   .top-bar .top-right {
-    order: 3;
-    flex: 0 1 auto;
+    gap: 0;
+    position: relative;
+    flex: 1 1 auto;
     justify-content: flex-end;
-    gap: 1.5rem;
-    width: auto;
+  }
+  .top-bar .hamburger {
+    display: flex;
+    margin-left: auto;
   }
   .top-bar .main-nav {
     display: none;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
     background: #fff;
     padding: 1rem 0;
-    width: 100%;
-  }
-  .top-bar .cta-button#top-cta {
-    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   .top-bar .main-nav.show {
     display: flex;
   }
-  .top-bar .hamburger {
-    display: flex;
-  }
   .top-bar .main-nav a {
     word-break: break-word;
+    padding: 0.5rem 1rem;
   }
+}
+
+/* -------------------------
+   Hero Section
+------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+.hero .hero-content {
+  max-width: 800px;
+}
+.hero .hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .hero-content .hero-stat {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.hero .hero-content .cta-button {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero .hero-content .cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
 
 /* -------------------------
@@ -261,7 +257,6 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Corporate";
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;
@@ -502,14 +497,6 @@ body {
   background: #f8f9fa;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  color: white;
-  flex-direction: column;
-  text-align: center;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -529,6 +516,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  overflow-x: hidden;
+  /* Logo only */
+  /* Right side: hamburger + nav */
   /* -------------------------
      Mobile Styles
   ------------------------- */
@@ -539,68 +529,18 @@ body {
   flex-shrink: 0;
 }
 .top-bar .logo-area .logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  gap: 0.5rem;
+  display: block;
 }
-.top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
-  text-decoration: none;
-  color: var(--gold);
-}
-.top-bar .logo-area .logo-link .logo {
+.top-bar .logo-area .logo-link img.logo {
   height: 48px;
   width: auto;
-}
-.top-bar .logo-area .logo-link .logo-text {
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #1a1a1a;
 }
 .top-bar .top-right {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  flex-shrink: 0;
-  /* Hamburger Menu Icon */
-}
-.top-bar .top-right .main-nav {
-  display: flex;
-  gap: 2rem;
-}
-.top-bar .top-right .main-nav a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.2s;
-}
-.top-bar .top-right .main-nav a:hover, .top-bar .top-right .main-nav a:focus-visible {
-  color: var(--gold);
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-.top-bar .top-right .cta-button {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: all 0.2s;
-  flex-shrink: 0;
-}
-.top-bar .top-right .cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-}
-.top-bar .top-right .cta-button:focus-visible {
-  outline: var(--focus-outline);
-  outline-offset: 2px;
+  gap: 1rem;
+  /* Hamburger */
+  /* Desktop nav */
 }
 .top-bar .top-right .hamburger {
   display: none;
@@ -618,44 +558,95 @@ body {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+.top-bar .top-right .main-nav {
+  display: flex;
+  gap: 2rem;
+}
+.top-bar .top-right .main-nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+.top-bar .top-right .main-nav a:hover, .top-bar .top-right .main-nav a:focus-visible {
+  color: var(--gold);
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
 @media (max-width: 768px) {
   .top-bar {
-    flex-wrap: wrap;
     padding: 1rem;
-    overflow-x: hidden; /* prevent horizontal scroll */
-    /* Remove header CTA on mobile */
-  }
-  .top-bar .logo-area {
-    flex: 1 1 auto;
-    min-width: 0;
+    flex-wrap: wrap;
+    /* Hamburger visible */
+    /* Hide nav by default */
+    /* Show nav when hamburger clicked */
   }
   .top-bar .top-right {
-    order: 3;
-    flex: 0 1 auto;
+    gap: 0;
+    position: relative;
+    flex: 1 1 auto;
     justify-content: flex-end;
-    gap: 1.5rem;
-    width: auto;
+  }
+  .top-bar .hamburger {
+    display: flex;
+    margin-left: auto;
   }
   .top-bar .main-nav {
     display: none;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
     background: #fff;
     padding: 1rem 0;
-    width: 100%;
-  }
-  .top-bar .cta-button#top-cta {
-    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   .top-bar .main-nav.show {
     display: flex;
   }
-  .top-bar .hamburger {
-    display: flex;
-  }
   .top-bar .main-nav a {
     word-break: break-word;
+    padding: 0.5rem 1rem;
   }
+}
+
+/* -------------------------
+   Hero Section
+------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+.hero .hero-content {
+  max-width: 800px;
+}
+.hero .hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .hero-content .hero-stat {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.hero .hero-content .cta-button {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero .hero-content .cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
 
 /* -------------------------
@@ -687,7 +678,6 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Corporate";
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;
