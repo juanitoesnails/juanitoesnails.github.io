@@ -39,6 +39,49 @@ h1, h2, h3 {
   color: var(--primary-color);
 }
 
+/* =========================
+   _layout-corporate.scss
+   Corporate layout: header, footer, containers
+========================= */
+/* -------------------------
+   Variables
+------------------------- */
+:root {
+  --gold: #d4af37;
+  --gold-dark: #b8860b;
+  --shadow-light: 0 8px 32px rgba(0,0,0,0.1);
+  --shadow-hover: 0 16px 48px rgba(0,0,0,0.15);
+  --focus-outline: 2px solid var(--gold);
+}
+
+/* -------------------------
+   Reset & container
+------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 /* -------------------------
    Top Bar / Header
 ------------------------- */
@@ -80,7 +123,7 @@ h1, h2, h3 {
   width: 28px;
   height: 20px;
   cursor: pointer;
-  z-index: 150;
+  z-index: 250;
 }
 .top-bar .top-right .hamburger span {
   display: block;
@@ -128,14 +171,15 @@ h1, h2, h3 {
     gap: 1rem;
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
     height: 100vh;
     background: #fff;
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 2rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 100;
+    overflow-y: auto;
+    z-index: 200;
   }
   .top-bar .main-nav a {
     font-size: 1.2rem;
@@ -146,6 +190,140 @@ h1, h2, h3 {
   }
 }
 
+/* -------------------------
+   Hero Section
+------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+.hero .hero-content {
+  max-width: 800px;
+}
+.hero .hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .hero-content .hero-stat {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.hero .hero-content .cta-button {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero .hero-content .cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+/* -------------------------
+   Footer
+------------------------- */
+.site-footer {
+  background: #000;
+  color: white;
+  padding: 2rem 2rem 1rem;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+.site-footer .footer-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+.site-footer .footer-inner .footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.site-footer .footer-inner .footer-left .footer-brand-small {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.site-footer .footer-inner .footer-left .footer-contact p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+.site-footer .footer-right {
+  position: absolute;
+  right: 2rem;
+  bottom: 0.5rem;
+  opacity: 0.7;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.site-footer .footer-legal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+.site-footer .footer-legal small {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+.site-footer .footer-legal p {
+  margin: 0.2rem 0;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem 1rem;
+  }
+  .site-footer .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .site-footer .footer-right {
+    position: static;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .site-footer .footer-legal {
+    text-align: center;
+  }
+}
+
+/* -------------------------
+   Sticky CTA Buttons
+------------------------- */
+.sticky-cta {
+  position: sticky;
+  bottom: 2rem;
+  margin: 0 auto;
+  z-index: 50;
+}
+
+/* -------------------------
+   General Accessibility
+------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 /* _components.scss */
 /* Corporate Call-to-Action Button */
 .cta-button {
@@ -280,6 +458,49 @@ h1, h2, h3 {
   outline-offset: 2px;
 }
 
+/* =========================
+   _layout-corporate.scss
+   Corporate layout: header, footer, containers
+========================= */
+/* -------------------------
+   Variables
+------------------------- */
+:root {
+  --gold: #d4af37;
+  --gold-dark: #b8860b;
+  --shadow-light: 0 8px 32px rgba(0,0,0,0.1);
+  --shadow-hover: 0 16px 48px rgba(0,0,0,0.15);
+  --focus-outline: 2px solid var(--gold);
+}
+
+/* -------------------------
+   Reset & container
+------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 /* -------------------------
    Top Bar / Header
 ------------------------- */
@@ -321,7 +542,7 @@ h1, h2, h3 {
   width: 28px;
   height: 20px;
   cursor: pointer;
-  z-index: 150;
+  z-index: 250;
 }
 .top-bar .top-right .hamburger span {
   display: block;
@@ -369,14 +590,15 @@ h1, h2, h3 {
     gap: 1rem;
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
     height: 100vh;
     background: #fff;
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 2rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 100;
+    overflow-y: auto;
+    z-index: 200;
   }
   .top-bar .main-nav a {
     font-size: 1.2rem;
@@ -387,6 +609,140 @@ h1, h2, h3 {
   }
 }
 
+/* -------------------------
+   Hero Section
+------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+.hero .hero-content {
+  max-width: 800px;
+}
+.hero .hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .hero-content .hero-stat {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.hero .hero-content .cta-button {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero .hero-content .cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+/* -------------------------
+   Footer
+------------------------- */
+.site-footer {
+  background: #000;
+  color: white;
+  padding: 2rem 2rem 1rem;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+.site-footer .footer-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+.site-footer .footer-inner .footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.site-footer .footer-inner .footer-left .footer-brand-small {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.site-footer .footer-inner .footer-left .footer-contact p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+.site-footer .footer-right {
+  position: absolute;
+  right: 2rem;
+  bottom: 0.5rem;
+  opacity: 0.7;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.site-footer .footer-legal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+.site-footer .footer-legal small {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+.site-footer .footer-legal p {
+  margin: 0.2rem 0;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem 1rem;
+  }
+  .site-footer .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .site-footer .footer-right {
+    position: static;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .site-footer .footer-legal {
+    text-align: center;
+  }
+}
+
+/* -------------------------
+   Sticky CTA Buttons
+------------------------- */
+.sticky-cta {
+  position: sticky;
+  bottom: 2rem;
+  margin: 0 auto;
+  z-index: 50;
+}
+
+/* -------------------------
+   General Accessibility
+------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 /* -------------------------
    Hero Section
 ------------------------- */
