@@ -19,9 +19,7 @@
       </a>
 
       <!-- Mobile menu toggle -->
-      <button class="menu-toggle" aria-label="Open menu">
-        ☰
-      </button>
+      <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     </div>
 
     <div class="top-right">
@@ -29,8 +27,7 @@
         <a href="#why">Why Coaching</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
+      <a href="#contact" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
   </header>
 
@@ -131,6 +128,15 @@
 
   <!-- JavaScript -->
   <script>
+        // Hamburger menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+
+    
     function sendCorporateEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
       const name = encodeURIComponent(document.getElementById('name').value || '');
