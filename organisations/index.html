@@ -13,7 +13,6 @@
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
-        <span class="logo-text">GOLD PEARL Organisations</span>
       </a>
     </div>
 
@@ -31,9 +30,6 @@
         <a href="#pilot">Pilot Program</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <!-- Header CTA -->
-      <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
   </header>
 
@@ -152,11 +148,6 @@ Message: ${message}`;
     }
 
     document.getElementById('organisations-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      sendOrganisationsEmail();
-    });
-
-    document.getElementById('top-cta').addEventListener('click', function (e) {
       e.preventDefault();
       sendOrganisationsEmail();
     });
