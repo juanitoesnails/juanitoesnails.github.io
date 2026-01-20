@@ -25,12 +25,14 @@
         <span></span>
       </div>
 
+      <!-- Navigation Links -->
       <nav class="main-nav">
         <a href="#why">Why Coaching</a>
         <a href="#pilot">Pilot Program</a>
         <a href="#contact">Contact</a>
       </nav>
 
+      <!-- Header CTA -->
       <a href="#" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
   </header>
@@ -128,11 +130,9 @@
     // Hamburger Menu Toggle
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.querySelector('.main-nav');
-    const topCta = document.getElementById('top-cta');
 
     hamburger.addEventListener('click', () => {
       mainNav.classList.toggle('show');
-      topCta.classList.toggle('show');
     });
 
     // Prefilled Email Function
