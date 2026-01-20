@@ -40,8 +40,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-organisation.scss
-   Organisation layout: header, footer, containers
+   _layout-corporate.scss
+   Corporate layout: header, footer, containers
 ========================= */
 /* -------------------------
    Variables
@@ -76,21 +76,32 @@ body {
   background: #f8f9fa;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  color: white; /* LOCK HERO TEXT TO WHITE */
-  flex-direction: column;
-  text-align: center;
-}
-.hero .hero-content {
-  color: white; /* Ensure hero content inherits white on mobile */
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* -------------------------
+   Hero Section
+------------------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 80vh;
+  color: white; /* base hero text color */
+  /* FORCE HERO TEXT + CTA TO WHITE */
+}
+.hero .hero-content {
+  color: white;
+  text-align: center;
+}
+.hero h1,
+.hero p,
+.hero a {
+  color: white !important;
 }
 
 /* -------------------------
@@ -177,17 +188,20 @@ body {
 }
 
 /* -------------------------
-   Mobile Header Fix
+   Mobile Header & Hero Fixes
 ------------------------- */
 @media (max-width: 768px) {
   .top-bar {
     padding: 0.75rem 1rem;
+    justify-content: flex-start; /* logo stays left */
   }
-  /* Hide desktop nav + CTA */
-  .top-right {
-    display: none;
+  /* Hide desktop nav + CTA completely on mobile */
+  .top-bar .top-right {
+    display: none !important;
+    width: 0;
+    overflow: hidden;
   }
-  /* Mobile menu toggle button (can be outside header) */
+  /* Mobile menu toggle button */
   .mobile-menu-toggle {
     display: block;
     background: none;
@@ -195,7 +209,7 @@ body {
     font-size: 1.75rem;
     cursor: pointer;
     color: #1a1a1a;
-    margin: 0.5rem 1rem; /* space below header */
+    margin: 0.5rem 1rem;
   }
   /* Mobile dropdown nav */
   .mobile-nav {
@@ -222,6 +236,12 @@ body {
   /* Show mobile nav when active */
   .mobile-nav.active {
     display: block;
+  }
+  /* Force hero text white on mobile as well */
+  .hero h1,
+  .hero p,
+  .hero a {
+    color: white !important;
   }
 }
 /* -------------------------
@@ -458,8 +478,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-organisation.scss
-   Organisation layout: header, footer, containers
+   _layout-corporate.scss
+   Corporate layout: header, footer, containers
 ========================= */
 /* -------------------------
    Variables
@@ -494,21 +514,32 @@ body {
   background: #f8f9fa;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  color: white; /* LOCK HERO TEXT TO WHITE */
-  flex-direction: column;
-  text-align: center;
-}
-.hero .hero-content {
-  color: white; /* Ensure hero content inherits white on mobile */
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* -------------------------
+   Hero Section
+------------------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 80vh;
+  color: white; /* base hero text color */
+  /* FORCE HERO TEXT + CTA TO WHITE */
+}
+.hero .hero-content {
+  color: white;
+  text-align: center;
+}
+.hero h1,
+.hero p,
+.hero a {
+  color: white !important;
 }
 
 /* -------------------------
@@ -595,17 +626,20 @@ body {
 }
 
 /* -------------------------
-   Mobile Header Fix
+   Mobile Header & Hero Fixes
 ------------------------- */
 @media (max-width: 768px) {
   .top-bar {
     padding: 0.75rem 1rem;
+    justify-content: flex-start; /* logo stays left */
   }
-  /* Hide desktop nav + CTA */
-  .top-right {
-    display: none;
+  /* Hide desktop nav + CTA completely on mobile */
+  .top-bar .top-right {
+    display: none !important;
+    width: 0;
+    overflow: hidden;
   }
-  /* Mobile menu toggle button (can be outside header) */
+  /* Mobile menu toggle button */
   .mobile-menu-toggle {
     display: block;
     background: none;
@@ -613,7 +647,7 @@ body {
     font-size: 1.75rem;
     cursor: pointer;
     color: #1a1a1a;
-    margin: 0.5rem 1rem; /* space below header */
+    margin: 0.5rem 1rem;
   }
   /* Mobile dropdown nav */
   .mobile-nav {
@@ -640,6 +674,12 @@ body {
   /* Show mobile nav when active */
   .mobile-nav.active {
     display: block;
+  }
+  /* Force hero text white on mobile as well */
+  .hero h1,
+  .hero p,
+  .hero a {
+    color: white !important;
   }
 }
 /* -------------------------
