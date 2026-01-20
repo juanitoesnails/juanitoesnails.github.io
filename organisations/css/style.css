@@ -39,49 +39,6 @@ h1, h2, h3 {
   color: var(--primary-color);
 }
 
-/* =========================
-   _layout-corporate.scss
-   Corporate layout: header, footer, containers
-========================= */
-/* -------------------------
-   Variables
-------------------------- */
-:root {
-  --gold: #d4af37;
-  --gold-dark: #b8860b;
-  --shadow-light: 0 8px 32px rgba(0,0,0,0.1);
-  --shadow-hover: 0 16px 48px rgba(0,0,0,0.15);
-  --focus-outline: 2px solid var(--gold);
-}
-
-/* -------------------------
-   Reset & container
-------------------------- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  font-size: 16px;
-  font-weight: 400;
-  background: #f8f9fa;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
 /* -------------------------
    Top Bar / Header
 ------------------------- */
@@ -95,9 +52,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  overflow-x: hidden;
-  /* Logo only */
-  /* Right side: hamburger + nav */
   /* -------------------------
      Mobile Styles
   ------------------------- */
@@ -107,9 +61,6 @@ body {
   align-items: center;
   flex-shrink: 0;
 }
-.top-bar .logo-area .logo-link {
-  display: block;
-}
 .top-bar .logo-area .logo-link img.logo {
   height: 48px;
   width: auto;
@@ -118,16 +69,18 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  /* Hamburger */
+  position: relative;
+  /* Hamburger (hidden on desktop) */
   /* Desktop nav */
 }
 .top-bar .top-right .hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  width: 28px;
+  height: 20px;
   cursor: pointer;
+  z-index: 150;
 }
 .top-bar .top-right .hamburger span {
   display: block;
@@ -136,6 +89,15 @@ body {
   background-color: #1a1a1a;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+.top-bar .top-right .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.top-bar .top-right .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.top-bar .top-right .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 .top-bar .top-right .main-nav {
   display: flex;
@@ -156,176 +118,34 @@ body {
 @media (max-width: 768px) {
   .top-bar {
     padding: 1rem;
-    flex-wrap: wrap;
-    /* Hamburger visible */
-    /* Hide nav by default */
-    /* Show nav when hamburger clicked */
-  }
-  .top-bar .top-right {
-    gap: 0;
-    position: relative;
-    flex: 1 1 auto;
-    justify-content: flex-end;
   }
   .top-bar .hamburger {
     display: flex;
-    margin-left: auto;
   }
   .top-bar .main-nav {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
-    background: #fff;
-    padding: 1rem 0;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     right: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  .top-bar .main-nav.show {
-    display: flex;
+    left: 0;
+    height: 100vh;
+    background: #fff;
+    padding: 5rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
   }
   .top-bar .main-nav a {
-    word-break: break-word;
-    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+  .top-bar .main-nav.active {
+    transform: translateX(0);
   }
 }
 
-/* -------------------------
-   Hero Section
-------------------------- */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 4rem 2rem;
-}
-.hero .hero-content {
-  max-width: 800px;
-}
-.hero .hero-content h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.hero .hero-content .hero-stat {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
-.hero .hero-content .cta-button {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.hero .hero-content .cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-}
-
-/* -------------------------
-   Footer
-------------------------- */
-.site-footer {
-  background: #000;
-  color: white;
-  padding: 2rem 2rem 1rem;
-  position: relative;
-  font-family: "Montserrat", sans-serif;
-}
-.site-footer .footer-inner {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding-bottom: 0.5rem;
-  box-sizing: border-box;
-}
-.site-footer .footer-inner .footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-.site-footer .footer-inner .footer-left .footer-brand-small {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--gold);
-}
-.site-footer .footer-inner .footer-left .footer-contact p {
-  margin: 0;
-  opacity: 0.9;
-  font-size: 0.85rem;
-}
-.site-footer .footer-right {
-  position: absolute;
-  right: 2rem;
-  bottom: 0.5rem;
-  opacity: 0.7;
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-.site-footer .footer-legal {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ccc;
-  font-size: 0.7rem;
-  line-height: 1.2;
-}
-.site-footer .footer-legal small {
-  font-size: 0.65rem;
-  opacity: 0.8;
-}
-.site-footer .footer-legal p {
-  margin: 0.2rem 0;
-}
-@media (max-width: 768px) {
-  .site-footer {
-    padding: 2rem 1rem 1rem;
-  }
-  .site-footer .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-  .site-footer .footer-right {
-    position: static;
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-  .site-footer .footer-legal {
-    text-align: center;
-  }
-}
-
-/* -------------------------
-   Sticky CTA Buttons
-------------------------- */
-.sticky-cta {
-  position: sticky;
-  bottom: 2rem;
-  margin: 0 auto;
-  z-index: 50;
-}
-
-/* -------------------------
-   General Accessibility
-------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
 /* _components.scss */
 /* Corporate Call-to-Action Button */
 .cta-button {
@@ -460,49 +280,6 @@ h1, h2, h3 {
   outline-offset: 2px;
 }
 
-/* =========================
-   _layout-corporate.scss
-   Corporate layout: header, footer, containers
-========================= */
-/* -------------------------
-   Variables
-------------------------- */
-:root {
-  --gold: #d4af37;
-  --gold-dark: #b8860b;
-  --shadow-light: 0 8px 32px rgba(0,0,0,0.1);
-  --shadow-hover: 0 16px 48px rgba(0,0,0,0.15);
-  --focus-outline: 2px solid var(--gold);
-}
-
-/* -------------------------
-   Reset & container
-------------------------- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  font-size: 16px;
-  font-weight: 400;
-  background: #f8f9fa;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
 /* -------------------------
    Top Bar / Header
 ------------------------- */
@@ -516,9 +293,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  overflow-x: hidden;
-  /* Logo only */
-  /* Right side: hamburger + nav */
   /* -------------------------
      Mobile Styles
   ------------------------- */
@@ -528,9 +302,6 @@ body {
   align-items: center;
   flex-shrink: 0;
 }
-.top-bar .logo-area .logo-link {
-  display: block;
-}
 .top-bar .logo-area .logo-link img.logo {
   height: 48px;
   width: auto;
@@ -539,16 +310,18 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  /* Hamburger */
+  position: relative;
+  /* Hamburger (hidden on desktop) */
   /* Desktop nav */
 }
 .top-bar .top-right .hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  width: 28px;
+  height: 20px;
   cursor: pointer;
+  z-index: 150;
 }
 .top-bar .top-right .hamburger span {
   display: block;
@@ -557,6 +330,15 @@ body {
   background-color: #1a1a1a;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+.top-bar .top-right .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.top-bar .top-right .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.top-bar .top-right .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 .top-bar .top-right .main-nav {
   display: flex;
@@ -577,176 +359,34 @@ body {
 @media (max-width: 768px) {
   .top-bar {
     padding: 1rem;
-    flex-wrap: wrap;
-    /* Hamburger visible */
-    /* Hide nav by default */
-    /* Show nav when hamburger clicked */
-  }
-  .top-bar .top-right {
-    gap: 0;
-    position: relative;
-    flex: 1 1 auto;
-    justify-content: flex-end;
   }
   .top-bar .hamburger {
     display: flex;
-    margin-left: auto;
   }
   .top-bar .main-nav {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
-    background: #fff;
-    padding: 1rem 0;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     right: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  .top-bar .main-nav.show {
-    display: flex;
+    left: 0;
+    height: 100vh;
+    background: #fff;
+    padding: 5rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
   }
   .top-bar .main-nav a {
-    word-break: break-word;
-    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+  .top-bar .main-nav.active {
+    transform: translateX(0);
   }
 }
 
-/* -------------------------
-   Hero Section
-------------------------- */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 4rem 2rem;
-}
-.hero .hero-content {
-  max-width: 800px;
-}
-.hero .hero-content h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.hero .hero-content .hero-stat {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
-.hero .hero-content .cta-button {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.hero .hero-content .cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-}
-
-/* -------------------------
-   Footer
-------------------------- */
-.site-footer {
-  background: #000;
-  color: white;
-  padding: 2rem 2rem 1rem;
-  position: relative;
-  font-family: "Montserrat", sans-serif;
-}
-.site-footer .footer-inner {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding-bottom: 0.5rem;
-  box-sizing: border-box;
-}
-.site-footer .footer-inner .footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-.site-footer .footer-inner .footer-left .footer-brand-small {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--gold);
-}
-.site-footer .footer-inner .footer-left .footer-contact p {
-  margin: 0;
-  opacity: 0.9;
-  font-size: 0.85rem;
-}
-.site-footer .footer-right {
-  position: absolute;
-  right: 2rem;
-  bottom: 0.5rem;
-  opacity: 0.7;
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-.site-footer .footer-legal {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ccc;
-  font-size: 0.7rem;
-  line-height: 1.2;
-}
-.site-footer .footer-legal small {
-  font-size: 0.65rem;
-  opacity: 0.8;
-}
-.site-footer .footer-legal p {
-  margin: 0.2rem 0;
-}
-@media (max-width: 768px) {
-  .site-footer {
-    padding: 2rem 1rem 1rem;
-  }
-  .site-footer .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-  .site-footer .footer-right {
-    position: static;
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-  .site-footer .footer-legal {
-    text-align: center;
-  }
-}
-
-/* -------------------------
-   Sticky CTA Buttons
-------------------------- */
-.sticky-cta {
-  position: sticky;
-  bottom: 2rem;
-  margin: 0 auto;
-  z-index: 50;
-}
-
-/* -------------------------
-   General Accessibility
-------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
 /* -------------------------
    Hero Section
 ------------------------- */
