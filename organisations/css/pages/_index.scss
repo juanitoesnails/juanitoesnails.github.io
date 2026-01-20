@@ -16,9 +16,6 @@
   background-attachment: fixed;
   display: flex;
   align-items: center;
-  justify-content: center;  
-  flex-direction: column;
-  text-align: center;
   color: white;
   padding: 0 15rem;
 
@@ -30,7 +27,6 @@
       font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1.3;
       margin-bottom: 1.5rem;
-      color: white; 
     }
 
     .hero-stat {
@@ -42,7 +38,6 @@
       display: inline-block;
       padding: 1rem 2rem;
       font-size: 1rem;
-      color: white !important;
     }
   }
 
@@ -54,11 +49,6 @@
     padding: 0 2rem;
     text-align: center;
     justify-content: center;
-
-    .hero-content {
-      text-align: center;
-      padding: 0 1.25rem; /* mobile safe padding */
-    }
   }
 }
 
@@ -89,24 +79,22 @@
   ul {
     list-style: none;
     padding: 0;
+    max-width: 800px;
     margin: 0 auto;
-    max-width: 100%;
 
     li {
-      display: grid;
-      grid-template-columns: auto 1fr; /* Checkmark + text */
-      gap: 0.75rem;                   /* space between checkmark and text */
-      align-items: start;
       margin-bottom: 1rem;
       font-size: 1rem;
       line-height: 1.6;
-      padding-left: 1rem;             /* moves checks slightly to the right on desktop */
+      padding-left: 1.5rem;
+      position: relative;
 
       &:before {
         content: "✓";
         color: var(--primary-color);
-        flex-shrink: 0;
-        margin-top: 2px;             /* vertically aligns checkmark with text */
+        position: absolute;
+        left: 0;
+        font-weight: 700;
       }
     }
   }
@@ -116,7 +104,7 @@
    Pilot Program Section
 ------------------------- */
 .pilot {
-  background: #f2f2f2;
+  background: #f2f2f2; /* Grey background to stand out */
   padding: 4rem 2rem;
   width: 100%;
 
@@ -129,6 +117,7 @@
       font-size: 2rem;
       color: var(--primary-color);
       margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     p {
@@ -246,17 +235,11 @@
   }
 
   .benefits, .pilot, .contact {
-    padding: 2rem 1.5rem;
-  }
+    padding: 2rem 1rem;
 
-  .contact form {
-    padding: 2rem 1.5rem;
-  }
-
-  .benefits ul li {
-    padding-left: 0.75rem; /* tablet padding */
-    gap: 0.6rem;
-    font-size: 0.95rem;
+    form {
+      padding: 2rem 1.5rem;
+    }
   }
 }
 
@@ -267,17 +250,6 @@
 
   .hero p {
     font-size: 0.95rem;
-  }
-
-  .benefits {
-    padding: 2rem 1.25rem;
-  }
-
-  .benefits ul li {
-    padding-left: 0.5rem; /* safe space from edges */
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
   }
 
   .contact form {
