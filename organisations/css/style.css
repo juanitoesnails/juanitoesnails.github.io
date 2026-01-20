@@ -196,28 +196,39 @@ body {
   .top-bar {
     flex-wrap: wrap;
     padding: 1rem;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    /* Remove header CTA on mobile */
+  }
+  .top-bar .logo-area {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .top-bar .top-right {
     order: 3;
-    width: 100%;
+    flex: 0 1 auto;
     justify-content: flex-end;
     gap: 1.5rem;
+    width: auto;
   }
-  .top-bar .main-nav,
-  .top-bar .cta-button {
-    display: none; /* Hide desktop nav & button on mobile */
-    width: 100%;
+  .top-bar .main-nav {
+    display: none;
     flex-direction: column;
     gap: 1rem;
     background: #fff;
     padding: 1rem 0;
+    width: 100%;
   }
-  .top-bar .main-nav.show,
-  .top-bar .cta-button.show {
-    display: flex; /* Show when hamburger is clicked */
+  .top-bar .cta-button#top-cta {
+    display: none;
+  }
+  .top-bar .main-nav.show {
+    display: flex;
   }
   .top-bar .hamburger {
-    display: flex; /* Show hamburger on mobile */
+    display: flex;
+  }
+  .top-bar .main-nav a {
+    word-break: break-word;
   }
 }
 
@@ -611,28 +622,39 @@ body {
   .top-bar {
     flex-wrap: wrap;
     padding: 1rem;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    /* Remove header CTA on mobile */
+  }
+  .top-bar .logo-area {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .top-bar .top-right {
     order: 3;
-    width: 100%;
+    flex: 0 1 auto;
     justify-content: flex-end;
     gap: 1.5rem;
+    width: auto;
   }
-  .top-bar .main-nav,
-  .top-bar .cta-button {
-    display: none; /* Hide desktop nav & button on mobile */
-    width: 100%;
+  .top-bar .main-nav {
+    display: none;
     flex-direction: column;
     gap: 1rem;
     background: #fff;
     padding: 1rem 0;
+    width: 100%;
   }
-  .top-bar .main-nav.show,
-  .top-bar .cta-button.show {
-    display: flex; /* Show when hamburger is clicked */
+  .top-bar .cta-button#top-cta {
+    display: none;
+  }
+  .top-bar .main-nav.show {
+    display: flex;
   }
   .top-bar .hamburger {
-    display: flex; /* Show hamburger on mobile */
+    display: flex;
+  }
+  .top-bar .main-nav a {
+    word-break: break-word;
   }
 }
 
