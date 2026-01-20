@@ -10,7 +10,7 @@
 
   <!-- Header -->
   <header class="top-bar">
-    <!-- Logo (Desktop and Mobile share styling) -->
+    <!-- Logo (shared for desktop & mobile) -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
@@ -28,12 +28,8 @@
       <a href="#contact" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
 
-    <!-- Mobile Nav -->
+    <!-- Mobile Nav (hamburger only) -->
     <div class="mobile-nav">
-      <div class="logo-area">
-        <img src="images/logo.png" alt="Gold Pearl Organisations" class="logo">
-        <span class="logo-text">GOLD PEARL Organisations</span>
-      </div>
       <div class="hamburger">&#9776;</div>
     </div>
 
@@ -134,9 +130,7 @@
     </div>
   </footer>
 
-  <!-- -------------------------
-       JavaScript
-  ------------------------- -->
+  <!-- JavaScript -->
   <script>
     // Mobile Hamburger Toggle
     const hamburger = document.querySelector('.hamburger');
@@ -146,7 +140,7 @@
       mobileLinks.classList.toggle('open');
     });
 
-    // Form submission via desktop and hero CTA
+    // Form submission and CTA buttons
     function sendOrganisationsEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
       const name = encodeURIComponent(document.getElementById('name').value || '');

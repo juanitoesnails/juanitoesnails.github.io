@@ -150,27 +150,9 @@ body {
   /* Mobile Nav */
   .mobile-nav {
     display: none; /* hidden on desktop/tablet */
-    justify-content: space-between;
+    justify-content: flex-end; /* hamburger to right */
     align-items: center;
     width: 100%;
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-
-      .logo {
-        height: 40px;
-        width: auto;
-      }
-
-      .logo-text {
-        font-size: 1rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #1a1a1a;
-      }
-    }
 
     .hamburger {
       font-size: 1.5rem;
