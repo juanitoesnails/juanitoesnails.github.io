@@ -43,22 +43,20 @@ h1, h2, h3 {
    Header / Top Bar
 ========================= */
 .top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  /* Logo Area */
+  /* Logo */
   /* Desktop Navigation */
   /* Mobile Navigation */
 }
 .top-bar .logo-area {
-  display: flex;
-  align-items: center;
   flex-shrink: 0;
 }
 .top-bar .logo-area .logo-link {
@@ -68,17 +66,13 @@ h1, h2, h3 {
   text-decoration: none;
   color: inherit;
 }
-.top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
-  color: var(--gold);
-}
 .top-bar .logo-area .logo-link .logo {
   height: 48px;
-  width: auto;
 }
 .top-bar .logo-area .logo-link .logo-text {
-  font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
+  font-size: 1.1rem;
   color: #1a1a1a;
 }
 .top-bar .desktop-nav {
@@ -104,8 +98,8 @@ h1, h2, h3 {
 }
 .top-bar .desktop-nav .cta-button {
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: black;
-  padding: 0.75rem 1.5rem;
+  color: white;
+  padding: 0.65rem 1.25rem;
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.9rem;
@@ -121,12 +115,12 @@ h1, h2, h3 {
   outline-offset: 2px;
 }
 .top-bar .mobile-nav {
-  display: none; /* hidden on desktop */
+  display: none;
   flex-direction: column;
   width: 100%;
 }
 .top-bar .mobile-nav .hamburger {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
   align-self: flex-end;
 }
@@ -154,15 +148,13 @@ h1, h2, h3 {
   display: flex;
 }
 
-/* -------------------------
-   Responsive Breakpoints
-------------------------- */
+/* Responsive Breakpoints */
 @media (max-width: 768px) {
   .desktop-nav {
-    display: none; /* hide desktop nav on mobile */
+    display: none;
   }
   .mobile-nav {
-    display: flex; /* show mobile nav */
+    display: flex;
   }
 }
 /* _components.scss */
@@ -303,22 +295,20 @@ h1, h2, h3 {
    Header / Top Bar
 ========================= */
 .top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  /* Logo Area */
+  /* Logo */
   /* Desktop Navigation */
   /* Mobile Navigation */
 }
 .top-bar .logo-area {
-  display: flex;
-  align-items: center;
   flex-shrink: 0;
 }
 .top-bar .logo-area .logo-link {
@@ -328,17 +318,13 @@ h1, h2, h3 {
   text-decoration: none;
   color: inherit;
 }
-.top-bar .logo-area .logo-link:hover, .top-bar .logo-area .logo-link:focus {
-  color: var(--gold);
-}
 .top-bar .logo-area .logo-link .logo {
   height: 48px;
-  width: auto;
 }
 .top-bar .logo-area .logo-link .logo-text {
-  font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
+  font-size: 1.1rem;
   color: #1a1a1a;
 }
 .top-bar .desktop-nav {
@@ -364,8 +350,8 @@ h1, h2, h3 {
 }
 .top-bar .desktop-nav .cta-button {
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: black;
-  padding: 0.75rem 1.5rem;
+  color: white;
+  padding: 0.65rem 1.25rem;
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.9rem;
@@ -381,12 +367,12 @@ h1, h2, h3 {
   outline-offset: 2px;
 }
 .top-bar .mobile-nav {
-  display: none; /* hidden on desktop */
+  display: none;
   flex-direction: column;
   width: 100%;
 }
 .top-bar .mobile-nav .hamburger {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
   align-self: flex-end;
 }
@@ -414,15 +400,13 @@ h1, h2, h3 {
   display: flex;
 }
 
-/* -------------------------
-   Responsive Breakpoints
-------------------------- */
+/* Responsive Breakpoints */
 @media (max-width: 768px) {
   .desktop-nav {
-    display: none; /* hide desktop nav on mobile */
+    display: none;
   }
   .mobile-nav {
-    display: flex; /* show mobile nav */
+    display: flex;
   }
 }
 /* -------------------------

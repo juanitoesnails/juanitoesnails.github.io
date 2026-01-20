@@ -23,21 +23,23 @@
     <!-- Desktop Navigation -->
     <div class="desktop-nav">
       <nav class="main-nav">
-        <a href="#why">Why Coaching</a>
-        <a href="#pilot">Pilot Program</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="why.html">Why Coaching</a>
+        <a href="pilot.html">Pilot Program</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <a href="#contact" class="cta-button" id="top-cta">Join Pilot</a>
+      <a href="contact.html" class="cta-button" id="top-cta">Join Pilot</a>
     </div>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
       <div class="hamburger">&#9776;</div>
       <div class="mobile-links">
-        <a href="#why">Why Coaching</a>
-        <a href="#pilot">Pilot Program</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="cta-button" id="mobile-cta">Join Pilot</a>
+        <a href="index.html">Home</a>
+        <a href="why.html">Why Coaching</a>
+        <a href="pilot.html">Pilot Program</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="cta-button" id="mobile-cta">Join Pilot</a>
       </div>
     </div>
   </header>
@@ -51,7 +53,7 @@
       <p class="hero-stat">
         Helping people gain confidence, knowledge, and control over their finances, especially in underserved communities.
       </p>
-      <a href="#contact" class="cta-button" id="hero-cta">Join the Pilot</a>
+      <a href="contact.html" class="cta-button" id="hero-cta">Join the Pilot</a>
     </div>
   </section>
 
@@ -87,7 +89,7 @@
       <p>
         We plan to offer <strong>interactive workshops, online courses, and educational materials</strong> that organisations can use directly with their communities. Our goal is to equip participants with practical skills, confidence, and long-term financial autonomy.
       </p>
-      <a href="#contact" class="cta-button">Sign Up to Participate</a>
+      <a href="contact.html" class="cta-button">Sign Up to Participate</a>
     </div>
   </section>
 
@@ -158,7 +160,7 @@
       mobileLinks.classList.remove('open');
     });
 
-    // Form submission for CTA buttons
+    // Form submission and CTA handling
     function sendOrganisationsEmail() {
       const company = encodeURIComponent(document.getElementById('company').value || '');
       const name = encodeURIComponent(document.getElementById('name').value || '');
