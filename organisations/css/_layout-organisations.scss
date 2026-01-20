@@ -1,6 +1,6 @@
 /* =========================
-   _layout-corporate.scss
-   Corporate layout: header, footer, containers
+   _layout-organisations.scss
+   Organisations layout: header, footer, containers
 ========================= */
 
 /* -------------------------
@@ -51,14 +51,14 @@ body {
   flex-direction: column;
   text-align: center;
   min-height: 80vh;
-  color: white; /* base hero text color */
+  color: white;
 
   .hero-content {
     color: white;
     text-align: center;
   }
 
-  /* FORCE HERO TEXT + CTA TO WHITE */
+  /* Force hero text + CTA to white */
   h1,
   p,
   a {
@@ -169,10 +169,10 @@ body {
 @media (max-width: 768px) {
   .top-bar {
     padding: 0.75rem 1rem;
-    justify-content: flex-start; /* logo stays left */
+    justify-content: flex-start;
   }
 
-  /* Hide desktop nav + CTA completely on mobile */
+  /* Hide desktop nav + CTA completely */
   .top-bar .top-right {
     display: none !important;
     width: 0;
@@ -216,12 +216,11 @@ body {
     text-align: center;
   }
 
-  /* Show mobile nav when active */
   .mobile-nav.active {
     display: block;
   }
 
-  /* Force hero text white on mobile as well */
+  /* Force hero text white */
   .hero h1,
   .hero p,
   .hero a {
@@ -258,7 +257,7 @@ body {
         font-size: 1.1rem;
         font-weight: 600;
         color: var(--gold);
-        content: "Gold Pearl Organisation";
+        content: "Gold Pearl Organisations";
       }
 
       .footer-contact p {

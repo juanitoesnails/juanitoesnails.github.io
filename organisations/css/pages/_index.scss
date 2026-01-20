@@ -16,6 +16,8 @@
   background-attachment: fixed;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
   color: white;
   padding: 0 15rem;
 
@@ -38,6 +40,7 @@
       display: inline-block;
       padding: 1rem 2rem;
       font-size: 1rem;
+      color: white !important;
     }
   }
 
@@ -49,6 +52,11 @@
     padding: 0 2rem;
     text-align: center;
     justify-content: center;
+
+    .hero-content {
+      text-align: center;
+      padding: 0 1.25rem; /* mobile safe padding */
+    }
   }
 }
 
@@ -83,18 +91,18 @@
     margin: 0 auto;
 
     li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
       margin-bottom: 1rem;
       font-size: 1rem;
       line-height: 1.6;
-      padding-left: 1.5rem;
-      position: relative;
 
       &:before {
         content: "✓";
         color: var(--primary-color);
-        position: absolute;
-        left: 0;
-        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 2px;
       }
     }
   }
@@ -104,7 +112,7 @@
    Pilot Program Section
 ------------------------- */
 .pilot {
-  background: #f2f2f2; /* Grey background to stand out */
+  background: #f2f2f2;
   padding: 4rem 2rem;
   width: 100%;
 
@@ -117,7 +125,6 @@
       font-size: 2rem;
       color: var(--primary-color);
       margin-bottom: 1.5rem;
-      text-align: center;
     }
 
     p {
@@ -235,11 +242,11 @@
   }
 
   .benefits, .pilot, .contact {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
+  }
 
-    form {
-      padding: 2rem 1.5rem;
-    }
+  .contact form {
+    padding: 2rem 1.5rem;
   }
 }
 
@@ -250,6 +257,15 @@
 
   .hero p {
     font-size: 0.95rem;
+  }
+
+  .benefits {
+    padding: 2rem 1.25rem;
+  }
+
+  .benefits ul li {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .contact form {

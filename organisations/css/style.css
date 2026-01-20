@@ -40,8 +40,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-corporate.scss
-   Corporate layout: header, footer, containers
+   _layout-organisations.scss
+   Organisations layout: header, footer, containers
 ========================= */
 /* -------------------------
    Variables
@@ -91,8 +91,8 @@ body {
   flex-direction: column;
   text-align: center;
   min-height: 80vh;
-  color: white; /* base hero text color */
-  /* FORCE HERO TEXT + CTA TO WHITE */
+  color: white;
+  /* Force hero text + CTA to white */
 }
 .hero .hero-content {
   color: white;
@@ -193,9 +193,9 @@ body {
 @media (max-width: 768px) {
   .top-bar {
     padding: 0.75rem 1rem;
-    justify-content: flex-start; /* logo stays left */
+    justify-content: flex-start;
   }
-  /* Hide desktop nav + CTA completely on mobile */
+  /* Hide desktop nav + CTA completely */
   .top-bar .top-right {
     display: none !important;
     width: 0;
@@ -233,11 +233,10 @@ body {
     display: block;
     text-align: center;
   }
-  /* Show mobile nav when active */
   .mobile-nav.active {
     display: block;
   }
-  /* Force hero text white on mobile as well */
+  /* Force hero text white */
   .hero h1,
   .hero p,
   .hero a {
@@ -273,7 +272,7 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Organisation";
+  content: "Gold Pearl Organisations";
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;
@@ -478,8 +477,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout-corporate.scss
-   Corporate layout: header, footer, containers
+   _layout-organisations.scss
+   Organisations layout: header, footer, containers
 ========================= */
 /* -------------------------
    Variables
@@ -529,8 +528,8 @@ body {
   flex-direction: column;
   text-align: center;
   min-height: 80vh;
-  color: white; /* base hero text color */
-  /* FORCE HERO TEXT + CTA TO WHITE */
+  color: white;
+  /* Force hero text + CTA to white */
 }
 .hero .hero-content {
   color: white;
@@ -631,9 +630,9 @@ body {
 @media (max-width: 768px) {
   .top-bar {
     padding: 0.75rem 1rem;
-    justify-content: flex-start; /* logo stays left */
+    justify-content: flex-start;
   }
-  /* Hide desktop nav + CTA completely on mobile */
+  /* Hide desktop nav + CTA completely */
   .top-bar .top-right {
     display: none !important;
     width: 0;
@@ -671,11 +670,10 @@ body {
     display: block;
     text-align: center;
   }
-  /* Show mobile nav when active */
   .mobile-nav.active {
     display: block;
   }
-  /* Force hero text white on mobile as well */
+  /* Force hero text white */
   .hero h1,
   .hero p,
   .hero a {
@@ -711,7 +709,7 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Organisation";
+  content: "Gold Pearl Organisations";
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;
@@ -790,6 +788,8 @@ body {
   background-attachment: fixed;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
   color: white;
   padding: 0 15rem;
 }
@@ -810,6 +810,7 @@ body {
   display: inline-block;
   padding: 1rem 2rem;
   font-size: 1rem;
+  color: white !important;
 }
 @media (max-width: 1024px) {
   .page-home .hero {
@@ -821,6 +822,10 @@ body {
     padding: 0 2rem;
     text-align: center;
     justify-content: center;
+  }
+  .page-home .hero .hero-content {
+    text-align: center;
+    padding: 0 1.25rem; /* mobile safe padding */
   }
 }
 
@@ -853,25 +858,25 @@ body {
   margin: 0 auto;
 }
 .benefits ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.6;
-  padding-left: 1.5rem;
-  position: relative;
 }
 .benefits ul li:before {
   content: "✓";
   color: var(--primary-color);
-  position: absolute;
-  left: 0;
-  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* -------------------------
    Pilot Program Section
 ------------------------- */
 .pilot {
-  background: #f2f2f2; /* Grey background to stand out */
+  background: #f2f2f2;
   padding: 4rem 2rem;
   width: 100%;
 }
@@ -884,7 +889,6 @@ body {
   font-size: 2rem;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
-  text-align: center;
 }
 .pilot .section-inner p {
   font-size: 1rem;
@@ -985,9 +989,9 @@ body {
     max-width: 90%;
   }
   .benefits, .pilot, .contact {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
   }
-  .benefits form, .pilot form, .contact form {
+  .contact form {
     padding: 2rem 1.5rem;
   }
 }
@@ -997,6 +1001,13 @@ body {
   }
   .hero p {
     font-size: 0.95rem;
+  }
+  .benefits {
+    padding: 2rem 1.25rem;
+  }
+  .benefits ul li {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
   .contact form {
     padding: 1.5rem 1rem;
