@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-book">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +7,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-book">
-  <!-- Top Bar -->
+<body>
+
+  <!-- Top Bar / Header -->
   <header class="top-bar">
+    <!-- Logo -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl" class="logo">
         <span class="logo-text">GOLD PEARL</span>
       </a>
     </div>
-    <div class="top-right">
+
+    <!-- Right cluster: nav + CTA -->
+    <div class="header-right">
+      <!-- Main navigation -->
       <nav class="main-nav">
         <a href="services.html">Services</a>
         <a href="faq.html">F.A.Q.</a>
         <a href="prices.html">Prices</a>
+        <a href="book.html" class="mobile-only">Book a Free Session</a>
       </nav>
-      <a href="book.html" class="cta-button">Book Free Consultation</a>
+
+      <!-- CTA Button -->
+      <div class="top-right">
+        <a href="book.html" class="cta-button">Book Free Consultation</a>
+      </div>
     </div>
+
+    <!-- Hamburger menu -->
+    <button
+      class="menu-toggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false">
+      &#9776;
+    </button>
   </header>
 
   <!-- Hero Banner -->
   <main>
     <section class="hero">
-      <div class="hero-content">
+      <div class="container hero-content">
         <h1>Book Your Free Consultation</h1>
         <p class="hero-subtext">Take the first step towards financial clarity and confidence. No strings attached.</p>
         <a href="book.html" class="cta-button hero-cta">Book Now</a>
@@ -104,9 +122,21 @@
       <p>KVK: [Organisations KVK] / VAT: [Organisations VAT]</p>
       <p><small>Keizersgracht 123, 1015 CJ Amsterdam</small></p>
       <p><small>Email: hello@goldpearlorganisations.nl</small></p>
-      <p><small><a href="terms.html" style="color: #fff; text-decoration: underline;">Terms & Conditions</a></small></p>
-      <p><small><a href="privacy.html" style="color: #fff; text-decoration: underline;">Privacy Statement</a></small></p>
+      <p><small><a href="terms.html">Terms & Conditions</a></small></p>
+      <p><small><a href="privacy.html">Privacy Statement</a></small></p>
     </div>
   </footer>
+
+  <!-- JavaScript: Toggle Mobile Nav -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
 </body>
 </html>

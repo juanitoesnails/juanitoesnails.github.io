@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-services">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +7,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-services">
+<body>
 
-  <!-- Top Bar -->
+  <!-- Top Bar / Header -->
   <header class="top-bar">
+    <!-- Logo -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
-        <img src="images/logo.png" alt="Gold Pearl" class="logo">
+        <img src="images/logo.png" alt="Gold Pearl Logo" class="logo">
         <span class="logo-text">GOLD PEARL</span>
       </a>
     </div>
-    <div class="top-right">
+
+    <!-- Right cluster: nav + CTA -->
+    <div class="header-right">
+      <!-- Main navigation -->
       <nav class="main-nav">
-        <a href="#services.html">Services</a>
+        <a href="#our-services">Services</a>
         <a href="faq.html">F.A.Q.</a>
         <a href="prices.html">Prices</a>
+        <a href="book.html" class="mobile-only">Book a Free Session</a>
       </nav>
-      <a href="book.html" class="cta-button">Book Free Consultation</a>
+
+      <!-- CTA Button (desktop only) -->
+      <div class="top-right">
+        <a href="book.html" class="cta-button">Book Free Consultation</a>
+      </div>
     </div>
+
+    <!-- Hamburger menu -->
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
   </header>
 
   <!-- Hero Banner -->
@@ -33,6 +45,7 @@
       <div class="hero-content">
         <h1>Tailored Expertise, On Your Terms</h1>
         <p class="hero-subtext">Find out what option works best for you</p>
+        <a href="book.html" class="cta-button hero-cta mobile-only">Book Now</a>
       </div>
     </section>
 
@@ -42,7 +55,6 @@
         <h2>Our Services</h2>
         <p class="solution-lead">We offer 3 ways to learn and take control of your finances.</p>
 
-        <!-- Flexbox Promise Container -->
         <div class="promise-container">
           <div class="promise-item">
             <span class="icon">👥</span>
@@ -72,7 +84,7 @@
       </div>
     </section>
 
-    <!-- Detailed Services -->
+    <!-- Detailed Services Section -->
     <section id="detailed-services" class="solution-section" style="background:#f8f9fa;">
       <div class="container">
 
@@ -87,7 +99,7 @@
             <div class="goal-card">Spend guilt-free on the things you love</div>
             <div class="goal-card">Start saving for emergencies and future goals</div>
             <div class="goal-card">Learn the basics of investing and making your money work</div>
-            <a href="book.html" class="cta-button">Book Free Consultation.</a>
+            <a href="book.html" class="cta-button">Book Free Consultation</a>
           </div>
         </div>
 
@@ -101,7 +113,7 @@
             <div class="goal-card">Align spending with your personal values</div>
             <div class="goal-card">Create a tailored saving plan for goals and emergencies</div>
             <div class="goal-card">Discover the type of investing that fits your lifestyle</div>
-            <a href="book.html" class="cta-button">Book Free Consultation.</a>
+            <a href="book.html" class="cta-button">Book Free Consultation</a>
           </div>
           <img src="images/individualcoaching.jpg" alt="Private Learning" class="service-img">
         </div>
@@ -116,9 +128,9 @@
             <p>Price dependent on the goals and number of sessions required. A typical client will budget €2000-€5000.</p>
             <h3>Outcomes</h3>
             <div class="goal-card">You set the goal, we set the plan to make it happen</div>
-            <div class="goal-card">On going coaching, mentoring, and guidance. We will be there for the big moments</div>
+            <div class="goal-card">Ongoing coaching, mentoring, and guidance. We will be there for the big moments</div>
             <div class="goal-card">Limited number of spots available to ensure you get our full attention</div>
-            <a href="book.html" class="cta-button">Book Free Consultation.<span></a>
+            <a href="book.html" class="cta-button">Book Free Consultation</a>
           </div>
         </div>
 
@@ -142,7 +154,7 @@
             <h3>Not Fit</h3>
             <ul>
               <li>Expect instant wealth</li>
-              <li>Individuals expecting a “magic solution” with no effort or time commitment</li>
+              <li>Want a “magic solution” without effort</li>
             </ul>
           </div>
         </div>
@@ -153,7 +165,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
@@ -180,6 +191,18 @@
       <p><small><a href="privacy.html" style="color: #fff; text-decoration: underline;">Privacy Statement</a></small></p>
     </div>
   </footer>
+
+  <!-- JavaScript: Toggle Mobile Nav -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
 
 </body>
 </html>

@@ -1,334 +1,322 @@
-/* =========================
-   _index.scss
-   Page-specific styles for homepage / individuals
-========================= */
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none; /* removes underline */
-  color: inherit;        /* keeps the text black/gold */
+/* ==========================
+   Variables
+=========================== */
+:root {
+  --gold: #d4af37;
+  --gold-dark: #b8860b;
+  --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.15);
+  --focus-outline: 2px solid var(--gold);
 }
-/* -------------------------
-   Hero Banner
-------------------------- */
-.page-home .hero {
-  min-height: 80vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("../images/individuals.png") center/cover;
-  background-attachment: fixed;
+
+/* ==========================
+   Base Styles
+=========================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  background: #f8f9fa;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ==========================
+   Hero Section
+=========================== */
+.hero {
+  min-height: 70vh;
   display: flex;
   align-items: center;
   color: white;
-  padding: 0 15rem; /* horizontal padding so text isn’t hugging edge */
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("../images/individuals.png") center/cover no-repeat;
+  padding: 0 15rem;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.hero-subtext,
+.hero-stat {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  opacity: 0.95;
+  margin-bottom: 1rem;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================
+   Family-Run Section
+=========================== */
+.family-run {
+  padding: 3rem 0;
+}
+
+.family-run h2 {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* ==========================
+   Financial Struggle Section
+=========================== */
+.problem-section {
+  padding: 3rem 0;
+}
+
+.problem-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.problem-list {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.problem-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.problem-note {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* ==========================
+   Situations Section
+=========================== */
+.who-section {
+  padding: 3rem 0;
+}
+
+.who-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.who-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.who-section li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.who-section .cta-button {
+  margin-top: 1rem;
+}
+
+/* ==========================
+   Our Simple Solution
+=========================== */
+.solution-section {
+  padding: 3rem 0;
+  background: #f8f9fa;
+}
+
+.solution-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.solution-lead {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.promise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.promise-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  flex: 1 1 200px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promise-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.promise-item .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.promise-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.promise-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Mobile emoji list */
+.promise-list-mobile {
+  display: none;
+}
+
+.results {
+  margin-top: 2rem;
+}
+
+.results h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.results p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.results-button .cta-button {
+  margin-top: 0.5rem;
+}
+
+/* Final CTA */
+.final-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.final-cta .cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* ==========================
+   Responsive Adjustments (Mobile)
+=========================== */
+@media (max-width: 768px) {
+
+  /* Hero adjustments */
+  .hero {
+    padding: 0 1.5rem;
+    min-height: 80vh;
+    background-attachment: scroll;
+    justify-content: center;
+    text-align: center;
+  }
 
   .hero-content {
-    max-width: 600px;
-    text-align: left;
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.3;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-stat {
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      margin-bottom: 1rem;
-    }
-
-    .hero-subtext {
-      font-size: clamp(1rem, 2vw, 1.1rem);
-      opacity: 0.95;
-      margin-bottom: 3rem;
-      line-height: 1.7;
-    }
-
-    .hero-cta {
-      display: inline-block;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-    }
+    max-width: 100%;
+    padding: 2rem 0;
   }
 
-  /* Responsive adjustments for hero padding */
-  @media (max-width: 1024px) {
-    padding: 0 3rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0 2rem;
+  /* Family-Run */
+  .family-run h2 {
+    font-size: 1.75rem;
     text-align: center;
-    justify-content: center;
-  }
-}
-
-/* -------------------------
-   Family Run Section
-------------------------- */
-.family-run {
-  text-align: center;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  
-  h2 {
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    margin: 0 auto;
-    padding: 0.5rem 0;
-    max-width: 80%;
-    color: #2c3e50;
-    position: relative;
-    display: inline-block;
-
-    /* Elegant gold underline */
-    &::after {
-      content: '';
-      display: block;
-      width: 50%;
-      height: 2px;
-      background: var(--gold);
-      margin: 0.5rem auto 0;
-      border-radius: 2px;
-    }
-  }
-}
-
-/* -------------------------
-   Section Headings
-------------------------- */
-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: #1a1a1a;
-}
-
-/* -------------------------
-   Section Spacing Improvements
-------------------------- */
-section {
-  padding: 6rem 0; /* more space above and below sections */
-}
-
-/* -------------------------
-   Problem Section
-------------------------- */
-.problem-section {
-  background: white;
-
-  .problem-list {
-    max-width: 700px;
-    margin: 2rem auto 3rem;
-    list-style: none;
-    font-size: 1.1rem;
-    line-height: 1.8; /* slightly more spacing */
-    padding: 0;
-
-    li {
-      padding: 1rem 0; /* more spacing between bullets */
-      position: relative;
-      padding-left: 2rem;
-
-      &::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: var(--gold);
-        font-weight: 700;
-        font-size: 1.2rem;
-      }
-    }
   }
 
-  .problem-note {
-    text-align: center;
-    font-size: 1.2rem;
-    font-style: italic;
-    max-width: 800px;
-    margin: 4rem auto 0; /* more spacing from list */
-    color: #555;
-    line-height: 1.6;
-  }
-}
-
-/* -------------------------
-   Who / Situations Section
-------------------------- */
-.who-section {
-  background: #f8f9fa;
-
-  ul {
-    max-width: 600px;
-    margin: 3rem auto 0; /* more spacing from previous section */
-    list-style: none;
-    text-align: center;
-    font-size: 1.1rem;
-
-    li {
-      padding: 1.5rem 0; /* increase spacing */
-      position: relative;
-      padding-left: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-
-      &::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--gold);
-        font-weight: 700;
-      }
-
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
-}
-
-/* -------------------------
-   Solution Section / Promises
-------------------------- */
-.solution-section {
-  background: white;
-
-  .solution-lead {
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 600;
-    max-width: 700px;
-    margin: 0 auto 4rem;
-    color: #2c3e50;
+  /* Problem Section */
+  #problem .problem-list {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
+  #problem .problem-note {
+    padding: 0 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Hide desktop promise grid, show emoji list */
   .promise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin: 4rem 0;
-
-    .promise-item {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: white;
-      border-radius: 16px;
-      box-shadow: var(--shadow-light);
-      transition: none; /* remove hover float effect */
-      border-top: 0; /* remove gold top border effect */
-
-      .icon {
-        font-size: 3rem;
-        display: block;
-        margin-bottom: 1.5rem;
-      }
-
-      h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-        color: #1a1a1a;
-      }
-
-      p, a {
-        color: #2c3e50;
-      }
-
-      a {
-        color: var(--gold);
-        text-decoration: none;
-      }
-    }
+    display: none;
   }
 
+  .promise-list-mobile {
+    display: block;
+    list-style: none;
+    padding: 0 1rem;
+    text-align: left;
+  }
+
+  .promise-list-mobile li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  /* Real Results centered */
   .results {
     text-align: center;
-    padding: 4rem 2rem;
-    background: #f8f9fa;
-    color: #333;
-    border: 1px solid #e9ecef;
-    border-radius: 16px;
-    margin: 4rem 0;
-
-    h3 {
-      color: var(--gold) !important;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .results-button {
-      margin-top: 2rem;
-    }
+    padding: 1rem;
   }
 
-  /* -------------------------
-     Final CTA
-  ------------------------- */
-  .final-cta {
-    text-align: center;
-    padding: 3rem 2rem;
-
-    .final-cta-header {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: #1a1a1a;
-    }
-
-    .cta-button.large {
-      padding: 1.25rem 3rem;
-      font-size: 1.2rem;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #666;
-      margin-top: 0.5rem;
-    }
-  }
-}
-
-.site-footer {
-  padding: 2rem 2rem 1rem;
-}
-
-/* =========================
-   Responsive Adjustments
-========================= */
-@media (max-width: 1024px) {
-  .hero {
-    background-attachment: scroll;
-    padding: 0 6rem; /* reduce padding */
-  }
-}
-
-@media (max-width: 768px) {
-  section h2 {
-    font-size: 2rem;
+  .results h3 {
+    font-size: 1.4rem;
   }
 
-  .hero {
-    padding: 0 2rem;
-    text-align: center;
+  .results-button {
+    display: flex;
     justify-content: center;
   }
 
-  .promise-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 1rem;
-  }
-
-  .hero-content {
-    padding: 2rem 1rem 3rem;
-  }
-
-  .problem-list li, .who-section li {
-    font-size: 1rem;
+  .results-button .cta-button {
+    text-align: center;
   }
 }

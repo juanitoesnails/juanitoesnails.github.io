@@ -36,8 +36,8 @@ h1, h2, h3 {
 }
 
 /* =========================
-   _layout.scss
-   Shared layout: header, footer, containers
+   _layout-individuals.scss
+   Shared layout for Individuals page
 ========================= */
 /* -------------------------
    Variables
@@ -72,12 +72,6 @@ body {
   background: #f8f9fa;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -88,22 +82,38 @@ body {
    Top Bar / Header
 ------------------------- */
 .top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  /* Logo */
+  /* Right cluster (nav + CTA) */
+  /* Main navigation */
+  /* CTA */
+  /* Hamburger menu */
+}
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 1rem;
+  }
 }
 .top-bar .logo-area {
   display: flex;
   align-items: center;
 }
+.top-bar .logo-area .logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
 .top-bar .logo-area .logo {
-  height: 48px; /* adjust as needed */
+  height: 48px;
   width: auto;
 }
 .top-bar .logo-area .logo-text {
@@ -114,56 +124,80 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.top-bar .top-right {
+.top-bar .header-right {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-.top-bar .top-right .main-nav {
+.top-bar .main-nav {
   display: flex;
   gap: 2rem;
+  /* Mobile menu (removed from flex flow) */
 }
-.top-bar .top-right .main-nav a {
+.top-bar .main-nav a {
   text-decoration: none;
-  color: #1a1a1a; /* black links */
+  color: #1a1a1a;
   font-weight: 500;
   font-size: 0.95rem;
   transition: color 0.2s;
 }
-.top-bar .top-right .main-nav a:hover, .top-bar .top-right .main-nav a:focus-visible {
+.top-bar .main-nav a:hover, .top-bar .main-nav a:focus-visible {
   color: var(--gold);
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
-.top-bar .top-right .cta-button {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.2s;
-}
-.top-bar .top-right .cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-}
-.top-bar .top-right .cta-button:focus-visible {
-  outline: var(--focus-outline);
-  outline-offset: 2px;
+@media (max-width: 768px) {
+  .top-bar .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    display: none;
+    /* Mobile-only Book a Free Session link */
+  }
+  .top-bar .main-nav.open {
+    display: flex;
+  }
+  .top-bar .main-nav .mobile-only {
+    display: block;
+    padding: 1rem 0;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .top-bar .main-nav .mobile-only:hover, .top-bar .main-nav .mobile-only:focus-visible {
+    color: var(--gold-dark);
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+  }
 }
 @media (max-width: 768px) {
-  .top-bar {
-    flex-wrap: wrap;
-    padding: 1rem;
+  .top-bar .top-right .cta-button {
+    display: none;
   }
-  .top-bar .top-right {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 1.5rem;
+}
+.top-bar .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: var(--gold);
+}
+@media (max-width: 768px) {
+  .top-bar .menu-toggle {
+    display: block;
   }
+}
+.top-bar .menu-toggle:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 3px;
 }
 
 /* -------------------------
@@ -173,10 +207,10 @@ body {
   background: #000;
   color: white;
   padding: 2rem 2rem 1rem;
-  position: relative;
   font-family: "Montserrat", sans-serif;
 }
 .site-footer .footer-inner {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -184,7 +218,6 @@ body {
   margin: 0 auto;
   width: 100%;
   padding-bottom: 0.5rem;
-  box-sizing: border-box;
 }
 .site-footer .footer-inner .footer-left {
   display: flex;
@@ -195,7 +228,6 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--gold);
-  content: "Gold Pearl Corporate"; /* update branding */
 }
 .site-footer .footer-inner .footer-left .footer-contact p {
   margin: 0;
@@ -204,8 +236,8 @@ body {
 }
 .site-footer .footer-right {
   position: absolute;
-  right: 2rem;
-  bottom: 0.5rem;
+  right: 0;
+  bottom: 0;
   opacity: 0.7;
   font-size: 0.85rem;
   white-space: nowrap;
@@ -226,6 +258,10 @@ body {
 .site-footer .footer-legal p {
   margin: 0.2rem 0;
 }
+.site-footer .footer-legal a {
+  color: #fff;
+  text-decoration: underline;
+}
 @media (max-width: 768px) {
   .site-footer {
     padding: 2rem 1rem 1rem;
@@ -238,7 +274,6 @@ body {
   .site-footer .footer-right {
     position: static;
     margin-top: 0.5rem;
-    text-align: center;
   }
   .site-footer .footer-legal {
     text-align: center;
@@ -256,7 +291,7 @@ body {
 }
 
 /* -------------------------
-   General Accessibility
+   Accessibility
 ------------------------- */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -307,306 +342,310 @@ body {
 }
 
 /* Pages */
-/* =========================
-   _index.scss
-   Page-specific styles for homepage / individuals
-========================= */
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none; /* removes underline */
-  color: inherit; /* keeps the text black/gold */
+/* ==========================
+   Variables
+=========================== */
+:root {
+  --gold: #d4af37;
+  --gold-dark: #b8860b;
+  --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.15);
+  --focus-outline: 2px solid var(--gold);
 }
 
-/* -------------------------
-   Hero Banner
-------------------------- */
-.page-home .hero {
-  min-height: 80vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../images/individuals.png") center/cover;
-  background-attachment: fixed;
+/* ==========================
+   Base Styles
+=========================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  background: #f8f9fa;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ==========================
+   Hero Section
+=========================== */
+.hero {
+  min-height: 70vh;
   display: flex;
   align-items: center;
   color: white;
-  padding: 0 15rem; /* horizontal padding so text isn’t hugging edge */
-  /* Responsive adjustments for hero padding */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../images/individuals.png") center/cover no-repeat;
+  padding: 0 15rem;
 }
-.page-home .hero .hero-content {
+
+.hero-content {
   max-width: 600px;
-  text-align: left;
 }
-.page-home .hero .hero-content h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
   line-height: 1.3;
-  margin-bottom: 1.5rem;
 }
-.page-home .hero .hero-content .hero-stat {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+
+.hero-subtext,
+.hero-stat {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  opacity: 0.95;
   margin-bottom: 1rem;
 }
-.page-home .hero .hero-content .hero-subtext {
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  opacity: 0.95;
-  margin-bottom: 3rem;
-  line-height: 1.7;
-}
-.page-home .hero .hero-content .hero-cta {
+
+.hero-cta {
   display: inline-block;
-  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================
+   Family-Run Section
+=========================== */
+.family-run {
+  padding: 3rem 0;
+}
+
+.family-run h2 {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* ==========================
+   Financial Struggle Section
+=========================== */
+.problem-section {
+  padding: 3rem 0;
+}
+
+.problem-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.problem-list {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.problem-list li {
+  margin-bottom: 0.5rem;
   font-size: 1rem;
 }
-@media (max-width: 1024px) {
-  .page-home .hero {
-    padding: 0 3rem;
-  }
-}
-@media (max-width: 768px) {
-  .page-home .hero {
-    padding: 0 2rem;
-    text-align: center;
-    justify-content: center;
-  }
-}
 
-/* -------------------------
-   Family Run Section
-------------------------- */
-.family-run {
-  text-align: center;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-.family-run h2 {
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  margin: 0 auto;
-  padding: 0.5rem 0;
-  max-width: 80%;
-  color: #2c3e50;
-  position: relative;
-  display: inline-block;
-  /* Elegant gold underline */
-}
-.family-run h2::after {
-  content: "";
-  display: block;
-  width: 50%;
-  height: 2px;
-  background: var(--gold);
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
-}
-
-/* -------------------------
-   Section Headings
-------------------------- */
-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: #1a1a1a;
-}
-
-/* -------------------------
-   Section Spacing Improvements
-------------------------- */
-section {
-  padding: 6rem 0; /* more space above and below sections */
-}
-
-/* -------------------------
-   Problem Section
-------------------------- */
-.problem-section {
-  background: white;
-}
-.problem-section .problem-list {
-  max-width: 700px;
-  margin: 2rem auto 3rem;
-  list-style: none;
-  font-size: 1.1rem;
-  line-height: 1.8; /* slightly more spacing */
-  padding: 0;
-}
-.problem-section .problem-list li {
-  padding: 1rem 0; /* more spacing between bullets */
-  position: relative;
-  padding-left: 2rem;
-}
-.problem-section .problem-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-.problem-section .problem-note {
-  text-align: center;
-  font-size: 1.2rem;
-  font-style: italic;
-  max-width: 800px;
-  margin: 4rem auto 0; /* more spacing from list */
-  color: #555;
+.problem-note {
+  font-size: 1rem;
   line-height: 1.6;
+  margin-top: 1rem;
 }
 
-/* -------------------------
-   Who / Situations Section
-------------------------- */
+/* ==========================
+   Situations Section
+=========================== */
 .who-section {
-  background: #f8f9fa;
-}
-.who-section ul {
-  max-width: 600px;
-  margin: 3rem auto 0; /* more spacing from previous section */
-  list-style: none;
-  text-align: center;
-  font-size: 1.1rem;
-}
-.who-section ul li {
-  padding: 1.5rem 0; /* increase spacing */
-  position: relative;
-  padding-left: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-.who-section ul li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-  font-weight: 700;
-}
-.who-section ul li:last-child {
-  border-bottom: none;
+  padding: 3rem 0;
 }
 
-/* -------------------------
-   Solution Section / Promises
-------------------------- */
-.solution-section {
-  background: white;
-  /* -------------------------
-     Final CTA
-  ------------------------- */
-}
-.solution-section .solution-lead {
+.who-section h2 {
   text-align: center;
-  font-size: 1.4rem;
-  font-weight: 600;
-  max-width: 700px;
-  margin: 0 auto 4rem;
-  color: #2c3e50;
-}
-.solution-section .promise-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  margin: 4rem 0;
-}
-.solution-section .promise-grid .promise-item {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: var(--shadow-light);
-  transition: none; /* remove hover float effect */
-  border-top: 0; /* remove gold top border effect */
-}
-.solution-section .promise-grid .promise-item .icon {
-  font-size: 3rem;
-  display: block;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
 }
-.solution-section .promise-grid .promise-item h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
-}
-.solution-section .promise-grid .promise-item p, .solution-section .promise-grid .promise-item a {
-  color: #2c3e50;
-}
-.solution-section .promise-grid .promise-item a {
-  color: var(--gold);
-  text-decoration: none;
-}
-.solution-section .results {
+
+.who-section ul {
+  list-style: none;
+  padding: 0;
   text-align: center;
-  padding: 4rem 2rem;
-  background: #f8f9fa;
-  color: #333;
-  border: 1px solid #e9ecef;
-  border-radius: 16px;
-  margin: 4rem 0;
 }
-.solution-section .results h3 {
-  color: var(--gold) !important;
+
+.who-section li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.who-section .cta-button {
+  margin-top: 1rem;
+}
+
+/* ==========================
+   Our Simple Solution
+=========================== */
+.solution-section {
+  padding: 3rem 0;
+  background: #f8f9fa;
+}
+
+.solution-section h2 {
+  text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-.solution-section .results .results-button {
+
+.solution-lead {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.promise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.promise-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  flex: 1 1 200px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promise-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.promise-item .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.promise-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.promise-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Mobile emoji list */
+.promise-list-mobile {
+  display: none;
+}
+
+.results {
   margin-top: 2rem;
 }
-.solution-section .final-cta {
-  text-align: center;
-  padding: 3rem 2rem;
-}
-.solution-section .final-cta .final-cta-header {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 2rem;
-  color: #1a1a1a;
-}
-.solution-section .final-cta .cta-button.large {
-  padding: 1.25rem 3rem;
-  font-size: 1.2rem;
-  border-radius: 12px;
+
+.results h3 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-.solution-section .final-cta p {
-  font-size: 1.1rem;
-  color: #666;
+
+.results p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.results-button .cta-button {
   margin-top: 0.5rem;
 }
 
-.site-footer {
-  padding: 2rem 2rem 1rem;
+/* Final CTA */
+.final-cta {
+  text-align: center;
+  margin-top: 2rem;
 }
 
-/* =========================
-   Responsive Adjustments
-========================= */
-@media (max-width: 1024px) {
-  .hero {
-    background-attachment: scroll;
-    padding: 0 6rem; /* reduce padding */
-  }
+.final-cta .cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
 }
+
+/* ==========================
+   Responsive Adjustments (Mobile)
+=========================== */
 @media (max-width: 768px) {
-  section h2 {
-    font-size: 2rem;
-  }
+  /* Hero adjustments */
   .hero {
-    padding: 0 2rem;
-    text-align: center;
+    padding: 0 1.5rem;
+    min-height: 80vh;
+    background-attachment: scroll;
     justify-content: center;
-  }
-  .promise-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-@media (max-width: 480px) {
-  .container {
-    padding: 0 1rem;
+    text-align: center;
   }
   .hero-content {
-    padding: 2rem 1rem 3rem;
+    max-width: 100%;
+    padding: 2rem 0;
   }
-  .problem-list li, .who-section li {
+  /* Family-Run */
+  .family-run h2 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  /* Problem Section */
+  #problem .problem-list {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #problem .problem-note {
+    padding: 0 1rem;
+    font-size: 0.95rem;
+  }
+  /* Hide desktop promise grid, show emoji list */
+  .promise-grid {
+    display: none;
+  }
+  .promise-list-mobile {
+    display: block;
+    list-style: none;
+    padding: 0 1rem;
+    text-align: left;
+  }
+  .promise-list-mobile li {
+    padding: 0.5rem 0;
     font-size: 1rem;
+  }
+  /* Real Results centered */
+  .results {
+    text-align: center;
+    padding: 1rem;
+  }
+  .results h3 {
+    font-size: 1.4rem;
+  }
+  .results-button {
+    display: flex;
+    justify-content: center;
+  }
+  .results-button .cta-button {
+    text-align: center;
   }
 }
 /* _services.scss */
@@ -631,6 +670,7 @@ section {
   color: white;
   padding: 0 15rem;
 }
+
 .page-services .hero .hero-content {
   max-width: 600px;
   padding: 5rem 2rem 6rem;
@@ -655,7 +695,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem; /* tightened from 2rem */
 }
 
 .promise-item {
@@ -666,15 +706,18 @@ section {
   text-align: center;
   flex: 1 1 calc(33.333% - 1.33rem);
 }
+
 .promise-item .icon {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
 .promise-item h3 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
   color: #1a1a1a;
 }
+
 .promise-item p {
   font-size: 1rem;
   color: #333;
@@ -693,6 +736,10 @@ section {
 /* ==========================
    Shared Lead Text
 =========================== */
+.solution-lead {
+  margin-top: 1.5rem; /* tightened from 3rem */
+}
+
 .solution-lead h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
@@ -704,6 +751,7 @@ section {
   padding: 0;
   text-align: center;
 }
+
 .solution-lead ul li {
   padding: 0.5rem 0;
   font-size: 1rem;
@@ -714,12 +762,11 @@ section {
    Adjust spacing before service-detail
 =========================== */
 #our-services .solution-lead {
-  margin-bottom: 2rem; /* Reduced from ~3rem to tighten space before service cards */
+  margin-bottom: 1.5rem; /* tightened space before service cards */
 }
 
 /* ==========================
    Detailed Service Cards
-   (Grid-based vertical split)
 =========================== */
 .service-detail {
   display: grid;
@@ -728,7 +775,7 @@ section {
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* tightened from 3rem */
 }
 
 /* Image side */
@@ -746,7 +793,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 0; /* CRITICAL: prevents width overflow */
+  min-width: 0;
 }
 
 .service-detail h2 {
@@ -773,6 +820,7 @@ section {
   display: flex;
   align-items: center;
 }
+
 .service-detail .goal-card::before {
   content: "•";
   color: #d4af37;
@@ -785,26 +833,29 @@ section {
   align-self: flex-start;
 }
 
-/* Alternate image/text sides */
+/* Alternate image/text sides on desktop */
 .service-detail:nth-child(even) .service-img {
   order: 2;
 }
+
 .service-detail:nth-child(even) .service-text {
   order: 1;
 }
 
 /* ==========================
-   Responsive – Stack Cards
+   Responsive – Stack Cards with Image on Top
 =========================== */
 @media (max-width: 1024px) {
   .service-detail {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* stack vertically */
   }
   .service-detail .service-img {
     height: 260px;
+    order: 0 !important; /* always first on mobile/tablet */
   }
   .service-detail .service-text {
     padding: 1.75rem;
+    order: 1 !important; /* always after image */
   }
 }
 @media (max-width: 768px) {
@@ -813,6 +864,12 @@ section {
   }
   .service-detail .service-text {
     padding: 1.25rem;
+  }
+  /* Hero adjustments for mobile */
+  .page-services .hero {
+    padding: 0 2rem;
+    text-align: center;
+    justify-content: center;
   }
 }
 /* ==========================
@@ -824,6 +881,7 @@ section {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .fit-full .fit-good,
 .fit-full .fit-not {
   background: #f8f9fa;
@@ -831,16 +889,19 @@ section {
   border-radius: 12px;
   flex: 1 1 280px;
 }
+
 .fit-full .fit-good h3,
 .fit-full .fit-not h3 {
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
+
 .fit-full .fit-good ul,
 .fit-full .fit-not ul {
   list-style: none;
   padding: 0;
 }
+
 .fit-full .fit-good ul li,
 .fit-full .fit-not ul li {
   position: relative;
@@ -848,6 +909,7 @@ section {
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
+
 .fit-full .fit-good li::before {
   content: "✓";
   position: absolute;
@@ -855,6 +917,7 @@ section {
   color: #d4af37;
   font-weight: bold;
 }
+
 .fit-full .fit-not li::before {
   content: "✗";
   position: absolute;
@@ -863,21 +926,19 @@ section {
   font-weight: bold;
 }
 
-.site-footer {
-  padding: 2rem 2rem 1rem;
-}
-
 /* ==========================
    Final CTA
 =========================== */
 .final-cta {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
+
 .final-cta .cta-button.large {
   padding: 1.25rem 3rem;
   font-size: 1.2rem;
 }
+
 .final-cta p {
   margin-top: 1rem;
   font-size: 1rem;
@@ -900,6 +961,7 @@ section {
   max-width: 900px;
   margin: 0 auto;
   padding: 3rem 2rem;
+  text-align: left;
 }
 .page-faq .hero .hero-content h1 {
   font-size: clamp(2rem, 4vw, 3rem);
@@ -914,7 +976,7 @@ section {
    FAQ Section
 ========================= */
 #faq {
-  padding: 4rem 0;
+  padding: 4rem 0 5rem; /* extra bottom spacing for footer rhythm */
   background: #fff;
 }
 #faq .container {
@@ -996,8 +1058,6 @@ section {
   background: #f8f9fa;
   text-align: center;
   border-radius: 8px;
-  /* All links default to gold */
-  /* CTA button override */
 }
 .faq-contact a {
   color: var(--gold);
@@ -1024,10 +1084,23 @@ section {
 /* =========================
    Responsive Adjustments
 ========================= */
-@media screen and (max-width: 768px) {
+/* Tablet & below */
+@media (max-width: 1024px) {
+  .page-faq .hero {
+    padding: 0 4rem;
+  }
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .page-faq .hero {
+    padding: 0 1.5rem;
+  }
   .page-faq .hero .hero-content {
     padding: 2rem 1.5rem;
     text-align: center;
+  }
+  #faq {
+    padding: 3rem 0 4rem;
   }
   #faq .faq-item label {
     font-size: 1.1rem;
@@ -1039,17 +1112,16 @@ section {
     font-size: 0.9rem;
   }
 }
-.site-footer {
-  padding: 2rem 2rem 1rem;
-}
-
-@media screen and (max-width: 480px) {
+/* Small mobile */
+@media (max-width: 480px) {
   .page-faq .hero .hero-content h1 {
     font-size: 1.75rem;
   }
 }
 /* _prices.scss */
-/* Hero Section */
+/* ==========================
+   Hero Section
+=========================== */
 .page-prices .hero {
   min-height: 50vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/prices.png") center/cover;
@@ -1077,10 +1149,12 @@ section {
   display: inline-block;
 }
 
-/* Pricing Section */
+/* ==========================
+   Pricing Section
+=========================== */
 #pricing {
   padding: 5rem 0;
-  /* ✅ FIXED GRID: ALWAYS 3 COLUMNS ON DESKTOP */
+  /* Always 3 columns on desktop */
 }
 #pricing h2 {
   text-align: center;
@@ -1147,12 +1221,17 @@ section {
   color: #666;
 }
 
+/* ==========================
+   Footer spacing consistency
+=========================== */
 .site-footer {
   padding: 2rem 2rem 1rem;
 }
 
-/* Responsive */
-/* ✅ Tablet & below: ALL STACKED */
+/* ==========================
+   Responsive Adjustments
+=========================== */
+/* Tablet & below: stack pricing cards */
 @media (max-width: 1024px) {
   .page-prices .hero .hero-content {
     max-width: 90%;
@@ -1164,6 +1243,7 @@ section {
     gap: 2rem;
   }
 }
+/* Mobile adjustments */
 @media (max-width: 768px) {
   #pricing {
     padding: 3rem 1rem;
@@ -1173,9 +1253,25 @@ section {
   }
   .page-prices .hero .hero-content {
     padding: 2rem 1rem;
+    text-align: center;
+  }
+  /* ✅ Final CTA mobile sizing (Option A) */
+  #pricing .final-cta {
+    margin-top: 2rem;
+  }
+  #pricing .final-cta .cta-button.large {
+    font-size: 1rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 10px;
+  }
+  #pricing .final-cta p {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
   }
 }
-/* Reduced Motion */
+/* ==========================
+   Reduced Motion
+=========================== */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -1183,17 +1279,30 @@ section {
     transition-duration: 0.01ms !important;
   }
 }
+@media (max-width: 768px) {
+  .page-prices #pricing .final-cta .cta-button {
+    font-size: 1rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 10px;
+  }
+  .page-prices #pricing .final-cta p {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+  }
+}
 /* _book.scss */
-/* Hero */
+/* ==========================
+   Hero Section
+=========================== */
 .page-book .hero {
   min-height: 50vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../images/book.png") center/cover;
-  background-attachment: fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../images/book.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   color: white;
   padding: 0 15rem;
 }
+
 .page-book .hero .hero-content {
   max-width: 600px;
   padding: 4rem 2rem 5rem;
@@ -1215,14 +1324,53 @@ section {
   font-size: 1rem;
 }
 
-/* Container for form and contact info */
+/* ==========================
+   Mobile Hero Adjustments
+=========================== */
+@media (max-width: 1024px) {
+  .page-book .hero {
+    padding: 0 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .page-book .hero {
+    min-height: 80vh; /* taller so content fits */
+    padding: 0 1.5rem;
+    background-attachment: scroll; /* fixes mobile rendering */
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-book .hero .hero-content {
+    max-width: 100%;
+    padding: 3rem 1rem 4rem;
+    text-align: center;
+  }
+  .page-book .hero .hero-content .cta-button {
+    background: none;
+    color: var(--gold, #d4af37);
+    text-decoration: underline;
+    padding: 0;
+  }
+}
+/* ==========================
+   Container for Form & Content
+=========================== */
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 5rem 2rem;
 }
 
-/* Section Titles */
+@media (max-width: 480px) {
+  .container {
+    padding: 3rem 1rem;
+  }
+}
+/* ==========================
+   Section Titles
+=========================== */
 section h2 {
   text-align: center;
   font-size: 2rem;
@@ -1230,7 +1378,9 @@ section h2 {
   margin-bottom: 3rem;
 }
 
-/* Form */
+/* ==========================
+   Book Form
+=========================== */
 .book-form {
   display: flex;
   flex-direction: column;
@@ -1255,7 +1405,7 @@ section h2 {
 }
 .book-form input:focus, .book-form select:focus, .book-form textarea:focus {
   outline: none;
-  border-color: #d4af37; /* Gold focus */
+  border-color: var(--gold, #d4af37);
   box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
 }
 .book-form textarea {
@@ -1266,12 +1416,22 @@ section h2 {
   width: -moz-max-content;
   width: max-content;
   margin-top: 1rem;
-  background: linear-gradient(135deg, #d4af37, #b8860b);
-  color: #fff; /* Ensure white text */
+  background: linear-gradient(135deg, var(--gold, #d4af37), var(--gold-dark, #b8860b));
+  color: #fff;
   text-align: center;
 }
+.book-form .cta-button:hover {
+  background: linear-gradient(135deg, var(--gold-dark, #b8860b), var(--gold, #d4af37));
+}
 
-/* Contact Info below the form */
+@media (max-width: 768px) {
+  .book-form {
+    padding: 2rem;
+  }
+}
+/* ==========================
+   Contact Info Below Form
+=========================== */
 .contact-info {
   margin-top: 3rem;
   text-align: center;
@@ -1282,27 +1442,53 @@ section h2 {
   margin: 0.25rem 0;
 }
 .contact-info a {
-  color: #d4af37;
+  color: var(--gold, #d4af37);
   text-decoration: none;
 }
 .contact-info a:hover {
   text-decoration: underline;
 }
 
+/* ==========================
+   Mobile-only gold link CTA
+=========================== */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    background: none;
+    color: var(--gold, #d4af37);
+    text-decoration: underline;
+    border-radius: 0;
+    padding: 0;
+    text-align: center;
+  }
+  /* Hide desktop CTA */
+  .top-right {
+    display: none;
+  }
+}
+/* ==========================
+   Footer
+=========================== */
 .site-footer {
   padding: 2rem 2rem 1rem;
 }
 
-/* Responsive */
+/* ==========================
+   Responsive Adjustments
+=========================== */
 @media (max-width: 768px) {
   .hero-content {
-    text-align: center;
     max-width: 90%;
     margin: 0 auto;
     padding: 3rem 1.5rem 4rem;
-  }
-  .book-form {
-    padding: 2rem;
+    text-align: center;
   }
 }
 @media (max-width: 480px) {

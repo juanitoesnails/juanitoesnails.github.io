@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-privacy">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,30 +50,43 @@
     }
   </style>
 </head>
-<body class="page-privacy">
+<body>
 
-  <!-- Header -->
+  <!-- Top Bar / Header -->
   <header class="top-bar">
+    <!-- Logo -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl Logo" class="logo">
         <span class="logo-text">GOLD PEARL</span>
       </a>
     </div>
-    <div class="top-right">
+
+    <!-- Right cluster: nav + CTA -->
+    <div class="header-right">
+      <!-- Main navigation -->
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="faq.html">F.A.Q.</a>
         <a href="prices.html">Prices</a>
       </nav>
-      <a href="book.html" class="cta-button">Book Free Consultation</a>
+
+      <!-- CTA Button -->
+      <div class="top-right">
+        <a href="book.html" class="cta-button">Book Free Consultation</a>
+      </div>
     </div>
+
+    <!-- Hamburger menu -->
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      &#9776;
+    </button>
   </header>
 
   <!-- Privacy Statement Section -->
-  <main>
-    <section class="privacy-container">
+  <main class="container privacy-container">
+    <section class="privacy-section">
       <h1>Privacy Statement</h1>
       <p>Gold Pearl EZ KVK number #, established by #, is committed to compliance with The General Data Protection Regulation (“GDPR”), and is responsible for the processing of personal data as shown in this privacy statement.</p>
 
@@ -83,6 +96,7 @@
         <li>Tel: +31 000000000</li>
         <li>Data privacy questions: <a href="mailto:contact@goldpearlfinance.com">contact@goldpearlfinance.com</a></li>
       </ul>
+
       <p>If after reading this document you have further questions about our data processing policies, please contact our customer service via <a href="mailto:contact@goldpearlfinance.com">contact@goldpearlfinance.com</a>.</p>
 
       <h3>Article 1: Definitions</h3>
@@ -142,7 +156,6 @@
 
       <h3>Article 11: Amendments</h3>
       <p>11.1 Gold Pearl reserves the right to amend this privacy policy. Amendments will be published on the official website and take effect from the publishing date.</p>
-
       <p>11.2 The Client is responsible for the accuracy of the personal data provided and for informing Gold Pearl of any changes.</p>
     </section>
   </main>
@@ -171,6 +184,16 @@
       <p><small><a href="privacy.html" style="color: #fff; text-decoration: underline;">Privacy Statement</a></small></p>
     </div>
   </footer>
+
+  <!-- JavaScript: Toggle Mobile Nav -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
 
 </body>
 </html>

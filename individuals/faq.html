@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-faq">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-faq">
+<body>
 
-  <!-- Top Bar -->
+  <!-- Header -->
   <header class="top-bar">
     <div class="logo-area">
       <a href="index.html" class="logo-link">
@@ -17,29 +17,41 @@
         <span class="logo-text">GOLD PEARL</span>
       </a>
     </div>
-    <div class="top-right">
+
+    <div class="header-right">
       <nav class="main-nav">
         <a href="services.html">Services</a>
         <a href="faq.html">F.A.Q.</a>
         <a href="prices.html">Prices</a>
+        <a href="book.html" class="mobile-only">Book a Free Session</a>
       </nav>
-      <a href="book.html" class="cta-button">Book Free Consultation</a>
+
+      <div class="top-right">
+        <a href="book.html" class="cta-button">Book Free Consultation</a>
+      </div>
     </div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      &#9776;
+    </button>
   </header>
 
-  <!-- Hero Banner -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
+    <div class="container hero-content">
       <h1>Frequently Asked Questions</h1>
       <p class="hero-subtext">Everything you need to know about our coaching and how we help you gain financial clarity.</p>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ -->
   <section id="faq">
     <div class="container">
-      
+
       <!-- FAQ Items -->
+      <!-- ... all 11 faq-items remain unchanged ... -->
+
+      <!-- Contact / CTA -->
       <div class="faq-item">
         <input type="checkbox" id="q1">
         <label for="q1">What exactly is financial coaching?</label>
@@ -164,10 +176,21 @@
       <p>KVK: [Organisations KVK] / VAT: [Organisations VAT]</p>
       <p><small>Keizersgracht 123, 1015 CJ Amsterdam</small></p>
       <p><small>Email: hello@goldpearlorganisations.nl</small></p>
-      <p><small><a href="terms.html" style="color: #fff; text-decoration: underline;">Terms & Conditions</a></small></p>
-      <p><small><a href="privacy.html" style="color: #fff; text-decoration: underline;">Privacy Statement</a></small></p>
+      <p><small><a href="terms.html">Terms & Conditions</a></small></p>
+      <p><small><a href="privacy.html">Privacy Statement</a></small></p>
     </div>
   </footer>
+
+  <!-- JS: Mobile nav -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
 
 </body>
 </html>

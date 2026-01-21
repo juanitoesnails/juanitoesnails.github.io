@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-legal">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Optional inline CSS for legal page formatting */
+    /* Inline styling for legal page */
     body.page-legal {
       font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
@@ -45,7 +45,7 @@
 </head>
 <body class="page-legal">
 
-  <!-- Header -->
+  <!-- Top Bar / Header -->
   <header class="top-bar">
     <div class="logo-area">
       <a href="index.html" class="logo-link">
@@ -53,13 +53,20 @@
         <span class="logo-text">GOLD PEARL</span>
       </a>
     </div>
+
+    <!-- Hamburger menu for mobile -->
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+    <!-- Main navigation -->
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">F.A.Q.</a>
+      <a href="prices.html">Prices</a>
+    </nav>
+
+    <!-- Desktop CTA -->
     <div class="top-right">
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="faq.html">F.A.Q.</a>
-        <a href="prices.html">Prices</a>
-      </nav>
       <a href="book.html" class="cta-button">Book Free Consultation</a>
     </div>
   </header>
@@ -197,6 +204,15 @@
       <p><small><a href="privacy.html" style="color: #fff; text-decoration: underline;">Privacy Statement</a></small></p>
     </div>
   </footer>
+
+  <!-- JavaScript: Toggle Mobile Nav -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+  </script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-prices">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +7,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-prices">
-  <!-- Top Bar -->
+<body>
+
+  <!-- Top Bar / Header -->
   <header class="top-bar">
+    <!-- Logo -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gold Pearl" class="logo">
         <span class="logo-text">GOLD PEARL</span>
       </a>
     </div>
-    <div class="top-right">
+
+    <!-- Right cluster: nav + CTA -->
+    <div class="header-right">
       <nav class="main-nav">
         <a href="services.html">Services</a>
         <a href="faq.html">F.A.Q.</a>
         <a href="prices.html">Prices</a>
       </nav>
-      <a href="book.html" class="cta-button">Book Free Consultation</a>
+
+      <div class="top-right">
+        <a href="book.html" class="cta-button">Book Free Consultation</a>
+      </div>
     </div>
+
+    <!-- Hamburger -->
+    <button
+      class="menu-toggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false">
+      &#9776;
+    </button>
   </header>
 
-  <!-- Hero -->
   <main>
+
+    <!-- Hero -->
     <section class="hero">
-      <div class="hero-content">
+      <div class="container hero-content">
         <h1>Transparent, simple pricing for all services</h1>
-        <p class="hero-subtext">We believe in transparent prices.</p>
+        <p class="hero-subtext">We believe in clear, honest pricing — no surprises.</p>
         <a href="#pricing" class="cta-button hero-cta">See Prices</a>
       </div>
     </section>
@@ -48,28 +64,30 @@
             <span class="icon">👥</span>
             <h3>Group Sessions</h3>
             <p>Small classes (~8 people), collaborative learning.</p>
-            <p><strong>€45 per session</strong></p>
+            <strong>€45 per session</strong>
           </div>
 
           <div class="promise-item">
             <span class="icon">💻</span>
             <h3>Private Learning</h3>
             <p>1-on-1 online sessions, tailored to your schedule and goals.</p>
-            <p><strong>€150 per session</strong></p>
+            <strong>€150 per session</strong>
           </div>
 
           <div class="promise-item">
             <span class="icon">⭐</span>
             <h3>Private Executive Coaching</h3>
-            <p>Price in consultation and limited spots available. Usual starting price: <strong>€2000-€5000</strong><p>
+            <p>Price determined in consultation.</p>
+            <strong>Typically €2000–€5000</strong>
           </div>
 
         </div>
 
-        <div class="final-cta" style="margin-top:3rem;">
-          <a href="book.html" class="cta-button large">Book Free Consultation</a>
+        <div class="final-cta">
+          <a href="book.html" class="cta-button hero-cta">Book Free Consultation</a>
           <p>100% free demo class. No strings attached.</p>
         </div>
+
       </div>
     </section>
 
@@ -95,9 +113,21 @@
       <p>KVK: [Organisations KVK] / VAT: [Organisations VAT]</p>
       <p><small>Keizersgracht 123, 1015 CJ Amsterdam</small></p>
       <p><small>Email: hello@goldpearlorganisations.nl</small></p>
-      <p><small><a href="terms.html" style="color: #fff; text-decoration: underline;">Terms & Conditions</a></small></p>
-      <p><small><a href="privacy.html" style="color: #fff; text-decoration: underline;">Privacy Statement</a></small></p>
+      <p><small><a href="terms.html">Terms & Conditions</a></small></p>
+      <p><small><a href="privacy.html">Privacy Statement</a></small></p>
     </div>
   </footer>
+
+  <!-- Mobile Nav Toggle -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
 </body>
 </html>

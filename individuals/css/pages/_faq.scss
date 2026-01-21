@@ -21,6 +21,7 @@
       max-width: 900px;
       margin: 0 auto;
       padding: 3rem 2rem;
+      text-align: left;
 
       h1 {
         font-size: clamp(2rem, 4vw, 3rem);
@@ -40,7 +41,7 @@
 ========================= */
 
 #faq {
-  padding: 4rem 0;
+  padding: 4rem 0 5rem; /* extra bottom spacing for footer rhythm */
   background: #fff;
 
   .container {
@@ -137,7 +138,6 @@
   text-align: center;
   border-radius: 8px;
 
-  /* All links default to gold */
   a {
     color: var(--gold);
     text-decoration: none;
@@ -148,11 +148,10 @@
     }
   }
 
-  /* CTA button override */
   .cta-button {
     display: inline-block;
     margin-bottom: 1rem;
-    color: #fff; // FIX: force white text on gold button
+    color: #fff;
 
     &:hover {
       text-decoration: none;
@@ -170,10 +169,26 @@
    Responsive Adjustments
 ========================= */
 
-@media screen and (max-width: 768px) {
-  .page-faq .hero .hero-content {
-    padding: 2rem 1.5rem;
-    text-align: center;
+/* Tablet & below */
+@media (max-width: 1024px) {
+  .page-faq .hero {
+    padding: 0 4rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-faq .hero {
+    padding: 0 1.5rem;
+
+    .hero-content {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+  }
+
+  #faq {
+    padding: 3rem 0 4rem;
   }
 
   #faq .faq-item label {
@@ -189,11 +204,8 @@
   }
 }
 
-.site-footer {
-  padding: 2rem 2rem 1rem;
-}
-
-@media screen and (max-width: 480px) {
+/* Small mobile */
+@media (max-width: 480px) {
   .page-faq .hero .hero-content h1 {
     font-size: 1.75rem;
   }

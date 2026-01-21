@@ -14,18 +14,17 @@
 =========================== */
 .page-services .hero {
   min-height: 70vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)),
-              url('../images/services.png') center / cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../images/services.png") center/cover;
   background-attachment: fixed;
   display: flex;
   align-items: center;
   color: white;
   padding: 0 15rem;
+}
 
-  .hero-content {
-    max-width: 600px;
-    padding: 5rem 2rem 6rem;
-  }
+.page-services .hero .hero-content {
+  max-width: 600px;
+  padding: 5rem 2rem 6rem;
 }
 
 .hero h1 {
@@ -47,32 +46,32 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem; /* tightened from 2rem */
 }
 
 .promise-item {
   background: white;
   padding: 2.5rem 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   text-align: center;
   flex: 1 1 calc(33.333% - 1.33rem);
+}
 
-  .icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
+.promise-item .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 
-  h3 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    color: #1a1a1a;
-  }
+.promise-item h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+}
 
-  p {
-    font-size: 1rem;
-    color: #333;
-  }
+.promise-item p {
+  font-size: 1rem;
+  color: #333;
 }
 
 @media (max-width: 1024px) {
@@ -90,6 +89,10 @@
 /* ==========================
    Shared Lead Text
 =========================== */
+.solution-lead {
+  margin-top: 1.5rem; /* tightened from 3rem */
+}
+
 .solution-lead h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
@@ -100,33 +103,32 @@
   list-style: none;
   padding: 0;
   text-align: center;
+}
 
-  li {
-    padding: 0.5rem 0;
-    font-size: 1rem;
-    color: #333;
-  }
+.solution-lead ul li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
 }
 
 /* ==========================
    Adjust spacing before service-detail
 =========================== */
 #our-services .solution-lead {
-  margin-bottom: 2rem; /* Reduced from ~3rem to tighten space before service cards */
+  margin-bottom: 1.5rem; /* tightened space before service cards */
 }
 
 /* ==========================
    Detailed Service Cards
-   (Grid-based vertical split)
 =========================== */
 .service-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* tightened from 3rem */
 }
 
 /* Image side */
@@ -143,7 +145,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 0; /* CRITICAL: prevents width overflow */
+  min-width: 0;
 }
 
 .service-detail h2 {
@@ -169,13 +171,13 @@
   padding: 0.4rem 0;
   display: flex;
   align-items: center;
+}
 
-  &::before {
-    content: "•";
-    color: #d4af37;
-    font-weight: bold;
-    margin-right: 0.5rem;
-  }
+.service-detail .goal-card::before {
+  content: "•";
+  color: #d4af37;
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
 
 .service-detail .cta-button {
@@ -183,30 +185,29 @@
   align-self: flex-start;
 }
 
-/* Alternate image/text sides */
-.service-detail:nth-child(even) {
-  .service-img {
-    order: 2;
-  }
-  .service-text {
-    order: 1;
-  }
+/* Alternate image/text sides on desktop */
+.service-detail:nth-child(even) .service-img {
+  order: 2;
+}
+
+.service-detail:nth-child(even) .service-text {
+  order: 1;
 }
 
 /* ==========================
-   Responsive – Stack Cards
+   Responsive – Stack Cards with Image on Top
 =========================== */
 @media (max-width: 1024px) {
   .service-detail {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* stack vertically */
   }
-
   .service-detail .service-img {
     height: 260px;
+    order: 0 !important; /* always first on mobile/tablet */
   }
-
   .service-detail .service-text {
     padding: 1.75rem;
+    order: 1 !important; /* always after image */
   }
 }
 
@@ -214,9 +215,15 @@
   .service-detail .service-img {
     height: 220px;
   }
-
   .service-detail .service-text {
     padding: 1.25rem;
+  }
+
+  /* Hero adjustments for mobile */
+  .page-services .hero {
+    padding: 0 2rem;
+    text-align: center;
+    justify-content: center;
   }
 }
 
@@ -228,51 +235,50 @@
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
-
-  .fit-good,
-  .fit-not {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 12px;
-    flex: 1 1 280px;
-
-    h3 {
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        position: relative;
-        padding-left: 1.2rem;
-        margin-bottom: 0.5rem;
-        font-size: 0.95rem;
-      }
-    }
-  }
-
-  .fit-good li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #d4af37;
-    font-weight: bold;
-  }
-
-  .fit-not li::before {
-    content: "✗";
-    position: absolute;
-    left: 0;
-    color: #d4af37;
-    font-weight: bold;
-  }
 }
 
-.site-footer {
-  padding: 2rem 2rem 1rem;
+.fit-full .fit-good,
+.fit-full .fit-not {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  flex: 1 1 280px;
+}
+
+.fit-full .fit-good h3,
+.fit-full .fit-not h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.fit-full .fit-good ul,
+.fit-full .fit-not ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fit-full .fit-good ul li,
+.fit-full .fit-not ul li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.fit-full .fit-good li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.fit-full .fit-not li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #d4af37;
+  font-weight: bold;
 }
 
 /* ==========================
@@ -280,16 +286,16 @@
 =========================== */
 .final-cta {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
 
-  .cta-button.large {
-    padding: 1.25rem 3rem;
-    font-size: 1.2rem;
-  }
+.final-cta .cta-button.large {
+  padding: 1.25rem 3rem;
+  font-size: 1.2rem;
+}
 
-  p {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #666;
-  }
+.final-cta p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #666;
 }

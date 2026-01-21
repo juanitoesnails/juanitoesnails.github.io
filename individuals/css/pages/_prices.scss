@@ -1,10 +1,15 @@
 /* _prices.scss */
 
-/* Hero Section */
+/* ==========================
+   Hero Section
+=========================== */
 .page-prices .hero {
   min-height: 50vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)),
-              url('../images/prices.png') center/cover;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("../images/prices.png") center / cover;
   display: flex;
   align-items: center;
   color: white;
@@ -33,7 +38,9 @@
   }
 }
 
-/* Pricing Section */
+/* ==========================
+   Pricing Section
+=========================== */
 #pricing {
   padding: 5rem 0;
 
@@ -51,7 +58,7 @@
     color: #2c3e50;
   }
 
-  /* ✅ FIXED GRID: ALWAYS 3 COLUMNS ON DESKTOP */
+  /* Always 3 columns on desktop */
   .promise-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -63,7 +70,7 @@
       background: white;
       padding: 2.5rem 1.75rem;
       border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
       text-align: center;
       transition: transform 0.2s ease;
 
@@ -115,13 +122,18 @@
   }
 }
 
+/* ==========================
+   Footer spacing consistency
+=========================== */
 .site-footer {
   padding: 2rem 2rem 1rem;
 }
 
-/* Responsive */
+/* ==========================
+   Responsive Adjustments
+=========================== */
 
-/* ✅ Tablet & below: ALL STACKED */
+/* Tablet & below: stack pricing cards */
 @media (max-width: 1024px) {
   .page-prices .hero .hero-content {
     max-width: 90%;
@@ -135,6 +147,7 @@
   }
 }
 
+/* Mobile adjustments */
 @media (max-width: 768px) {
   #pricing {
     padding: 3rem 1rem;
@@ -145,15 +158,46 @@
 
     .hero-content {
       padding: 2rem 1rem;
+      text-align: center;
     }
+  }
+
+  /* ✅ Final CTA mobile sizing (Option A) */
+  #pricing .final-cta {
+    margin-top: 2rem;
+  }
+
+  #pricing .final-cta .cta-button.large {
+    font-size: 1rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 10px;
+  }
+
+  #pricing .final-cta p {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
   }
 }
 
-/* Reduced Motion */
+/* ==========================
+   Reduced Motion
+=========================== */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+@media (max-width: 768px) {
+  .page-prices #pricing .final-cta .cta-button {
+    font-size: 1rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 10px;
+  }
+
+  .page-prices #pricing .final-cta p {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
   }
 }
