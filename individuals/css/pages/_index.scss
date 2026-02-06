@@ -90,26 +90,30 @@ h1, h2, h3 {
    Family-Run Section
 =========================== */
 .family-run {
-  padding: 3rem 0;
+  background: white;
+  padding: 1rem 0;
+  margin: 0.05rem 0;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05);
 }
 
 .family-run h2 {
-  font-size: 2rem;
-  text-align: left;
-  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.1rem;
 }
 
 /* ==========================
    Financial Struggle Section
 =========================== */
 .problem-section {
-  padding: 3rem 0;
+  padding: 0.1rem 0;
 }
 
 .problem-section h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .problem-list {
@@ -133,7 +137,9 @@ h1, h2, h3 {
    Situations Section
 =========================== */
 .who-section {
-  padding: 3rem 0;
+  background: white;
+  padding: 1rem 0;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05);
 }
 
 .who-section h2 {
@@ -161,7 +167,7 @@ h1, h2, h3 {
    Our Simple Solution
 =========================== */
 .solution-section {
-  padding: 3rem 0;
+  padding: 0.5rem 0;
   background: #f8f9fa;
 }
 
@@ -219,8 +225,14 @@ h1, h2, h3 {
   display: none;
 }
 
+/* ==========================
+   Results Section
+=========================== */
 .results {
-  margin-top: 2rem;
+  width: 100%;             /* full viewport width */       /* white stripe */
+  padding: 2rem 0;         /* vertical padding */
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05); /* subtle separator */
+  text-align: center;
 }
 
 .results h3 {
@@ -237,10 +249,14 @@ h1, h2, h3 {
   margin-top: 0.5rem;
 }
 
-/* Final CTA */
+/* ==========================
+   Final CTA
+=========================== */
 .final-cta {
+  width: 100%;             
+  padding: 3rem 0;         /* bigger padding for CTA */
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05);
   text-align: center;
-  margin-top: 2rem;
 }
 
 .final-cta .cta-button {
