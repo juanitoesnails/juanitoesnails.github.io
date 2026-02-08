@@ -389,7 +389,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   color: white;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../images/individuals.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../images/individuals.webp") center/cover no-repeat;
   padding: 0 15rem;
 }
 
@@ -679,7 +679,7 @@ h1, h2, h3 {
 =========================== */
 .page-services .hero {
   min-height: 70vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../images/services.png") center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../images/services.webp") center/cover;
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -967,7 +967,7 @@ h1, h2, h3 {
 ========================= */
 .page-faq .hero {
   min-height: 40vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../images/faq.png") center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../images/faq.webp") center/cover;
   display: flex;
   align-items: center;
   color: white;
@@ -1140,7 +1140,7 @@ h1, h2, h3 {
 =========================== */
 .page-prices .hero {
   min-height: 50vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/prices.png") center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/prices.webp") center/cover;
   display: flex;
   align-items: center;
   color: white;
@@ -1312,7 +1312,7 @@ h1, h2, h3 {
 =========================== */
 .page-book .hero {
   min-height: 50vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../images/book.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../images/book.webp") center/cover no-repeat;
   display: flex;
   align-items: center;
   color: white;
