@@ -1,61 +1,142 @@
 <!DOCTYPE html>
 <html lang="en" class="page-home">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gold Pearl | Financial Coaching for Individuals</title>
-  <link rel="icon" type="image/webp" sizes="32x32" href="images/logo.webp">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gold Pearl | Financial Coaching for Individuals & Families</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Gold Pearl Finance EZ offers financial coaching for individuals and families. Reduce money anxiety, save more, and gain confidence managing your finances with expert guidance.">
+  <meta name="keywords" content="financial coaching, money anxiety, personal finance, save money, financial guidance, financial planning, money management, budgeting help">
+
+  <!-- Preload Hero and Logo images -->
+  <link rel="preload" as="image" href="images/financial-coach-individuals.avif" fetchpriority="high">
+  <link rel="preload" as="image" href="images/logo.webp" fetchpriority="high">
+
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- AI + SEO: Organization Schema with Social Links -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gold Pearl Finance EZ",
+    "url": "https://goldpearlfinance.com",
+    "logo": "https://goldpearlfinance.com/images/logo.webp",
+    "description": "Financial coaching for individuals and families to reduce money anxiety, build savings, and improve financial confidence.",
+    "sameAs": [
+      "https://www.linkedin.com/company/gold-pearl"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+310620878260",
+      "contactType": "customer service",
+      "areaServed": "NL",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <!-- Optional: WebPage Schema to boost AI understanding -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Gold Pearl Finance EZ Homepage",
+    "url": "https://goldpearlfinance.com",
+    "description": "Homepage of Gold Pearl Finance EZ, offering expert financial coaching for individuals and families. Learn how to reduce money anxiety, save more, and gain confidence managing your finances.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://goldpearlfinance.com"
+        }
+      ]
+    }
+  }
+  </script>
+
 </head>
-<body>
 
-  <!-- Top Bar / Header -->
-  <header class="top-bar">
-    <!-- Logo -->
-    <div class="logo-area">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.webp" alt="Gold Pearl" class="logo">
-        <span class="logo-text">GOLD PEARL</span>
-      </a>
-    </div>
 
-    <!-- Right cluster: nav + CTA -->
-    <div class="header-right">
-      <!-- Main navigation -->
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="faq.html">F.A.Q.</a>
-        <a href="prices.html">Prices</a>
-        <a href="book.html" class="mobile-only">Book a Free Session</a>
-      </nav>
+<body class="page-home" style="
+  --hero-image: url('images/financial-coach-individuals.avif');
+  --hero-gradient-start: rgba(0,0,0,0.45);
+  --hero-gradient-end: rgba(0,0,0,0.25);
+">
 
-      <!-- CTA Button -->
-      <div class="top-right">
-        <a href="book.html" class="cta-button">Book Free Consultation</a>
-      </div>
+<header class="top-bar">
+  <div class="logo-area">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.webp" alt="Gold Pearl Finance logo" class="logo">
+      <span class="logo-text">Gold Pearl</span>
+    </a>
+  </div>
+
+  <div class="header-right">
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="prices.html">Prices</a>
+      <!-- Mobile-only CTA link -->
+      <a href="book.html" class="mobile-only">Book Free Session</a>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <div class="top-right">
+      <a href="book.html" class="cta-button">Book Free Session</a>
     </div>
 
     <!-- Hamburger menu -->
-    <button
-      class="menu-toggle"
-      aria-label="Toggle navigation"
-      aria-expanded="false">
-      &#9776;
-    </button>
-  </header>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
 
-  <!-- Hero Banner -->
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <h1>Overcome financial anxiety. Feel in control of your future.</h1>
-        <p class="hero-stat">After 2 hours, students save €140 on average + feel motivated about tomorrow.</p>
-        <p class="hero-subtext">Transparent prices. Simple lessons. Experts from banking & trading.</p>
-        <a href="book.html" class="cta-button hero-cta">Book a Free Session Now</a>
-      </div>
-    </section>
+<main>
+
+  <!-- HERO -->
+<section class="hero">
+
+  <!-- Hero image -->
+<picture class="hero-media">
+  <source srcset="images/financial-coach-individuals.avif" type="image/avif">
+  <source srcset="images/financial-coach-individuals.webp" type="image/webp">
+  <img
+    src="images/financial-coach-individuals.avif"
+    alt="Financial coach helping a couple plan savings and reduce money stress"
+    width="1600"
+    height="900"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  >
+</picture>
+
+<!-- Gradient overlay remains -->
+<div class="hero-overlay"></div>
+
+<div class="container hero-content">
+  <h1>Financial Coaching for Individuals: Overcome Money Anxiety and Take Control</h1>
+<p class="hero-stat">
+  In just 2 hours, participants save an average of €140 and gain confidence managing their finances.
+</p>
+<p class="hero-subtext">
+  Transparent pricing, simple lessons, and expert guidance from banking and trading professionals.
+</p>
+<a href="book.html" class="cta-button hero-cta">
+  Book Your Free Session
+</a>
+
+</div>
+
+</section>
+
 
     <!-- Family Run Section -->
     <section class="family-run">
@@ -67,7 +148,7 @@
     <!-- Problem Section -->
     <section id="problem" class="problem-section">
       <div class="container">
-        <h2>The Financial Struggle</h2>
+        <h2>The Financial Struggle in 2026</h2>
         <ul class="problem-list">
           <li>Rising costs of living squeezing every euro</li>
           <li>Guilt when spending on hobbies, passions, or travel</li>
@@ -94,7 +175,7 @@
           <li>Lost confidence handling investments</li>
           <li>Irregular income making planning impossible</li>
           <li>Retirement feeling out of reach</li>
-          <a href="book.html" class="cta-button hero-cta">Book Free Consultation</a>
+          <a href="book.html" class="cta-button hero-cta">Book Free Session</a>
         </ul>
 
       </div>
@@ -103,8 +184,11 @@
     <!-- Solution Section -->
     <section id="services" class="solution-section">
       <div class="container">
-        <h2>Our Simple Solution</h2>
-        <p class="solution-lead">A coach turns money anxiety into excitement with plans built for <em>your</em> happiness.</p>
+        <h2>Our Proven Solution for Financial Confidence</h2>
+        <p class="solution-lead">
+          Our expert coaches transform money anxiety into confidence with personalized financial plans designed for <em>your</em> goals and happiness.
+        </p>
+
 
         <!-- Desktop cards -->
         <div class="promise-grid">
@@ -154,13 +238,13 @@
           <h3>Real Results</h3>
           <p>After 2 hours: €140 saved, excitement about money, total clarity.</p>
           <div class="results-button">
-            <a href="#our-services" class="cta-button hero-cta">See Our Services</a>
+            <a href="#services" class="cta-button hero-cta">See Our Services</a>
           </div>
         </div>
 
         <div class="final-cta">
           <h3 class="final-cta-header">Ready to start your journey?</h3>
-          <a href="book.html" class="cta-button hero-cta">Book Free Consultation</a>
+          <a href="book.html" class="cta-button hero-cta">Book Free Session</a>
           <p>100% free demo class. No strings attached.</p>
         </div>
       </div>

@@ -1,55 +1,169 @@
 <!DOCTYPE html>
 <html lang="en" class="page-services">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gold Pearl | Services</title>
-  <link rel="icon" type="image/webp" sizes="32x32" href="images/logo.webp">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gold Pearl | Financial Coaching Services to Reduce Money Anxiety</title>
+  <meta name="description" content="Gold Pearl Finance EZ offers tailored financial coaching for individuals and families. Reduce money anxiety, improve budgeting, and gain confidence managing your finances.">
+  <meta name="keywords" content="financial coaching services, money anxiety coaching, personal finance guidance, budgeting advice, financial literacy training, financial planning for individuals, money management workshops">
+
+  <!-- Preload Hero and Logo images -->
+  <link rel="preload" as="image" href="images/financial-coaching-services.avif" fetchpriority="high">
+  <link rel="preload" as="image" href="images/logo.webp" fetchpriority="high">
+
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- AI + SEO Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gold Pearl Finance EZ",
+    "url": "https://goldpearlfinance.com",
+    "logo": "https://goldpearlfinance.com/images/logo.webp",
+    "description": "Financial coaching for individuals and families to reduce money anxiety and build confidence.",
+    "sameAs": [
+      "https://www.linkedin.com/company/gold-pearl"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+310620878260",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+
+  <!-- Services Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Group Financial Coaching Sessions",
+        "provider": {
+          "@type": "Organization",
+          "name": "Gold Pearl Finance EZ",
+          "url": "https://goldpearlfinance.com"
+        },
+        "description": "Small group sessions (~8 people) to learn financial skills, reduce money anxiety, and improve budgeting.",
+        "offers": {
+          "@type": "Offer",
+          "price": "50",
+          "priceCurrency": "EUR",
+          "url": "https://goldpearlfinance.com/book.html"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "1-on-1 Private Financial Coaching",
+        "provider": {
+          "@type": "Organization",
+          "name": "Gold Pearl Finance EZ",
+          "url": "https://goldpearlfinance.com"
+        },
+        "description": "Flexible one-on-one online sessions tailored to your financial goals, starting at €150 per session.",
+        "offers": {
+          "@type": "Offer",
+          "price": "150",
+          "priceCurrency": "EUR",
+          "url": "https://goldpearlfinance.com/book.html"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Executive Financial Coaching",
+        "provider": {
+          "@type": "Organization",
+          "name": "Gold Pearl Finance EZ",
+          "url": "https://goldpearlfinance.com"
+        },
+        "description": "Long-term executive coaching plans for individuals and business owners, personalized financial planning, pricing €2000–€5000 depending on goals.",
+        "offers": {
+          "@type": "Offer",
+          "price": "2000",
+          "priceCurrency": "EUR",
+          "url": "https://goldpearlfinance.com/book.html"
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
-<body>
+
+<body class="page-services" style="
+  --hero-image: url('images/services-hero.avif');
+  --hero-gradient-start: rgba(0,0,0,0.5);
+  --hero-gradient-end: rgba(0,0,0,0.3);
+">
 
   <!-- Top Bar / Header -->
   <header class="top-bar">
-    <!-- Logo -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
-        <img src="images/logo.webp" alt="Gold Pearl Logo" class="logo">
-        <span class="logo-text">GOLD PEARL</span>
+        <img src="images/logo.webp" alt="Gold Pearl Finance logo" class="logo">
+        <span class="logo-text">Gold Pearl</span>
       </a>
     </div>
 
-    <!-- Right cluster: nav + CTA -->
     <div class="header-right">
-      <!-- Main navigation -->
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="faq.html">F.A.Q.</a>
+        <a href="faq.html">FAQ</a>
         <a href="prices.html">Prices</a>
-        <a href="book.html" class="mobile-only">Book a Free Session</a>
+        <!-- Mobile-only CTA link -->
+        <a href="book.html" class="mobile-only">Book Free Session</a>
       </nav>
 
-      <!-- CTA Button (desktop only) -->
+      <!-- Desktop CTA -->
       <div class="top-right">
-        <a href="book.html" class="cta-button">Book a Free Session</a>
+        <a href="book.html" class="cta-button">Book Free Session</a>
       </div>
-    </div>
 
-    <!-- Hamburger menu -->
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <!-- Hamburger menu -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
   </header>
 
   <!-- Hero Banner -->
+   
   <main>
+
     <section class="hero">
-      <div class="hero-content">
-        <h1>Tailored Expertise, On Your Terms</h1>
-        <p class="hero-subtext">Find out what option works best for you</p>
+        
+          <!-- Hero image -->
+        <picture class="hero-media">
+          <source srcset="images/financial-coaching-services.avif" type="image/avif">
+          <source srcset="images/financial-coaching-services.webp" type="image/webp">
+          <img
+            src="images/financial-coaching-services.avif"
+            alt="Transparent pricing for Gold Pearl financial coaching services for individuals"
+            width="1600"
+            height="900"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
+
+        <!-- Gradient overlay remains -->
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <h1>Tailored Expertise, On Your Terms</h1>
+        <p class="hero-subtext">
+          We believe in clear, honest pricing — no surprises.
+        </p>
         <a href="book.html" class="cta-button hero-cta">Book a Free Session</a>
-      </div>
+
+        </div>
+
     </section>
+
 
     <!-- Our Services Section -->
     <section id="our-services" class="solution-section">
@@ -92,7 +206,7 @@
 
         <!-- Group Sessions Detail -->
         <div class="service-detail">
-          <img src="images/classroom.jpg" alt="Group Sessions" class="service-img">
+          <img src="images/classroom.webp" alt="Group financial coaching session at Gold Pearl Finance EZ" class="service-img">
           <div class="service-text">
             <h2>Group Sessions</h2>
             <p>Learn in small groups with interactive lessons. Low cost of entry with classes starting at €49</p>
@@ -117,12 +231,12 @@
             <div class="goal-card">Discover the type of investing that fits your lifestyle</div>
             <a href="book.html" class="cta-button">Book Free Consultation</a>
           </div>
-          <img src="images/individualcoaching.jpg" alt="Private Learning" class="service-img">
+          <img src="images/financial-coach-private-session.webp" alt="Individual financial coaching session to improve budgeting and money management" class="service-img">
         </div>
 
         <!-- Private Coaching Detail -->
         <div class="service-detail">
-          <img src="images/privatecoaching.jpg" alt="Private Coaching" class="service-img">
+          <img src="images/privatecoaching.webp" alt="Gold Pearl private financial coaching helping a client manage personal finances" class="service-img">
           <div class="service-text">
             <h2>Private Executive Coaching</h2>
             <p>Long-term coaching plans, personalized monitoring of your spending, saving, and investing goals.</p>

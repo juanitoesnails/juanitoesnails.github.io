@@ -1,64 +1,146 @@
 <!DOCTYPE html>
 <html lang="en" class="page-prices">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gold Pearl | Prices</title>
-  <link rel="icon" type="image/webp" sizes="32x32" href="images/logo.webp">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Top Bar / Header -->
+  <title>Gold Pearl | Transparent Financial Coaching Prices</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Discover Gold Pearl Finance EZ's transparent financial coaching pricing. Affordable group sessions, 1-on-1 coaching, and executive plans to reduce money anxiety and improve confidence.">
+  <meta name="keywords" content="financial coaching pricing, financial coaching cost, personal finance coaching packages, money coaching rates, affordable financial coaching, money anxiety coaching, one-on-one financial coaching, executive coaching rates">
+
+  <!-- Preload Hero and Logo images -->
+  <link rel="preload" as="image" href="images/financial-coaching-pricing.avif" fetchpriority="high">
+  <link rel="preload" as="image" href="images/logo.webp" fetchpriority="high">
+
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- AI + SEO: Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gold Pearl Finance EZ",
+    "url": "https://goldpearlfinance.com",
+    "logo": "https://goldpearlfinance.com/images/logo.webp",
+    "description": "Financial coaching for individuals and families to reduce money anxiety, build confidence, and improve financial literacy.",
+    "sameAs": [
+      "https://www.linkedin.com/company/gold-pearl"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+310620878260",
+      "contactType": "customer service",
+      "areaServed": "NL",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <!-- AI + SEO: WebPage Schema for Pricing Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Gold Pearl Finance EZ Pricing",
+    "url": "https://goldpearlfinance.com/prices.html",
+    "description": "Transparent financial coaching pricing from Gold Pearl Finance EZ. Includes group sessions, one-on-one coaching, and executive plans to help you save, reduce money anxiety, and gain confidence.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://goldpearlfinance.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prices",
+          "item": "https://goldpearlfinance.com/prices.html"
+        }
+      ]
+    }
+  }
+  </script>
+
+</head>
+
+<body class="page-prices" style="
+  --hero-image: url('images/prices-hero.avif');
+  --hero-gradient-start: rgba(20,20,20,0.35);
+  --hero-gradient-end: rgba(0,0,0,0.2);
+">
+
   <header class="top-bar">
-    <!-- Logo -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
-        <img src="images/logo.webp" alt="Gold Pearl" class="logo">
-        <span class="logo-text">GOLD PEARL</span>
+        <img src="images/logo.webp" alt="Gold Pearl Finance logo" class="logo">
+        <span class="logo-text">Gold Pearl</span>
       </a>
     </div>
 
-    <!-- Right cluster: nav + CTA -->
     <div class="header-right">
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="faq.html">F.A.Q.</a>
+        <a href="faq.html">FAQ</a>
         <a href="prices.html">Prices</a>
-        <a href="book.html" class="mobile-only">Book a Free Session</a>
+        <!-- Mobile-only CTA link -->
+        <a href="book.html" class="mobile-only">Book Free Session</a>
       </nav>
 
+      <!-- Desktop CTA -->
       <div class="top-right">
-        <a href="book.html" class="cta-button">Book Free Consultation</a>
+        <a href="book.html" class="cta-button">Book Free Session</a>
       </div>
-    </div>
 
-    <!-- Hamburger -->
-    <button
-      class="menu-toggle"
-      aria-label="Toggle navigation"
-      aria-expanded="false">
-      &#9776;
-    </button>
+      <!-- Hamburger menu -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
   </header>
 
   <main>
 
     <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-content">
-        <h1>Transparent, simple pricing for all services</h1>
-        <p class="hero-subtext">We believe in clear, honest pricing — no surprises.</p>
-        <a href="#pricing" class="cta-button hero-cta">See Prices</a>
-      </div>
-    </section>
+<section class="hero">
+
+  <!-- Hero image -->
+<picture class="hero-media">
+  <source srcset="images/financial-coaching-pricing.avif" type="image/avif">
+  <source srcset="images/financial-coaching-pricing.webp" type="image/webp">
+  <img
+    src="images/financial-coaching-pricing.avif"
+    alt="Transparent pricing for Gold Pearl financial coaching services for individuals"
+    width="1600"
+    height="900"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  >
+</picture>
+
+<!-- Gradient overlay remains -->
+<div class="hero-overlay"></div>
+
+<div class="container hero-content">
+  <h1>Transparent, simple pricing for all services</h1>
+<p class="hero-subtext">
+  We believe in clear, honest pricing — no surprises.
+</p>
+<a href="#pricing" class="cta-button hero-cta">See Prices</a>
+
+</div>
+
+</section>
 
     <!-- Pricing Section -->
     <section id="pricing" class="solution-section">
       <div class="container">
-        <h2>Our Prices</h2>
+        <h2>Financing Coaching Prices</h2>
         <p class="solution-lead">We offer accessible, flexible pricing for every learner.</p>
 
         <div class="promise-grid">
@@ -109,7 +191,7 @@
     </div>
 
     <div class="footer-right">
-      <p>© 2026 Gold Pearl EZ | Indivduals.</p>
+      <p>© 2026 Gold Pearl EZ | Individuals.</p>
     </div>
 
     <div class="footer-legal">

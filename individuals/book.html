@@ -1,59 +1,133 @@
 <!DOCTYPE html>
-<html lang="en" class="page-book">
+<html lang="en" class="page-services">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gold Pearl | Book a Free Consultation</title>
-  <link rel="icon" type="image/webp" sizes="32x32" href="images/logo.webp">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gold Pearl | Book Your Free Financial Coaching Session</title>
+
+  <meta name="description" content="Schedule your free financial coaching session with Gold Pearl Finance EZ. Reduce money anxiety, improve budgeting, and gain confidence managing your finances.">
+  
+  <meta name="keywords" content="book financial coaching, schedule financial session, money anxiety coaching, personal finance guidance, financial consultation, free coaching session, financial clarity booking">
+
+  <!-- Preload Hero and Logo images -->
+  <link rel="preload" as="image" href="images/book-financial-coaching-session.avif" fetchpriority="high">
+  <link rel="preload" as="image" href="images/logo.webp" fetchpriority="high">
+
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Organization Schema with LinkedIn -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gold Pearl Finance EZ",
+    "url": "https://goldpearlfinance.com",
+    "logo": "https://goldpearlfinance.com/images/logo.webp",
+    "sameAs": [
+      "https://www.linkedin.com/company/gold-pearl"
+    ],
+    "description": "Financial coaching for individuals and families to reduce money anxiety and build confidence.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+310620878260",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+
+  <!-- Booking / Action Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScheduleAction",
+    "name": "Book a Free Financial Coaching Session",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://goldpearlfinance.com/book.html",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "description": "Book your free financial coaching session with Gold Pearl Finance EZ to reduce money anxiety, improve budgeting, and gain confidence managing personal finances.",
+    "agent": {
+      "@type": "Organization",
+      "name": "Gold Pearl Finance EZ"
+    },
+    "result": {
+      "@type": "Reservation",
+      "name": "Financial Coaching Session",
+      "url": "https://goldpearlfinance.com/book.html"
+    }
+  }
+  </script>
+
 </head>
-<body>
+
+<body class="page-faq" style="
+  --hero-image: url('images/faq-banner.avif');
+  --hero-gradient-start: rgba(26, 117, 147, 0.45); /* adjust to match your design */
+  --hero-gradient-end: rgba(26, 117, 147, 0.25);
+">
 
   <!-- Top Bar / Header -->
   <header class="top-bar">
-    <!-- Logo -->
     <div class="logo-area">
       <a href="index.html" class="logo-link">
-        <img src="images/logo.webp" alt="Gold Pearl" class="logo">
-        <span class="logo-text">GOLD PEARL</span>
+        <img src="images/logo.webp" alt="Gold Pearl Finance logo" class="logo">
+        <span class="logo-text">Gold Pearl</span>
       </a>
     </div>
 
-    <!-- Right cluster: nav + CTA -->
     <div class="header-right">
-      <!-- Main navigation -->
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="faq.html">F.A.Q.</a>
+        <a href="faq.html">FAQ</a>
         <a href="prices.html">Prices</a>
-        <a href="book.html" class="mobile-only">Book a Free Session</a>
       </nav>
 
-      <!-- CTA Button -->
-      <div class="top-right">
-        <a href="book.html" class="cta-button">Book Free Consultation</a>
-      </div>
-    </div>
+      
 
-    <!-- Hamburger menu -->
-    <button
-      class="menu-toggle"
-      aria-label="Toggle navigation"
-      aria-expanded="false">
-      &#9776;
-    </button>
+
+      <!-- Hamburger menu -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
   </header>
 
-  <!-- Hero Banner -->
-  <main>
+<main>
+
     <section class="hero">
-      <div class="container hero-content">
-        <h1>Book Your Free Consultation</h1>
-        <p class="hero-subtext">Take the first step towards financial clarity and confidence. No strings attached.</p>
-        <a href="book.html" class="cta-button hero-cta">Book Now</a>
-      </div>
+        
+          <!-- Hero image -->
+        <picture class="hero-media">
+          <source srcset="images/book-financial-coaching-session.avif" type="image/avif">
+          <source srcset="images/book-financial-coaching-session.webp" type="image/webp">
+          <img
+            src="images/book-financial-coaching-session.avif"
+            alt="Book a financial coaching session with Gold Pearl Finance EZ"
+            width="1600"
+            height="900"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
+
+        <!-- Gradient overlay remains -->
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <h1>Book a free session</h1>
+        <p class="hero-subtext">
+          Take the first step towards financial clarity and confidence. No strings attached.
+        </p>
+        <a href="book.html" class="cta-button hero-cta">Book a Free Session</a>
+
+        </div>
+
     </section>
 
     <!-- Book Consultation Form -->

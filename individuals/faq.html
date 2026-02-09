@@ -1,21 +1,120 @@
 <!DOCTYPE html>
-<html lang="en" class="page-faq">
+<html lang="en" class="page-services">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gold Pearl | FAQ</title>
-  <link rel="icon" type="image/webp" sizes="32x32" href="images/logo.webp">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Header -->
+  <title>Gold Pearl | Financial Coaching FAQ | Money Anxiety & Personal Finance</title>
+  
+  <meta name="description" content="Frequently Asked Questions about Gold Pearl Finance EZ's financial coaching. Learn how our services help reduce money anxiety, improve budgeting, and boost confidence managing personal finances.">
+  
+  <meta name="keywords" content="financial coaching FAQ, money anxiety help, personal finance questions, financial literacy guidance, budgeting advice, financial coaching for individuals, money management tips">
+
+  <!-- Preload Hero and Logo images -->
+  <link rel="preload" as="image" href="images/personal-finance-faq.avif" fetchpriority="high">
+  <link rel="preload" as="image" href="images/logo.webp" fetchpriority="high">
+
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- AI + SEO Organization Schema with LinkedIn -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gold Pearl Finance EZ",
+    "url": "https://goldpearlfinance.com",
+    "logo": "https://goldpearlfinance.com/images/logo.webp",
+    "sameAs": [
+      "https://www.linkedin.com/company/gold-pearl"
+    ],
+    "description": "Financial coaching for individuals and families to reduce money anxiety and build confidence in managing personal finances.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+310620878260",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+
+  <!-- FAQPage Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What exactly is financial coaching?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Financial coaching combines education with practical guidance to help you organise your money, reduce stress, and make confident day-to-day decisions. Unlike other finance professionals, we approach money through an emotional, financial, and psychological lens." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a financial coach or a financial advisor?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A financial advisor recommends products and manages investments, usually for high-net-worth individuals. Financial coaching improves your overall financial wellbeing, helping you make informed decisions about spending, saving, and budgeting." }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is financial coaching best for?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Financial coaching is for anyone wanting to improve their financial understanding, set meaningful goals, and build healthier money habits, regardless of background or income level." }
+      },
+      {
+        "@type": "Question",
+        "name": "What can you achieve through financial coaching?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You can create a realistic monthly plan, get out of debt, build long-term savings, plan for big life goals, and reduce money anxiety, all with guidance tailored to your situation." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do you offer courses?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We offer online courses and personalized coaching accessible from anywhere. In-person sessions are currently available in the Amsterdam region." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this about getting rich quickly?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. We focus on sustainable financial wellbeing, not quick wins, risky tactics, or unrealistic promises." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a financial coach help me if I already make good money?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Once you have your spending and saving habits under control we focus on big goals. We help clients plan for retirement, family, and major purchases." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is financial coaching worth it if I’m already worried about money?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Financial literacy is about making informed choices with what you have, not how much you earn. Coaching helps you save more, waste less, and avoid expensive mistakes over time." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does personal finance advice feel so overwhelming?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Financial concepts can often be overly complicated. We simplify them with a real-world approach, breaking down complex terms and outdated advice into actionable steps." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to see results?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Clients report feeling more motivated after just 2 hours of coaching. For bigger goals, results can typically be seen within 6 months, depending on commitment and plan execution." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my information confidential?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We take your confidentiality seriously. We will never disclose your financial situation without your permission. See our privacy statement for full details." }
+      }
+    ]
+  }
+  </script>
+</head>
+
+
+<body class="page-faq" style="
+  --hero-image: none; /* no image if you want a solid color */
+  --hero-gradient-start: rgba(30, 105, 163, 1); /* #1e69a3 */
+  --hero-gradient-end: rgba(30, 105, 163, 1);
+">
+  <!-- Top Bar / Header -->
   <header class="top-bar">
     <div class="logo-area">
       <a href="index.html" class="logo-link">
-        <img src="images/logo.webp" alt="Gold Pearl" class="logo">
-        <span class="logo-text">GOLD PEARL</span>
+        <img src="images/logo.webp" alt="Gold Pearl Finance logo" class="logo">
+        <span class="logo-text">Gold Pearl</span>
       </a>
     </div>
 
@@ -23,28 +122,57 @@
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="faq.html">F.A.Q.</a>
+        <a href="faq.html">FAQ</a>
         <a href="prices.html">Prices</a>
-        <a href="book.html" class="mobile-only">Book a Free Session</a>
+        <!-- Mobile-only CTA link -->
+        <a href="book.html" class="mobile-only">Book Free Session</a>
       </nav>
 
+      <!-- Desktop CTA -->
       <div class="top-right">
-        <a href="book.html" class="cta-button">Book Free Consultation</a>
+        <a href="book.html" class="cta-button">Book Free Session</a>
       </div>
-    </div>
 
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      &#9776;
-    </button>
+      <!-- Hamburger menu -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>Frequently Asked Questions</h1>
-      <p class="hero-subtext">Everything you need to know about our coaching and how we help you gain financial clarity.</p>
-    </div>
-  </section>
+  <!-- Hero Banner -->
+   
+  <main>
+
+    <section class="hero">
+        
+          <!-- Hero image -->
+        <picture class="hero-media">
+          <source srcset="images/personal-finance-faq.avif" type="image/avif">
+          <source srcset="images/personal-finance-faq.webp" type="image/webp">
+          <img
+            src="images/personal-finance-faq.avif"
+            alt="Frequently Asked Questions about Gold Pearl Financial Coaching services"
+            width="1600"
+            height="900"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
+
+        <!-- Gradient overlay remains -->
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <h1>Frequently Asked Questions</h1>
+        <p class="hero-subtext">
+          Everything you need to know about our coaching and how we help you gain financial clarity.
+        </p>
+        <a href="book.html" class="cta-button hero-cta">Book a Free Session</a>
+
+        </div>
+
+    </section>
+
 
   <!-- FAQ -->
   <section id="faq">
