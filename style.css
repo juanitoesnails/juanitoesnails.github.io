@@ -104,7 +104,15 @@ nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 
 /* ── PAGE HERO ── */
 .page-hero { position: relative; min-height: 460px; display: flex; align-items: flex-end; overflow: hidden; padding-top: 72px; }
-.page-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.page-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
 .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.75) 35%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.1) 100%); }
 .page-hero-content { position: relative; z-index: 2; padding: 60px 64px 72px; max-width: 700px; }
 .page-hero-tag { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
