@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'DM Sans';
   src: url('/fonts/DMSans-VariableFont_opsz,wght.woff2') format('woff2');
-  font-weight: 200 700;
+  font-weight: 200 600;
   font-style: normal;
   font-display: swap;
 }
@@ -10,7 +10,7 @@
 @font-face {
   font-family: 'DM Sans';
   src: url('/fonts/DMSans-Italic-VariableFont_opsz,wght.woff2') format('woff2');
-  font-weight: 200 700;
+  font-weight: 200 600;
   font-style: italic;
   font-display: swap;
 }
@@ -19,7 +19,7 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   src: url('/fonts/CormorantGaramond-VariableFont_wght.woff2') format('woff2');
-  font-weight: 300 700;
+  font-weight: 300 600;
   font-style: normal;
   font-display: swap;
 }
@@ -27,7 +27,7 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   src: url('/fonts/CormorantGaramond-Italic-VariableFont_wght.woff2') format('woff2');
-  font-weight: 300 700;
+  font-weight: 300 600;
   font-style: italic;
   font-display: swap;
 }
