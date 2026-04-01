@@ -1,2 +1,2 @@
 # juanitoesnails.github.io
-Financial Coaching
+Financial Education
