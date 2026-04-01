@@ -15,7 +15,7 @@
   font-display: swap;
 }
 
-/* Cormorant Garamond */
+/* Cormorant Garamond */  
 @font-face {
   font-family: 'Cormorant Garamond';
   src: url('/fonts/CormorantGaramond-VariableFont_wght.woff2') format('woff2');
