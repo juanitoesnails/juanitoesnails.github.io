@@ -338,7 +338,7 @@ footer { background: var(--black); padding: 72px 64px 40px; border-top: 2px soli
     gap: 40px !important;
   }
 
-  /* Why GPF stat mini-grid */
+  /* Why avansera stat mini-grid */
   .section [style*="grid-template-columns:1fr 1fr"][style*="gap:2px"],
   .section [style*="grid-template-columns: 1fr 1fr"][style*="gap: 2px"] {
     grid-template-columns: 1fr 1fr !important;
