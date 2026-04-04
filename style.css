@@ -1,17 +1,16 @@
-/* DM Sans */
+/* 300 — body */
 @font-face {
-  font-family: 'DM Sans';
-  src: url('/fonts/DMSans-VariableFont_opsz,wght.woff2') format('woff2');
-  font-weight: 200 400;
-  font-style: normal;
+  font-family: 'Taviraj';
+  src: url('/fonts/Taviraj-Light.woff2') format('woff2');
+  font-weight: 300;
   font-display: swap;
 }
 
+/* 600 — nav/buttons */
 @font-face {
-  font-family: 'DM Sans';
-  src: url('/fonts/DMSans-Italic-VariableFont_opsz,wght.woff2') format('woff2');
-  font-weight: 200 400;
-  font-style: italic;
+  font-family: 'Taviraj';
+  src: url('/fonts/Taviraj-SemiBold.woff2') format('woff2');
+  font-weight: 600;
   font-display: swap;
 }
 
@@ -19,7 +18,7 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   src: url('/fonts/CormorantGaramond-VariableFont_wght.woff2') format('woff2');
-  font-weight: 300 400;
+  font-weight: 300 400 600;
   font-style: normal;
   font-display: swap;
 }
@@ -27,13 +26,13 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   src: url('/fonts/CormorantGaramond-Italic-VariableFont_wght.woff2') format('woff2');
-  font-weight: 300 400;
+  font-weight: 300 400 600;
   font-style: italic;
   font-display: swap;
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Taviraj', sans-serif;
 }
 
 h1, h2, h3 {
@@ -64,7 +63,7 @@ h1, h2, h3 {
 html { scroll-behavior: smooth; margin: 0; padding: 0; overscroll-behavior-y: none; }
 *, *::before, *::after { box-sizing: border-box; }
 a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--charcoal-mid); overflow-x: hidden; overscroll-behavior-y: none; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Taviraj', sans-serif; background: var(--white); color: var(--charcoal-mid); overflow-x: hidden; overscroll-behavior-y: none; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--black); }
@@ -83,10 +82,10 @@ nav {
 nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
 .nav-logo img { height: 40px; width: 40px; object-fit: contain; }
-.nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.22rem; font-weight: 600; color: var(--charcoal); letter-spacing: 0.02em; }
+.nav-logo-text { font-family: 'Taviraj', serif; font-size: 1.22rem; font-weight: 400; color: var(--charcoal); letter-spacing: 0.02em; }
 .nav-logo-text em { color: var(--gold); font-style: normal; }
 .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; }
-.nav-links > li > a { font-size: 0.67rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-mid); text-decoration: none; padding: 8px 14px; transition: color 0.2s; display: block; white-space: nowrap; }
+.nav-links > li > a { font-size: 0.67rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-mid); text-decoration: none; padding: 8px 14px; transition: color 0.2s; display: block; white-space: nowrap; }
 .nav-links > li > a:hover, .nav-links > li > a.active { color: var(--charcoal); }
 
 /* Dropdown */
@@ -119,9 +118,9 @@ nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 .mobile-menu.open { display: flex; }
 .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: rgba(255,255,255,0.7); text-decoration: none; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: block; transition: color 0.2s; }
 .mobile-menu a:hover { color: var(--gold); }
-.mobile-sub { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); padding: 22px 0 8px; display: block; font-family: 'DM Sans', sans-serif; }
+.mobile-sub { font-size: 0.6rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); padding: 22px 0 8px; display: block; font-family: 'Taviraj', sans-serif; }
 .mobile-indent { padding-left: 16px !important; font-size: 1.1rem !important; color: rgba(255,255,255,0.4) !important; }
-.mobile-cta { margin-top: 32px; background: var(--gold) !important; color: var(--charcoal) !important; text-align: center; padding: 18px !important; font-size: 0.72rem !important; font-weight: 600 !important; letter-spacing: 0.13em; text-transform: uppercase; font-family: 'DM Sans', sans-serif !important; border-bottom: none !important; }
+.mobile-cta { margin-top: 32px; background: var(--gold) !important; color: var(--charcoal) !important; text-align: center; padding: 18px !important; font-size: 0.72rem !important; font-weight: 600 !important; letter-spacing: 0.13em; text-transform: uppercase; font-family: 'Taviraj', sans-serif !important; border-bottom: none !important; }
 
 /* ── GOLD BAR ── */
 .gold-bar { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent); }
@@ -139,7 +138,7 @@ nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 .split-hero-stat { flex: 1; }
 .split-hero-stat + .split-hero-stat { border-left: 1px solid rgba(255,255,255,0.07); padding-left: 28px; }
 .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--creme); line-height: 1; }
-.stat-label { font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 6px; }
+.stat-label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 6px; }
 .split-hero-right { position: relative; overflow: hidden; }
 .split-hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 8s ease; }
 .split-hero-right:hover img { transform: scale(1.03); }
@@ -194,10 +193,10 @@ nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .form-group { display: flex; flex-direction: column; gap: 7px; }
 .form-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-mid); }
-.form-input, .form-select, .form-textarea { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 300; color: var(--charcoal); background: var(--white); border: 1px solid rgba(0,0,0,0.15); padding: 12px 15px; outline: none; transition: border-color 0.25s, box-shadow 0.25s; -webkit-appearance: none; width: 100%; }
+.form-input, .form-select, .form-textarea { font-family: 'Taviraj', sans-serif; font-size: 0.85rem; font-weight: 300; color: var(--charcoal); background: var(--white); border: 1px solid rgba(0,0,0,0.15); padding: 12px 15px; outline: none; transition: border-color 0.25s, box-shadow 0.25s; -webkit-appearance: none; width: 100%; }
 .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
 .form-textarea { resize: vertical; min-height: 130px; }
-.form-submit { font-family: 'DM Sans', sans-serif; font-size: 0.67rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--white); background: var(--charcoal); padding: 14px 34px; cursor: pointer; transition: all 0.25s; align-self: flex-start; }
+.form-submit { font-family: 'Taviraj', sans-serif; font-size: 0.67rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--white); background: var(--charcoal); padding: 14px 34px; cursor: pointer; transition: all 0.25s; align-self: flex-start; }
 .form-submit:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
 .form-note { font-size: 0.7rem; font-weight: 300; color: var(--grey-light); }
 
@@ -229,7 +228,7 @@ nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(0,0,0,0.08); }
 .pain-item { background: var(--white); padding: 24px 26px; display: flex; gap: 14px; align-items: flex-start; }
 .pain-item.on-pale { background: var(--grey-pale); }
-.pain-title { font-size: 0.82rem; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
+.pain-title { font-size: 0.82rem; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
 .pain-desc  { font-size: 0.75rem; font-weight: 300; line-height: 1.75; color: var(--grey-mid); }
 
 /* ── EDITORIAL LIST (How We Help — Option A) ── */
@@ -259,7 +258,7 @@ nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 /* ── FOOTER BUSINESS INFO ── */
 .footer-info { display: flex; flex-direction: column; gap: 5px; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.06); }
 .footer-info-row { font-size: 0.63rem; font-weight: 300; color: rgba(255,255,255,0.22); line-height: 1.6; }
-.footer-info-row strong { color: rgba(255,255,255,0.38); font-weight: 500; }
+.footer-info-row strong { color: rgba(255,255,255,0.38); font-weight: 600; }
 
 .faq-item { border-bottom: 1px solid var(--border); }
 .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; font-size: 0.88rem; font-weight: 400; color: var(--charcoal); transition: color 0.2s; user-select: none; gap: 20px; }
@@ -273,7 +272,7 @@ nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 /* ── FOOTER ── */
 footer { background: var(--black); padding: 72px 64px 40px; border-top: 2px solid var(--gold); }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 52px; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: #fff; margin-bottom: 14px; display: block; }
+.footer-brand { font-family: 'Taviraj', serif; font-size: 1.3rem; font-weight: 150; color: #fff; margin-bottom: 14px; display: block; }
 .footer-brand em { color: var(--gold); font-style: normal; }
 .footer-tagline { font-size: 0.75rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.28); max-width: 220px; }
 .footer-col-title { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
