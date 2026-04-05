@@ -531,3 +531,10 @@ footer { background: var(--black); padding: 72px 64px 40px; border-top: 2px soli
   .footer-top       { gap: 24px; }
   #cookie-banner    { padding: 14px 16px; }
 }
+
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
