@@ -4,29 +4,30 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#1C1C1A"/>
-  <meta name="description" content="Avansera privacy policy — how we collect, use and protect your personal data in accordance with GDPR and applicable Dutch and European law."/>
+  <meta name="description" content="Avansera privacy policy — how we collect, use, and protect your personal data."/>
   <title>Privacy Policy — Avansera</title>
-    <link rel="preload" href="/fonts/Taviraj-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Taviraj-Light.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/CormorantGaramond-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css"/>
-    <!-- Favicon -->
+  <link rel="stylesheet" href="css/region-selector.css"/>
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
   <!-- Canonical -->
-  <link rel="canonical" href="https://avansera.com/privacy.html"/>
+  <link rel="canonical" href="https://www.avansera.com/privacy.html" />
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Avansera"/>
   <meta property="og:title" content="Privacy Policy — Avansera"/>
-  <meta property="og:description" content="Avansera privacy policy — how we collect, use and protect your personal data in accordance with GDPR and applicable Dutch and European law."/>
-  <meta property="og:url" content="https://avansera.com/privacy.html"/>
-  <meta property="og:image" content="https://avansera.com/images/gateway.webp"/>
-  <meta property="og:locale" content="en_US"/>
+  <meta property="og:description" content="Avansera privacy policy — how we collect, use, and protect your personal data."/>
+  <meta property="og:url" content="https://www.avansera.com/privacy.html"/>
+  <meta property="og:image" content="https://avansera.com/images/avanseras_financial_expertise.webp"/>
+  <meta property="og:locale" content="en_GB"/>
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Privacy Policy — Avansera"/>
-  <meta name="twitter:description" content="Avansera privacy policy — how we collect, use and protect your personal data in accordance with GDPR and applicable Dutch and European law."/>
-  <meta name="twitter:image" content="https://avansera.com/images/gateway.webp"/>
+  <meta name="twitter:description" content="Avansera privacy policy — how we collect, use, and protect your personal data."/>
+  <meta name="twitter:image" content="https://avansera.com/images/avanseras_financial_expertise.webp"/>
   <!-- Google Site Verification (replace with your token) -->
   <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_TOKEN"/>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://avansera.com/index.html"},{"@type":"ListItem","position":2,"name":"Privacy Policy","item":"https://avansera.com/privacy.html"}]}</script>
@@ -40,169 +41,191 @@
 </head>
 <body>
 <nav id="main-nav" role="navigation" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo" aria-label="Avansera — Home">
-    <img src="images/logo.webp" alt="Avansera" width="40" height="40" loading="eager"/>
-    <span class="nav-logo-text">Avansera</span>
-  </a>
-  <ul class="nav-links" role="list">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li class="nav-dropdown" id="nav-services">
-      <a href="services.html" aria-haspopup="true" aria-expanded="false">Services</a>
-      <div class="dropdown-menu" role="menu">
-        <a href="services.html" role="menuitem">All Services</a>
-        <a href="services/business-owners.html" role="menuitem">For Business Owners</a>
-        <a href="services/companies.html" role="menuitem">For Companies</a>
-        <a href="services/nonprofits.html" role="menuitem">For Nonprofits</a>
-      </div>
-    </li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="insights.html">Insights</a></li>
-  </ul>
-  <a href="contact.html" class="nav-cta">Book a Call</a>
-  <button id="lang-switcher" type="button" aria-label="Switch language" style="font-family:'Taviraj',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;background:var(--gold);color:var(--charcoal);border:none;padding:8px 16px;cursor:pointer;border-radius:4px;min-height:44px;transition:all 0.3s ease;margin-right:12px;font-weight:700">EN / NL</button>
+  <div class="nav-left">
+    <a href="index.html" class="nav-logo" aria-label="Avansera — Home">
+      <img src="images/logo.svg" alt="Avansera" width="40" height="40" loading="eager"/>
+      <span class="nav-logo-text">Avansera</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="nav-dropdown" id="nav-services">
+        <a href="services.html" aria-haspopup="true" aria-expanded="false">Services</a>
+        <div class="dropdown-menu" role="menu">
+          <a href="services.html" role="menuitem">All Services</a>
+          <a href="services/business-owners.html" role="menuitem">For Business Owners</a>
+          <a href="services/companies.html" role="menuitem">For Companies</a>
+          <a href="services/nonprofits.html" role="menuitem">For the Public & Social sectors</a>
+        </div>
+      </li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="articles.html">Articles</a></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <div id="region-selector"></div>
+    <a href="contact.html" class="nav-cta">Book a Call</a>
+  </div>
   <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" type="button">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+  <div id="region-selector-mobile"></div>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <span class="mobile-sub">Services</span>
   <a href="services.html" class="mobile-indent">All Services</a>
   <a href="services/business-owners.html" class="mobile-indent">For Business Owners</a>
   <a href="services/companies.html" class="mobile-indent">For Companies</a>
-  <a href="services/nonprofits.html" class="mobile-indent">For Nonprofits</a>
+  <a href="services/nonprofits.html" class="mobile-indent">For the Public & Social sectors</a>
   <a href="faq.html">FAQ</a>
-  <a href="insights.html">Insights</a>
-  <a href="contact.html" class="mobile-cta">Book a Free Call</a>
+  <a href="articles.html">Articles</a>
+  <a href="contact.html" class="mobile-cta">Book a Call</a>
 </div>
 <div style="padding-top:72px;background:var(--white)">
   <div style="background:var(--charcoal);padding:72px 64px 64px">
-    <span style="font-size:0.6rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px" data-en="Legal" data-nl="Juridisch">Legal</span>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;color:#fff;line-height:1.1" data-en="Privacy Policy" data-nl="Privacybeleid">Privacy Policy</h1>
-    <p style="font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.45);margin-top:14px;max-width:520px;line-height:1.8" data-en="Your privacy matters to us. Find out how Avansera collects, uses, and protects your personal information." data-nl="Uw privacy is voor ons belangrijk. Ontdek hoe Avansera uw persoonlijke gegevens verzamelt, gebruikt en beschermt.">Your privacy matters to us. Find out how Avansera collects, uses, and protects your personal information.</p>
+    <span style="font-size:0.6rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px">Legal</span>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;color:#fff;line-height:1.1">Privacy Policy</h1>
+    <p style="font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.45);margin-top:14px;max-width:520px;line-height:1.8">Your privacy matters to us. Find out how Avansera collects, uses, and protects your personal information.</p>
   </div>
   <div class="gold-bar"></div>
   <div class="section bg-white">
-    <div style="display:grid;grid-template-columns:2fr 1fr;gap:72px;align-items:start">
+    <div style="max-width:860px;margin:0 auto">
       <div class="reveal">
         <div style="background:var(--grey-pale);border:1px solid var(--border);padding:18px 24px;margin-bottom:40px;display:flex;gap:12px;align-items:flex-start">
-          <p style="font-size:0.78rem;font-weight:300;color:var(--grey-mid);line-height:1.75" data-i18n="compliance">Avansera EZ is committed to compliance with The General Data Protection Regulation and is responsible for the processing of personal data as shown in this privacy policy.</p>
+          <p style="font-size:0.78rem;font-weight:300;color:var(--grey-mid);line-height:1.75">Avansera Ltd (company number 17368181), 124 City Road, London EC1V 2NX, United Kingdom, is the data controller responsible for the processing of personal data described in this privacy policy. We are committed to compliance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018, and the EU General Data Protection Regulation (EU GDPR).</p>
         </div>
-        
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Personal data" data-nl="Persoonsgegevens">Personal data</h2>
-        <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
-          <p style="margin:0 0 12px 0" data-i18n="personal-intro">Personal data is any information relating to a natural person which can identify them either directly or indirectly. Avansera processes your personal data because you use our services and / or because you provide this data to us yourself. Below you will find an overview of the personal data we process:</p>
-          <ul style="margin:0 0 12px 20px;padding:0">
-            <li data-i18n="personal-list-1">Personal identification information (Name, email address, phone number, etc.)</li>
-            <li data-i18n="personal-list-2">Address details</li>
-            <li data-i18n="personal-list-3">Location data</li>
-            <li data-i18n="personal-list-4">Bank account number</li>
-            <li data-i18n="personal-list-5">Other personal data that the customer actively provides, for example but not limited to in correspondence or by telephone.</li>
-          </ul>
-          <p style="margin:0" data-i18n="personal-closing">You are responsible for the accuracy of the personal data you have provided and for informing Avansera of any changes.</p>
-        </div>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="How we collect personal data" data-nl="Hoe wij persoonsgegevens verzamelen">How we collect personal data</h2>
-        <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
-          <p style="margin:0 0 12px 0" data-i18n="collect-intro">You directly provide Avansera with most of the data we collect. We collect and process data when you:</p>
-          <ul style="margin:0;padding:0 0 0 20px">
-            <li data-i18n="collect-list-1">Register online or request any of our products or services.</li>
-            <li data-i18n="collect-list-2">Voluntarily complete a customer survey or provide feedback on any of our message boards or via email.</li>
-            <li data-i18n="collect-list-3">Voluntarily provide personal data actively for example but not limited to via email or telephone.</li>
-            <li data-i18n="collect-list-4">Pay an invoice.</li>
-          </ul>
-        </div>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Special or sensitive personal data" data-nl="Bijzondere of gevoelige persoonsgegevens">Special or sensitive personal data</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="sensitive">We do not intend to collect data about website visitors who are under the age of 16. Unless they have permission from a parent or guardian. However, we cannot verify that a visitor is over 16. We therefore advise parents to be involved in the online activities of their children, in order to prevent data about children from being collected without parental consent. If you think that we have collected personal information about a minor without parental or guardian consent, please contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f5c50514b5e5c4b7f5850535b4f5a5e4d535956515e515c5a115c5052"><span class="__cf_email__" data-cfemail="bbd8d4d5cfdad8cffbdacddad5c8dec9dadcc9d4cecb95d8d4d6">[email&#160;protected]</span></a> and we will delete this information.</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Use of personal data" data-nl="Gebruik van persoonsgegevens">Use of personal data</h2>
-        <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
-          <p style="margin:0 0 12px 0" data-i18n="use-intro">Avansera collects your data for the following reasons:</p>
-          <ul style="margin:0 0 12px 20px;padding:0">
-            <li data-i18n="use-list-1">Delivery of Services</li>
-            <li data-i18n="use-list-2">Process payment and draft our invoices</li>
-            <li data-i18n="use-list-3">Sending email correspondence and /or advertising brochures</li>
-            <li data-i18n="use-list-4">To call or e-mail you if this is necessary to the performance of Services</li>
-            <li data-i18n="use-list-5">Informing you about changes to our services or products</li>
-            <li data-i18n="use-list-6">If we are legally obliged to do so, such as the data that we need for our tax return</li>
-            <li data-i18n="use-list-7">Sending our newsletter and/or advertising leaflet</li>
-            <li data-i18n="use-list-8">Website analytics</li>
-          </ul>
-          <p style="margin:0" data-i18n="use-closing">When we process your payment, it may send your data to, and also use the resulting information from, credit reference agencies to prevent fraudulent purchases.</p>
-        </div>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Retaining personal data" data-nl="Bewaren van persoonsgegevens">Retaining personal data</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="retention-intro">Avansera does not store Personal Data longer than is strictly necessary to achieve the purposes for which your Personal Data is collected. We will store your Personal Data for the duration in which we have an active agreement to provide you services. Following the termination of such agreement we will continue to store your Personal Data for a 12 month retention period.</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Sharing of Personal Data with Third Parties" data-nl="Delen van persoonsgegevens met derden">Sharing of Personal Data with Third Parties</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="sharing-intro">Avansera shares your personal data with various third parties if this is necessary for the execution of the agreement and to comply with any legal obligation. In addition, in exceptional circumstances, if Avansera wishes to provide your personal data to other third parties, we will only do this with your explicit consent.</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Cookies" data-nl="Cookies">Cookies</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="cookies-intro">Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. You can set your browser not to accept cookies.</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Use of Cookies" data-nl="Gebruik van cookies">Use of Cookies</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="cookies-use">Avansera does not use cookies or similar techniques for the running of our website.</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Privacy policies of other websites" data-nl="Privacybeleid van andere websites">Privacy policies of other websites</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="cookies-other">The Avansera website contains links to other websites. Our privacy policy applies only to our website, if you click on a link to another website, please refer to their privacy policy.</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Automated decision making" data-nl="Automatisch besluit">Automated decision making</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="automated-intro"> Avansera does not use automated decision making.</p>
-      </div>
-      <div style="margin-bottom:48px">
-  <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)"
-    data-en="Your data protection rights" data-nl="Uw rechten op het gebied van gegevensbescherming">Your data protection rights</h2>
-  </h2>
 
-    <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
-      <p style="margin:0 0 12px 0" data-i18n="rights-intro">Avansera wants to ensure that you are fully informed of all your data protection rights. You have the right to the following rights with respect to your personal data:</p>
-      <ul style="margin:0 0 12px 20px;padding:0">
-        <li data-i18n="rights-list-1">Right of access – You have the right to request copies of your personal data.</li>
-        <li data-i18n="rights-list-2">Right to rectification – You have the right to request correction of information that you believe is incorrect or incomplete.</li>
-        <li data-i18n="rights-list-3">Right to erasure – You have the right to request erasure of your personal data, subject to certain conditions.</li>
-        <li data-i18n="rights-list-4">Right to restrict processing – You have the right to request restriction of the processing of your personal data, subject to certain conditions.</li>
-        <li data-i18n="rights-list-5">Right to object to processing – You have the right to object to the processing of your personal data, subject to certain conditions.</li>
-        <li data-i18n="rights-list-6">Right to data portability – You have the right to request that the data we have collected be transferred to another organization, or directly to you, subject to certain conditions.</li>
-      </ul>
-      <p style="margin:0" data-i18n="rights-closing">If you wish to exercise any of these rights, please contact us at contact@avansera.com. We will respond to your request within four weeks.</p>
-    </div>
-  </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Securing of Personal Data" data-nl="Beveiliging van persoonsgegevens">Securing of Personal Data</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="security-intro"> Avansera takes the protection of your personal data seriously and takes appropriate measures to prevent misuse, loss, unauthorized access, unwanted disclosure and unauthorized modification. If you feel that your personal data is not properly secured or there are indications of misuse, please contact our customer service via contact@avansera.com</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="Amendments to our privacy policy" data-nl="Wijzigingen in ons privacybeleid">Amendments to our privacy policy</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="changes-intro"> Avansera keeps its privacy policy under regular review and reserves the right to amend its privacy policy from time to time. Amendments to the policy will be published on the Avansera official website and will apply from the date of publishing.</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="How to contact the appropriate authority" data-nl="Hoe u contact kunt opnemen met de bevoegde autoriteit">How to contact the appropriate authority</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="authority-intro"> Avansera would like to point out that you have the opportunity to file a complaint with the national supervisory authority, the Dutch Data Protection Authority. This can be done via the following link: 
-https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegevens/tip-ons </p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)" data-en="How to contact us" data-nl="Hoe u contact met ons kunt opnemen">How to contact us</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic" data-i18n="contact-intro"> If you have any questions concerning this privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us at contact@avansera.com</p>
-      </div>
-      </div>
-      <div class="reveal rd1" style="position:sticky;top:96px">
-        <div style="background:var(--charcoal);padding:32px 28px;border-top:2px solid var(--gold)">
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:#fff;margin-bottom:10px">Have <em style="color:var(--gold);font-style:italic">questions?</em></h3>
-          <p style="font-size:0.75rem;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:22px;line-height:1.8">Contact us directly and we will be happy to help.</p>
-          <a href="contact.html" class="btn-gold" style="width:100%;text-align:center;display:block">Get In Touch</a>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Who this policy applies to</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0">If you are in the United Kingdom, your personal data is processed under the UK GDPR and the Data Protection Act 2018. If you are in the European Economic Area (EEA), your personal data is processed under the EU GDPR.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Personal data</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">Personal data is any information relating to a natural person which can identify them either directly or indirectly. Avansera processes your personal data because you use our services and / or because you provide this data to us yourself. Below you will find an overview of the personal data we process:</p>
+            <ul style="margin:0 0 12px 20px;padding:0">
+              <li>Personal identification information (Name, email address, phone number, etc.)</li>
+              <li>Address details</li>
+              <li>Location data</li>
+              <li>Bank account number</li>
+              <li>Other personal data that the customer actively provides, for example but not limited to in correspondence or by telephone.</li>
+            </ul>
+            <p style="margin:0">You are responsible for the accuracy of the personal data you have provided and for informing Avansera of any changes.</p>
+          </div>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">How we collect personal data</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">You directly provide Avansera with most of the data we collect. We collect and process data when you:</p>
+            <ul style="margin:0;padding:0 0 0 20px">
+              <li>Register online or request any of our products or services.</li>
+              <li>Voluntarily complete a customer survey or provide feedback on any of our message boards or via email.</li>
+              <li>Voluntarily provide personal data actively for example but not limited to via email or telephone.</li>
+              <li>Pay an invoice.</li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Special or sensitive personal data</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">We do not intend to collect personal data about children without the consent of a parent or guardian. We cannot verify the age of visitors to our website, so we advise parents and guardians to be involved in their children's online activities to help prevent children's data from being collected without consent. The age of consent differs by jurisdiction: under the EU GDPR it is 16, and under the UK GDPR it is 13. If you believe that we have collected personal data about a child without appropriate consent, please contact us at <a href="mailto:contact@avansera.com">contact@avansera.com</a> and we will delete that information.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Use of personal data</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">Avansera collects your data for the following reasons:</p>
+            <ul style="margin:0 0 12px 20px;padding:0">
+              <li>Delivery of Services</li>
+              <li>Process payment and draft our invoices</li>
+              <li>Sending email correspondence and /or advertising brochures</li>
+              <li>To call or e-mail you if this is necessary to the performance of Services</li>
+              <li>Informing you about changes to our services or products</li>
+              <li>If we are legally obliged to do so, such as the data that we need for our tax return</li>
+              <li>Sending our newsletter and/or advertising leaflet</li>
+              <li>Website analytics</li>
+            </ul>
+            <p style="margin:0">When we process your payment, it may send your data to, and also use the resulting information from, credit reference agencies to prevent fraudulent purchases.</p>
+          </div>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Lawful basis for processing</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">Under the UK GDPR and the EU GDPR, we must have a lawful basis for each purpose for which we process personal data. The bases we rely on are set out below:</p>
+            <ul style="margin:0 0 12px 20px;padding:0">
+              <li><strong>Performance of a contract</strong> — providing the services you have requested, and processing payments and invoices.</li>
+              <li><strong>Legitimate interests</strong> — responding to enquiries, contacting you about changes to our services, and improving our website.</li>
+              <li><strong>Consent</strong> — sending newsletters and marketing communications, and placing optional analytics cookies. You may withdraw your consent at any time.</li>
+              <li><strong>Legal obligation</strong> — retaining records required for tax, accounting, or other legal requirements.</li>
+            </ul>
+            <p style="margin:0">Where we rely on your consent, you have the right to withdraw it at any time without affecting the lawfulness of processing carried out before withdrawal.</p>
+          </div>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Retaining personal data</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Avansera does not store Personal Data longer than is strictly necessary to achieve the purposes for which your Personal Data is collected. We will store your Personal Data for the duration in which we have an active agreement to provide you services. Following the termination of such agreement we will continue to store your Personal Data for a 12 month retention period.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Sharing of Personal Data with Third Parties</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Avansera shares your personal data with various third parties if this is necessary for the execution of the agreement and to comply with any legal obligation. In addition, in exceptional circumstances, if Avansera wishes to provide your personal data to other third parties, we will only do this with your explicit consent.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Cookies</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Cookies are text files that are placed on your computer to collect standard Internet log data and information about visitor behaviour. You can set your browser to not accept cookies.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Use of Cookies</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Avansera uses cookies and similar technologies to understand how visitors use our website. We do not rely on cookies that are strictly necessary for the website to function. Optional analytics cookies (for example Google Analytics) are only placed with your consent, which you may withdraw at any time by clearing your browser cookies. You can also set your browser to refuse cookies.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Privacy policies of other websites</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">The Avansera website contains links to other websites. Our privacy policy applies only to our website, if you click on a link to another website, please refer to their privacy policy.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Automated decision making</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Avansera does not use automated decision making.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Your data protection rights</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">Avansera wants to ensure that you are fully informed of all your data protection rights. You have the right to the following rights with respect to your personal data:</p>
+            <ul style="margin:0 0 12px 20px;padding:0">
+              <li>Right of access – You have the right to request copies of your personal data.</li>
+              <li>Right to rectification – You have the right to request correction of information that you believe is incorrect or incomplete.</li>
+              <li>Right to erasure – You have the right to request erasure of your personal data, subject to certain conditions.</li>
+              <li>Right to restrict processing – You have the right to request restriction of the processing of your personal data, subject to certain conditions.</li>
+              <li>Right to object to processing – You have the right to object to the processing of your personal data, subject to certain conditions.</li>
+              <li>Right to data portability – You have the right to request that the data we have collected be transferred to another organisation, or directly to you, subject to certain conditions.</li>
+            </ul>
+            <p style="margin:0">If you wish to exercise any of these rights, please contact us at contact@avansera.com. We will respond to your request without undue delay and in any event within one month of receiving it, as required by the UK GDPR and the EU GDPR.</p>
+          </div>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Securing of Personal Data</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Avansera takes the protection of your personal data seriously and takes appropriate measures to prevent misuse, loss, unauthorized access, unwanted disclosure and unauthorized modification. If you feel that your personal data is not properly secured or there are indications of misuse, please contact our customer service via contact@avansera.com</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">Amendments to our privacy policy</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Avansera keeps its privacy policy under regular review and reserves the right to amend its privacy policy from time to time. Amendments to the policy will be published on the Avansera official website and will apply from the date of publishing.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">How to complain to a supervisory authority</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">You have the right to lodge a complaint with a supervisory authority about how we process your personal data.</p>
+            <p style="margin:0 0 12px 0"><strong>If you are in the United Kingdom:</strong> you may complain to the Information Commissioner's Office (ICO): <a href="https://ico.org.uk/" style="color:var(--grey-mid)">https://ico.org.uk/</a></p>
+            <p style="margin:0"><strong>If you are in the European Economic Area (EEA):</strong> you may complain to the supervisory authority in the country where you live or work. A list of EEA supervisory authorities is available from the European Data Protection Board: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" style="color:var(--grey-mid)">https://edpb.europa.eu/about-edpb/about-edpb/members_en</a></p>
+          </div>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">EU/EEA representative</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Avansera Ltd is established in the United Kingdom. We process the personal data of individuals in the European Economic Area (EEA) only on an occasional, low-risk basis and not on a large scale, and we do not process special category data on a large scale. We are therefore not required to appoint a representative in the European Union under Article 27 of the EU GDPR. If you are in the EEA and have any questions or concerns about the processing of your personal data, please contact us using the details in the next section.</p>
+        </div>
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">How to contact us</h2>
+          <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">If you have any questions concerning this privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us at contact@avansera.com</p>
         </div>
       </div>
     </div>
@@ -211,22 +234,16 @@ https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegev
 <footer role="contentinfo">
   <div class="footer-top">
     <div>
-      <span class="footer-brand"><em>Avansera</em></span>
-      <p class="footer-tagline">Institutional expertise, human scale. Empowering businesses and nonprofits to lead with financial confidence.</p>
-      <div class="footer-info">
-        <div class="footer-info-row"><strong>KVK:</strong> 99560917</div>
-        <div class="footer-info-row"><strong>BTW:</strong> NL005396120B80</div>
-        <div class="footer-info-row"><strong>E:</strong> <a href="/cdn-cgi/l/email-protection#75161a1b0114160135121a19110510140719131c1b141b16105b161a18" style="color:inherit;text-decoration:none"><span class="__cf_email__" data-cfemail="51323e3f2530322511363e3d35213430233d37383f303f32347f323e3c"><span class="__cf_email__" data-cfemail="a3c0cccdd7c2c0d7e3c2d5c2cdd0c6d1c2c4d1ccd6d38dc0ccce">[email&#160;protected]</span></span></a></div>
-        <div class="footer-info-row"><strong>T:</strong> <a href="tel:+310620878260" style="color:inherit;text-decoration:none">+31 06 2087 8260</a></div>
-        
-      </div>
+      <span class="footer-brand"><em>Avansera Ltd</em></span>
+      <p style="font-size:0.63rem;color:var(--gold);margin-bottom:8px">A company registered in England and Wales</p>
+      <p class="footer-tagline">Avansera is a firm dedicated to providing high-quality financial consultancy and education services to clients globally. We pride ourselves on our tailored solutions and value-based approach to business.</p>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul role="list">
         <li><a href="services/business-owners.html">For Business Owners</a></li>
         <li><a href="services/companies.html">For Companies</a></li>
-        <li><a href="services/nonprofits.html">For Nonprofits</a></li>
+        <li><a href="services/nonprofits.html">For the Public & Social Sectors</a></li>
         <li><a href="services.html">All Services</a></li>
       </ul>
     </div>
@@ -241,17 +258,29 @@ https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegev
     <div class="footer-col">
       <div class="footer-col-title">Get Started</div>
       <ul role="list">
-        <li><a href="contact.html">Book a Free Call</a></li>
+        <li><a href="contact.html">Book a Call</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul role="list">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-info">
+        <div class="footer-info-row"><strong>Company number:</strong> 17368181</div>
+        <div class="footer-info-row"><strong>E:</strong> <a href="mailto:contact@avansera.com" style="color:inherit;text-decoration:none">contact@avansera.com</a></div>
+        <div class="footer-info-row"><strong>T:</strong> <a href="tel:+310620878260" style="color:inherit;text-decoration:none">+31 06 2087 8260</a></div>
+        <div class="footer-info-row"><strong>Address:</strong> 124 City Road, London EC1V 2NX</div>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">&#169; 2026 Avansera. All rights reserved.</p>
-    <div class="footer-legal">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </div>
   </div>
 </footer>
 <div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--black);border-top:2px solid var(--gold);padding:20px 40px;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
@@ -264,7 +293,7 @@ https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegev
     <button onclick="declineCookies()" type="button" aria-label="Decline cookies" style="font-family:'Taviraj',sans-serif;font-size:0.65rem;font-weight:150;letter-spacing:0.12em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.15);padding:10px 22px;cursor:pointer;min-height:44px">Decline</button>
   </div>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Nav scroll
 const mainNav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => mainNav.classList.toggle('scrolled', window.scrollY > 40));
@@ -301,131 +330,7 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); obs.unobserve(el.target); }});
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Language Switcher with Full Content Translations
-const langSwitcher = document.getElementById('lang-switcher');
-let currentLanguage = localStorage.getItem('language') || 'en';
-
-// Comprehensive translations object
-const pageTranslations = {
-  en: {
-    'compliance': 'Avansera EZ is committed to compliance with The General Data Protection Regulation and is responsible for the processing of personal data as shown in this privacy policy.',
-    'personal-intro': 'Personal data is any information relating to a natural person which can identify them either directly or indirectly. Avansera processes your personal data because you use our services and / or because you provide this data to us yourself. Below you will find an overview of the personal data we process:',
-    'personal-list-1': 'Personal identification information (Name, email address, phone number, etc.)',
-    'personal-list-2': 'Address details',
-    'personal-list-3': 'Location data',
-    'personal-list-4': 'Bank account number',
-    'personal-list-5': 'Other personal data that the customer actively provides, for example but not limited to in correspondence or by telephone.',
-    'personal-closing': 'You are responsible for the accuracy of the personal data you have provided and for informing Avansera of any changes.',
-    'collect-intro': 'You directly provide Avansera with most of the data we collect. We collect and process data when you:',
-    'collect-list-1': 'Register online or request any of our products or services.',
-    'collect-list-2': 'Voluntarily complete a customer survey or provide feedback on any of our message boards or via email.',
-    'collect-list-3': 'Voluntarily provide personal data actively for example but not limited to via email or telephone.',
-    'collect-list-4': 'Pay an invoice.',
-    'sensitive': 'We do not intend to collect data about website visitors who are under the age of 16. Unless they have permission from a parent or guardian. However, we cannot verify that a visitor is over 16. We therefore advise parents to be involved in the online activities of their children, in order to prevent data about children from being collected without parental consent. If you think that we have collected personal information about a minor without parental or guardian consent, please contact us at contact@avansera.com and we will delete this information.',
-    'use-intro': 'Avansera collects your data for the following reasons:',
-    'use-list-1': 'Delivery of Services',
-    'use-list-2': 'Process payment and draft our invoices',
-    'use-list-3': 'Sending email correspondence and /or advertising brochures',
-    'use-list-4': 'To call or e-mail you if this is necessary to the performance of Services',
-    'use-list-5': 'Informing you about changes to our services or products',
-    'use-list-6': 'If we are legally obliged to do so, such as the data that we need for our tax return',
-    'use-list-7': 'Sending our newsletter and/or advertising leaflet',
-    'use-list-8': 'Website analytics',
-    'use-closing': 'When we process your payment, it may send your data to, and also use the resulting information from, credit reference agencies to prevent fraudulent purchases.',
-    'retention-intro': 'Avansera does not retain personal data longer than strictly necessary to achieve the purposes for which your personal data is collected. We retain your personal data during the period in which we have an active agreement to provide you with services. After termination of such an agreement, we retain your personal data for an additional retention period of 12 months.',
-    'sharing-intro': 'Avansera shares your personal data with various third parties if this is necessary for the performance of the agreement and to comply with a legal obligation. In addition, we will in exceptional cases, if Avansera wishes to provide your personal data to other third parties, only do so with your explicit consent.',
-    'cookies-intro': 'Cookies are text files that are placed on your computer to collect standard Internet log data and information about visitor behavior. You can set your browser to not accept cookies.',
-    'cookies-use': 'Avansera does not use cookies or similar techniques for the functioning of our website.',
-    'cookies-other': 'The Avansera website contains links to other websites. Our privacy policy only applies to our website. If you click on a link to another website, please consult the privacy policy of that website.',
-    'automated-intro': 'Avansera does not use automated decision-making.',
-    'rights-intro': 'Avansera wants to ensure that you are fully informed of all your data protection rights. You have the right to the following rights with respect to your personal data:',
-    'rights-list-1': 'Right of access – You have the right to request copies of your personal data.',
-    'rights-list-2': 'Right to rectification – You have the right to request correction of information that you believe is incorrect or incomplete.',
-    'rights-list-3': 'Right to erasure – You have the right to request erasure of your personal data, subject to certain conditions.',
-    'rights-list-4': 'Right to restrict processing – You have the right to request restriction of the processing of your personal data, subject to certain conditions.',
-    'rights-list-5': 'Right to object to processing – You have the right to object to the processing of your personal data, subject to certain conditions.',
-    'rights-list-6': 'Right to data portability – You have the right to request that the data we have collected be transferred to another organization, or directly to you, subject to certain conditions.',
-    'rights-closing': 'If you wish to exercise any of these rights, please contact us at contact@avansera.com. We will respond to your request within four weeks.',
-    'security-intro': 'Avansera takes the protection of your personal data seriously and takes appropriate measures to prevent misuse, loss, unauthorized access, unwanted disclosure and unauthorized modification. If you feel that your personal data is not properly secured or there are signs of misuse, please contact our customer service at contact@avansera.com.',
-    'changes-intro': 'Avansera regularly reviews its privacy policy and reserves the right to change this privacy policy from time to time. Changes to the policy will be published on the official website of Avansera and are effective from the date of publication.',
-    'authority-intro': 'Avansera would like to point out that you have the option to file a complaint with the national supervisory authority, the Personal Data Authority. This can be done via the following link:',
-    'contact-intro': 'If you have questions about this privacy policy, the information we hold about you, or if you would like to exercise any of your data protection rights, please feel free to contact us at contact@avansera.com.',
-  },
-  nl: {
-    'compliance': 'Avansera EZ zet zich in voor naleving van de Algemene Verordening Gegevensbescherming (AVG) en is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacybeleid.',
-    'personal-intro': 'Persoonsgegevens zijn alle informatie met betrekking tot een natuurlijke persoon waarmee deze direct of indirect kan worden geïdentificeerd. Avansera verwerkt uw persoonsgegevens doordat u gebruikmaakt van onze diensten en/of omdat u deze gegevens zelf aan ons verstrekt. Hieronder vindt u een overzicht van de persoonsgegevens die wij verwerken:',
-    'personal-list-1': 'Persoonlijke identificatiegegevens (naam, e-mailadres, telefoonnummer, enz.)',
-    'personal-list-2': 'Adresgegevens',
-    'personal-list-3': 'Locatiegegevens',
-    'personal-list-4': 'Bankrekeningnummer',
-    'personal-list-5': 'Overige persoonsgegevens die de klant actief verstrekt, bijvoorbeeld maar niet beperkt tot in correspondentie of telefonisch.',
-    'personal-closing': 'U bent verantwoordelijk voor de juistheid van de door u verstrekte persoonsgegevens en voor het informeren van Avansera over eventuele wijzigingen.',
-    'collect-intro': 'U verstrekt de meeste gegevens die wij verzamelen rechtstreeks aan Avansera. Wij verzamelen en verwerken gegevens wanneer u:',
-    'collect-list-1': 'Zich online registreert of een van onze producten of diensten aanvraagt.',
-    'collect-list-2': 'Vrijwillig een klantonderzoek invult of feedback geeft via onze berichtborden of per e-mail.',
-    'collect-list-3': 'Vrijwillig actief persoonsgegevens verstrekt, bijvoorbeeld maar niet beperkt tot via e-mail of telefoon.',
-    'collect-list-4': 'Een factuur betaalt.',
-    'sensitive': 'Wij hebben niet de intentie gegevens te verzamelen over websitebezoekers die jonger zijn dan 16 jaar, tenzij zij toestemming hebben van een ouder of voogd. Wij kunnen echter niet controleren of een bezoeker ouder is dan 16. Wij raden ouders daarom aan betrokken te zijn bij de online activiteiten van hun kinderen, om te voorkomen dat gegevens over kinderen worden verzameld zonder ouderlijke toestemming. Als u denkt dat wij zonder toestemming van een ouder of voogd persoonlijke gegevens hebben verzameld over een minderjarige, neem dan contact met ons op via contact@avansera.com en wij zullen deze informatie verwijderen.',
-    'use-intro': 'Avansera verzamelt uw gegevens om de volgende redenen:',
-    'use-list-1': 'Levering van diensten',
-    'use-list-2': 'Verwerking van betalingen en het opstellen van facturen',
-    'use-list-3': 'Verzenden van e-mailcorrespondentie en/of reclamebrochures',
-    'use-list-4': 'U te bellen of e-mailen indien dit noodzakelijk is voor de uitvoering van de diensten',
-    'use-list-5': 'U te informeren over wijzigingen in onze diensten of producten',
-    'use-list-6': 'Indien wij hier wettelijk toe verplicht zijn, zoals gegevens die wij nodig hebben voor onze belastingaangifte',
-    'use-list-7': 'Verzenden van onze nieuwsbrief en/of reclamefolder',
-    'use-list-8': 'Websiteanalyse',
-    'use-closing': 'Wanneer wij uw betaling verwerken, kunnen wij uw gegevens doorsturen naar, en ook gebruikmaken van de resulterende informatie van, kredietbeoordelingsinstanties om frauduleuze aankopen te voorkomen.',
-    'retention-intro': 'Avansera bewaart persoonsgegevens niet langer dan strikt noodzakelijk is om de doelen te realiseren waarvoor uw persoonsgegevens worden verzameld. Wij bewaren uw persoonsgegevens gedurende de periode waarin wij een actieve overeenkomst hebben om u diensten te verlenen. Na beëindiging van een dergelijke overeenkomst bewaren wij uw persoonsgegevens nog gedurende een bewaartermijn van 12 maanden.',
-    'sharing-intro': 'Avansera deelt uw persoonsgegevens met verschillende derden indien dit noodzakelijk is voor de uitvoering van de overeenkomst en om te voldoen aan een wettelijke verplichting. Daarnaast zullen wij in uitzonderlijke gevallen, indien Avansera uw persoonsgegevens aan andere derden wil verstrekken, dit uitsluitend doen met uw uitdrukkelijke toestemming.',
-    'cookies-intro': 'Cookies zijn tekstbestanden die op uw computer worden geplaatst om standaard internetloggegevens en informatie over bezoekersgedrag te verzamelen. U kunt uw browser zo instellen dat deze geen cookies accepteert.',
-    'cookies-use': 'Avansera maakt geen gebruik van cookies of vergelijkbare technieken voor het functioneren van onze website.',
-    'cookies-other': 'De website van Avansera bevat links naar andere websites. Ons privacybeleid is alleen van toepassing op onze website. Als u op een link naar een andere website klikt, raadpleeg dan het privacybeleid van die betreffende website.',
-    'automated-intro': 'Avansera maakt geen gebruik van automatisch besluit.',
-    'rights-intro': 'Avansera wil ervoor zorgen dat u volledig op de hoogte bent van al uw rechten op het gebied van gegevensbescherming. U heeft recht op de volgende rechten met betrekking tot uw persoonsgegevens:',
-    'rights-list-1': 'Het recht op inzage – U heeft het recht om kopieën van uw persoonsgegevens op te vragen.',
-    'rights-list-2': 'Het recht op rectificatie – U heeft het recht om correctie te verzoeken van informatie die volgens u onjuist of onvolledig is.',
-    'rights-list-3': 'Het recht op gegevens verwijderen – U heeft het recht om verwijdering van uw persoonsgegevens te verzoeken, onder bepaalde voorwaarden.',
-    'rights-list-4': 'Het recht op beperking van de verwerking – U heeft het recht om beperking van de verwerking van uw persoonsgegevens te verzoeken, onder bepaalde voorwaarden.',
-    'rights-list-5': 'Het recht van bezwaar – U heeft het recht om bezwaar te maken tegen de verwerking van uw persoonsgegevens, onder bepaalde voorwaarden.',
-    'rights-list-6': 'Recht op gegevens overdragen  – U heeft het recht om te verzoeken dat de gegevens die wij hebben verzameld worden overgedragen aan een andere organisatie, of rechtstreeks aan u, onder bepaalde voorwaarden.',
-    'rights-closing': 'Als u een van deze rechten wilt uitoefenen, neem dan contact met ons op via contact@avansera.com. Wij zullen binnen vier weken op uw verzoek reageren.',
-    'security-intro': 'Avansera neemt de bescherming van uw persoonsgegevens serieus en treft passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging te voorkomen. Als u het gevoel heeft dat uw persoonsgegevens niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact op met onze klantenservice via contact@avansera.com.',
-    'changes-intro': 'Avansera houdt haar privacybeleid regelmatig onder review en behoudt zich het recht voor om dit privacybeleid van tijd tot tijd te wijzigen. Wijzigingen in het beleid zullen worden gepubliceerd op de officiële website van Avansera en zijn van toepassing vanaf de datum van publicatie.',
-    'authority-intro': 'Avansera wil u erop wijzen dat u de mogelijkheid heeft om een klacht in te dienen bij de nationale toezichthoudende autoriteit, de Autoriteit Persoonsgegevens. Dit kan via de volgende link:',
-    'contact-intro': 'Als u vragen heeft over dit privacybeleid, de gegevens die wij over u bewaren, of als u een van uw rechten op het gebied van gegevensbescherming wilt uitoefenen, neem dan gerust contact met ons op via contact@avansera.com.',
-  }
-};
-// Apply language on page load
-function applyLanguage(lang) {
-  document.documentElement.lang = lang;
-  
-  // Update headings
-  document.querySelectorAll('[data-en]').forEach(el => {
-    const content = el.getAttribute('data-' + lang);
-    if (content) el.textContent = content;
-  });
-  
-  // Update content sections
-  Object.keys(pageTranslations[lang]).forEach(key => {
-    const elements = document.querySelectorAll('[data-i18n="' + key + '"]');
-    elements.forEach(el => {
-      el.textContent = pageTranslations[lang][key];
-    });
-  });
-  
-  langSwitcher.textContent = lang === 'en' ? 'EN / NL' : 'NL / EN';
-}
-
-langSwitcher.addEventListener('click', () => {
-  currentLanguage = currentLanguage === 'en' ? 'nl' : 'en';
-  localStorage.setItem('language', currentLanguage);
-  applyLanguage(currentLanguage);
-  window.scrollTo(0, 0);
-});
-
-applyLanguage(currentLanguage);
 </script>
+<script src="js/region-selector.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#1C1C1A"/>
-  <meta name="description" content="The page you are looking for does not exist or may have moved. Return to Avansera to explore our financial consulting services."/>
+  <meta name="description" content="The page you are looking for does not exist."/>
   <title>Page Not Found — Avansera</title>
     <link rel="preload" href="/fonts/Taviraj-Light.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/CormorantGaramond-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
@@ -13,20 +13,35 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
   <!-- Canonical -->
-  <link rel="canonical" href="https://avansera.com/404.html"/>
+  <link rel="canonical" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="en" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="es" href="https://www.avansera.com/es/404.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="en" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="es" href="https://www.avansera.com/es/404.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="en" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="es" href="https://www.avansera.com/es/404.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="en" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="es" href="https://www.avansera.com/es/404.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="en" href="https://www.avansera.com/404.html" />
+  <link rel="alternate" hreflang="es" href="https://www.avansera.com/es/404.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.avansera.com/404.html" />
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Avansera"/>
   <meta property="og:title" content="Page Not Found — Avansera"/>
-  <meta property="og:description" content="The page you are looking for does not exist or may have moved. Return to Avansera to explore our financial consulting services."/>
-  <meta property="og:url" content="https://avansera.com/404.html"/>
-  <meta property="og:image" content="https://avansera.com/images/gateway.webp"/>
-  <meta property="og:locale" content="en_US"/>
+  <meta property="og:description" content="The page you are looking for does not exist."/>
+  <meta property="og:url" content="https://www.avansera.com/404.html"/>
+  <meta property="og:image" content="https://avansera.com/images/avanseras_financial_expertise.webp"/>
+  <meta property="og:locale" content="en_GB"/>
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Page Not Found — Avansera"/>
-  <meta name="twitter:description" content="The page you are looking for does not exist or may have moved. Return to Avansera to explore our financial consulting services."/>
-  <meta name="twitter:image" content="https://avansera.com/images/gateway.webp"/>
+  <meta name="twitter:description" content="The page you are looking for does not exist."/>
+  <meta name="twitter:image" content="https://avansera.com/images/avanseras_financial_expertise.webp"/>
   <!-- Google Site Verification (replace with your token) -->
   <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_TOKEN"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J536R23K01"></script>
@@ -36,11 +51,12 @@
     gtag('js', new Date());
     gtag('config', 'G-J536R23K01');
   </script>
+  <link rel="stylesheet" href="css/region-selector.css"/>
 </head>
 <body>
 <nav id="main-nav" role="navigation" aria-label="Main navigation">
   <a href="index.html" class="nav-logo" aria-label="Avansera — Home">
-    <img src="images/logo.webp" alt="Avansera" width="40" height="40" loading="eager"/>
+    <img src="images/logo.svg" alt="Avansera" width="40" height="40" loading="eager"/>
     <span class="nav-logo-text">Avansera</span>
   </a>
   <ul class="nav-links" role="list">
@@ -52,28 +68,30 @@
         <a href="services.html" role="menuitem">All Services</a>
         <a href="services/business-owners.html" role="menuitem">For Business Owners</a>
         <a href="services/companies.html" role="menuitem">For Companies</a>
-        <a href="services/nonprofits.html" role="menuitem">For Nonprofits</a>
+        <a href="services/nonprofits.html" role="menuitem">For the Public & Social sectors</a>
       </div>
     </li>
     <li><a href="faq.html">FAQ</a></li>
-    <li><a href="insights.html">Insights</a></li>
+    <li><a href="articles.html">Articles</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Book a Call</a>
+  <div id="region-selector"></div>
+    <a href="contact.html" class="nav-cta">Book a Call</a>
   <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" type="button">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+  <div id="region-selector-mobile"></div>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <span class="mobile-sub">Services</span>
   <a href="services.html" class="mobile-indent">All Services</a>
   <a href="services/business-owners.html" class="mobile-indent">For Business Owners</a>
   <a href="services/companies.html" class="mobile-indent">For Companies</a>
-  <a href="services/nonprofits.html" class="mobile-indent">For Nonprofits</a>
+  <a href="services/nonprofits.html" class="mobile-indent">For the Public & Social sectors</a>
   <a href="faq.html">FAQ</a>
-  <a href="insights.html">Insights</a>
-  <a href="contact.html" class="mobile-cta">Book a Free Call</a>
+  <a href="articles.html">Articles</a>
+  <a href="contact.html" class="mobile-cta">Book a Call</a>
 </div>
 <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--charcoal);padding-top:72px">
   <div style="text-align:center;padding:60px 32px">
@@ -83,7 +101,7 @@
     <p style="font-size:0.87rem;font-weight:300;color:rgba(255,255,255,0.45);max-width:380px;margin:0 auto 40px;line-height:1.85">The page you are looking for does not exist or may have moved.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
       <a href="index.html" class="btn-gold">Go to Homepage</a>
-      <a href="contact.html" class="btn-outline-white">Book a Free Call</a>
+      <a href="contact.html" class="btn-outline-white">Book a Call</a>
     </div>
     <div style="margin-top:52px;display:flex;gap:32px;justify-content:center;flex-wrap:wrap">
       <a href="services.html" style="font-size:0.7rem;font-weight:400;letter-spacing:0.08em;color:rgba(255,255,255,0.3);text-decoration:none">Our Services &#8594;</a>
@@ -95,22 +113,16 @@
 <footer role="contentinfo">
   <div class="footer-top">
     <div>
-      <span class="footer-brand"><em>Avansera</em></span>
-      <p class="footer-tagline">Institutional expertise, human scale. Empowering businesses and nonprofits to lead with financial confidence.</p>
-      <div class="footer-info">
-        <div class="footer-info-row"><strong>KVK:</strong> 99560917</div>
-        <div class="footer-info-row"><strong>BTW:</strong> NL005396120B80</div>
-        <div class="footer-info-row"><strong>E:</strong> <a href="mailto:contact@avansera.com" style="color:inherit;text-decoration:none">contact@avansera.com</a></div>
-        <div class="footer-info-row"><strong>T:</strong> <a href="tel:+310620878260" style="color:inherit;text-decoration:none">+31 06 2087 8260</a></div>
-        
-      </div>
+      <span class="footer-brand"><em>Avansera Ltd</em></span>
+      <p style="font-size:0.63rem;color:var(--gold);margin-bottom:8px">A company registered in England and Wales</p>
+      <p class="footer-tagline">Avansera is a firm dedicated to providing high-quality financial consultancy and education services to clients globally. We pride ourselves on our tailored solutions and value-based approach to business.</p>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul role="list">
         <li><a href="services/business-owners.html">For Business Owners</a></li>
         <li><a href="services/companies.html">For Companies</a></li>
-        <li><a href="services/nonprofits.html">For Nonprofits</a></li>
+        <li><a href="services/nonprofits.html">For the Public & Social Sectors</a></li>
         <li><a href="services.html">All Services</a></li>
       </ul>
     </div>
@@ -125,17 +137,29 @@
     <div class="footer-col">
       <div class="footer-col-title">Get Started</div>
       <ul role="list">
-        <li><a href="contact.html">Book a Free Call</a></li>
+        <li><a href="contact.html">Book a Call</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul role="list">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-info">
+        <div class="footer-info-row"><strong>Company number:</strong> 17368181</div>
+        <div class="footer-info-row"><strong>E:</strong> <a href="mailto:contact@avansera.com" style="color:inherit;text-decoration:none">contact@avansera.com</a></div>
+        <div class="footer-info-row"><strong>T:</strong> <a href="tel:+310620878260" style="color:inherit;text-decoration:none">+31 06 2087 8260</a></div>
+        <div class="footer-info-row"><strong>Address:</strong> 124 City Road, London EC1V 2NX</div>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">&#169; 2026 Avansera. All rights reserved.</p>
-    <div class="footer-legal">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </div>
   </div>
 </footer>
 <div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--black);border-top:2px solid var(--gold);padding:20px 40px;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
@@ -219,5 +243,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+  <script src="js/region-selector.js"></script>
 </body>
 </html>

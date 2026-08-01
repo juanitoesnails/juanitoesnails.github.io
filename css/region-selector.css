@@ -1,0 +1,177 @@
+/* Region/Language Selector — JPMorgan-style dropdown */
+.region-selector-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.region-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Taviraj', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 150;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.55);
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  min-height: 44px;
+  line-height: 1;
+}
+
+.region-trigger:hover,
+.region-trigger:focus-visible {
+  color: var(--gold);
+  border-color: rgba(212, 175, 55, 0.4);
+  outline: none;
+}
+
+.region-trigger::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  margin-left: 2px;
+  transition: transform 0.2s;
+}
+
+.region-trigger[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.region-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 200px;
+  background: #1C1C1A;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 8px 0;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.region-dropdown.open {
+  display: block;
+}
+
+.region-group {
+  padding: 4px 0;
+}
+
+.region-group + .region-group {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.region-group-label {
+  font-family: 'Taviraj', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  padding: 6px 16px 4px;
+}
+
+.region-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: 'Taviraj', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 150;
+  color: rgba(255,255,255,0.6);
+  background: none;
+  border: none;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1.4;
+}
+
+.region-option:hover,
+.region-option:focus-visible {
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.06);
+  outline: none;
+}
+
+.region-option.active {
+  color: var(--gold);
+}
+
+/* Desktop nav integration */
+@media (min-width: 769px) {
+  .region-selector-wrapper {
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  
+  .region-trigger {
+    padding: 6px 10px;
+    color: var(--grey-mid);
+    border: 1px solid transparent;
+    font-weight: 400;
+    min-height: auto;
+  }
+
+  .region-trigger:hover,
+  .region-trigger:focus-visible {
+    color: var(--charcoal);
+    border-color: var(--border);
+  }
+
+  .region-trigger::after {
+    border-top-color: var(--gold);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Mobile nav integration */
+@media (max-width: 768px) {
+  .region-selector-wrapper {
+    display: block;
+    padding: 8px 0;
+  }
+  
+  .region-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.7rem;
+  }
+  
+  .region-dropdown {
+    position: static;
+    border: none;
+    box-shadow: none;
+    background: rgba(255,255,255,0.02);
+  }
+  
+  .region-group-label {
+    padding-left: 28px;
+  }
+  
+  .region-option {
+    padding-left: 28px;
+  }
+}

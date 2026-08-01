@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#1C1C1A"/>
-  <meta name="description" content="Avansera terms of service — the terms and conditions governing your use of our website and professional financial consulting services."/>
+  <meta name="description" content="Avansera terms of service — conditions governing the use of our website and services."/>
   <title>Terms of Service — Avansera</title>
     <link rel="preload" href="/fonts/Taviraj-Light.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/CormorantGaramond-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
@@ -13,22 +13,23 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
   <!-- Canonical -->
-  <link rel="canonical" href="https://avansera.com/terms.html"/>
+  <link rel="canonical" href="https://www.avansera.com/terms.html" />
+  <link rel="alternate" hreflang="en" href="https://www.avansera.com/terms.html" />
+  <link rel="alternate" hreflang="es" href="https://www.avansera.com/es/terminos.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.avansera.com/terms.html" />
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Avansera"/>
   <meta property="og:title" content="Terms of Service — Avansera"/>
-  <meta property="og:description" content="Avansera terms of service — the terms and conditions governing your use of our website and professional financial consulting services."/>
-  <meta property="og:url" content="https://avansera.com/terms.html"/>
-  <meta property="og:image" content="https://avansera.com/images/gateway.webp"/>
-  <meta property="og:locale" content="en_US"/>
+  <meta property="og:description" content="Avansera terms of service — conditions governing the use of our website and services."/>
+  <meta property="og:url" content="https://www.avansera.com/terms.html"/>
+  <meta property="og:image" content="https://avansera.com/images/avanseras_financial_expertise.webp"/>
+  <meta property="og:locale" content="en_GB"/>
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Terms of Service — Avansera"/>
-  <meta name="twitter:description" content="Avansera terms of service — the terms and conditions governing your use of our website and professional financial consulting services."/>
-  <meta name="twitter:image" content="https://avansera.com/images/gateway.webp"/>
-  <!-- Google Site Verification (replace with your token) -->
-  <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_TOKEN"/>
+  <meta name="twitter:description" content="Avansera terms of service — conditions governing the use of our website and services."/>
+  <meta name="twitter:image" content="https://avansera.com/images/avanseras_financial_expertise.webp"/>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://avansera.com/index.html"},{"@type":"ListItem","position":2,"name":"Terms of Service","item":"https://avansera.com/terms.html"}]}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J536R23K01"></script>
   <script>
@@ -37,11 +38,12 @@
     gtag('js', new Date());
     gtag('config', 'G-J536R23K01');
   </script>
+  <link rel="stylesheet" href="css/region-selector.css"/>
 </head>
 <body>
 <nav id="main-nav" role="navigation" aria-label="Main navigation">
   <a href="index.html" class="nav-logo" aria-label="Avansera — Home">
-    <img src="images/logo.webp" alt="Avansera" width="40" height="40" loading="eager"/>
+    <img src="images/logo.svg" alt="Avansera" width="40" height="40" loading="eager"/>
     <span class="nav-logo-text">Avansera</span>
   </a>
   <ul class="nav-links" role="list">
@@ -53,82 +55,219 @@
         <a href="services.html" role="menuitem">All Services</a>
         <a href="services/business-owners.html" role="menuitem">For Business Owners</a>
         <a href="services/companies.html" role="menuitem">For Companies</a>
-        <a href="services/nonprofits.html" role="menuitem">For Nonprofits</a>
+        <a href="services/nonprofits.html" role="menuitem">For the Public & Social sectors</a>
       </div>
     </li>
     <li><a href="faq.html">FAQ</a></li>
-    <li><a href="insights.html">Insights</a></li>
+    <li><a href="articles.html">Articles</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Book a Call</a>
+  <div id="region-selector"></div>
+    <a href="contact.html" class="nav-cta">Book a Call</a>
   <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" type="button">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+  <div id="region-selector-mobile"></div>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <span class="mobile-sub">Services</span>
   <a href="services.html" class="mobile-indent">All Services</a>
   <a href="services/business-owners.html" class="mobile-indent">For Business Owners</a>
   <a href="services/companies.html" class="mobile-indent">For Companies</a>
-  <a href="services/nonprofits.html" class="mobile-indent">For Nonprofits</a>
+  <a href="services/nonprofits.html" class="mobile-indent">For the Public & Social sectors</a>
   <a href="faq.html">FAQ</a>
-  <a href="insights.html">Insights</a>
-  <a href="contact.html" class="mobile-cta">Book a Free Call</a>
+  <a href="articles.html">Articles</a>
+  <a href="contact.html" class="mobile-cta">Book a Call</a>
 </div>
 <div style="padding-top:72px;background:var(--white)">
   <div style="background:var(--charcoal);padding:72px 64px 64px">
     <span style="font-size:0.6rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px">Legal</span>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;color:#fff;line-height:1.1">Terms of Service</h1>
-    <p style="font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.45);margin-top:14px;max-width:520px;line-height:1.8">These terms of service govern your use of the Avansera website and services.</p>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;color:#fff;line-height:1.1">Standard Terms and Conditions</h1>
+    <p style="font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.45);margin-top:14px;max-width:520px;line-height:1.8">Business-to-Business Supply &#183; Professional Services</p>
   </div>
   <div class="gold-bar"></div>
   <div class="section bg-white">
-    <div style="display:grid;grid-template-columns:2fr 1fr;gap:72px;align-items:start">
+    <div style="max-width:860px;margin:0 auto">
       <div class="reveal">
-        <div style="background:var(--grey-pale);border:1px solid var(--border);padding:18px 24px;margin-bottom:40px;display:flex;gap:12px;align-items:flex-start">
-          <span class="diamond" style="margin-top:3px">&#9670;</span>
-          <p style="font-size:0.78rem;font-weight:300;color:var(--grey-mid);line-height:1.75">This page contains placeholder content. Please replace it with your own legal text before publishing. If you need assistance drafting these documents, consider consulting a qualified legal professional.</p>
+        <div style="background:var(--grey-pale);border:1px solid var(--border);border-left:2px solid var(--border-gold);padding:18px 24px;margin-bottom:40px">
+          <p style="font-size:0.78rem;font-weight:300;color:var(--grey-mid);line-height:1.75;margin:0">
+            <strong style="letter-spacing:0.05em">STANDARD TERMS AND CONDITIONS</strong><br>
+            Business-to-Business Supply · Professional Services<br>
+            Supplier: Avansera Ltd · 124 City Road, London EC1V 2NX · contact@avansera.com · Company No. 17368181 · avansera.com<br>
+            Last updated: 1 August 2026
+          </p>
         </div>
-        
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">1. Acceptance of Terms</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">By accessing or using the Avansera website, you agree to be bound by these terms of service. [Add full acceptance clause appropriate to your jurisdiction.]</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">2. Services</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Avansera provides financial consultancy and coaching services. [Describe the nature of your services and any limitations or exclusions that apply.]</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">3. No Financial Advice</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">[Include an appropriate disclaimer regarding the nature of the information provided on this website. For example, clarify whether content constitutes regulated financial advice and what professional advice users should seek.]</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">4. Intellectual Property</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">All content on this website, including text, images, and design, is the property of Avansera. [Add full intellectual property clause including permitted and prohibited uses.]</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">5. Limitation of Liability</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">[Add your limitation of liability clause, including any exclusions that apply under applicable law.]</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">6. Privacy</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">Your use of this website is also governed by our Privacy Policy, which is incorporated into these terms by reference.</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">7. Governing Law</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">[State the governing law and jurisdiction for any disputes arising under these terms.]</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">8. Changes to These Terms</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">We reserve the right to update these terms at any time. [Add details of how changes will be communicated to users.]</p>
-      </div>
-      <div style="margin-bottom:48px">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">9. Contact Us</h2>
-        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">[Provide contact details for legal enquiries, including a postal address and email address.]</p>
-      </div>
-      </div>
-      <div class="reveal rd1" style="position:sticky;top:96px">
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">1. PARTIES AND INTERPRETATION</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">These Terms and Conditions ("Terms") govern every contract for the supply of professional services by Avansera Ltd (the "Supplier"), a private limited company incorporated in England and Wales, registered under company number 17368181, with registered office at 124 City Road, London EC1V 2NX, to any business customer (the "Buyer"). "Services" means any services, coaching, training, workshops, online programmes, financial or management consultancy, or related support supplied by the Supplier. "Order" means any order for Services placed by the Buyer and accepted by the Supplier. "Contract" means an Order together with these Terms.</p>
+            <p style="margin:0 0 12px 0">These Terms apply to the exclusion of, and prevail over, any terms which the Buyer seeks to impose or incorporate, whether in a purchase order, confirmation of order, specification or any other document, and any course of dealing established between the parties. Acknowledgement of, or reference to, a Buyer's purchase order does not constitute acceptance of any Buyer's terms.</p>
+            <p style="margin:0">These Terms are directed at business customers only. A "business customer" is any person or entity contracting wholly or mainly for purposes relating to that person's trade, business, craft or profession. The Supplier does not knowingly contract with consumers under these Terms. If a prospective Buyer is contracting other than for such purposes, they must notify the Supplier before placing an Order, as separate consumer terms and statutory protections will apply instead.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">2. SERVICES SUPPLIED</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0"><strong>Supply of:</strong> educational, consulting and coaching Services in the fields of corporate finance, financial literacy and personal finance, as further described in the applicable Order or Proposal.</p>
+            <p style="margin:0 0 12px 0"><strong>Supply type:</strong> Professional Services (no Goods are supplied under these Terms).</p>
+            <p style="margin:0 0 8px 0"><strong>Minimum order:</strong> the minimum value of any Order is:</p>
+            <ul style="margin:0 0 8px 20px;padding:0">
+              <li>£430 (GBP);</li>
+              <li>€500 (EUR); or</li>
+              <li>$550 (USD),</li>
+            </ul>
+            <p style="margin:0 0 12px 0">depending on the currency in which the Order is invoiced. The Supplier may reject or decline to process any Order below the applicable threshold.</p>
+            <p style="margin:0 0 12px 0">All descriptions, illustrations, methodologies or outcomes referenced by the Supplier in any proposal, brochure, website or marketing material are indicative only and form no part of the Contract unless expressly incorporated into the Order.</p>
+            <p style="margin:0"><strong>Nature of advice.</strong> The Services are educational, coaching and consultancy services only. They do not constitute, and must not be relied upon as, regulated financial advice, investment advice, a personal recommendation, tax advice or legal advice. The Supplier is not authorised or regulated by the Financial Conduct Authority and does not carry on any regulated activity within the meaning of the Financial Services and Markets Act 2000. The Buyer remains solely responsible for its own financial, investment, tax and legal decisions and should obtain independent professional advice where appropriate.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">3. ORDERS AND ACCEPTANCE</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">An Order constitutes an offer by the Buyer to purchase Services on these Terms.</p>
+            <p style="margin:0 0 12px 0">The Supplier accepts an Order only by written confirmation (which may be sent by email), at which point the Contract comes into existence. Proposals issued by the Supplier are not an offer and are valid for thirty (30) days from the date of issue, unless withdrawn sooner in writing.</p>
+            <p style="margin:0 0 12px 0">Any typographical, clerical or other error or omission in any sales literature, quotation, price list, invoice, Proposal or other document issued by the Supplier shall be subject to correction without liability.</p>
+            <p style="margin:0 0 12px 0">The Supplier may, at its sole discretion, reject any Order in whole or in part (including where the Order falls below the applicable minimum order value set out in Clause 2). Where an Order is rejected after payment has been made, any sum already paid in respect of the rejected Order shall be refunded without interest within a reasonable time.</p>
+            <p style="margin:0">Where the Supplier issues a Proposal setting out scope, deliverables, timeline and fees for an engagement, that Proposal forms part of the Contract once accepted by the Buyer in writing (including by email confirmation or online acceptance). In the event of any conflict between a Proposal and these Terms, the Proposal prevails only in respect of scope, deliverables, timeline and fees; these Terms prevail on all other matters.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">4. PRICE AND PAYMENT</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">The price of the Services shall be as set out in the Order or Proposal, or as otherwise agreed in writing.</p>
+            <p style="margin:0 0 12px 0">All prices are exclusive of VAT and any other applicable taxes, duties or levies, which shall be added at the prevailing rate where applicable. Invoices shall be issued in GBP, EUR or USD as agreed with the Buyer, and are payable within fourteen (14) days of the invoice date, by bank transfer in cleared funds to the account specified on the invoice, without set-off, deduction, counterclaim or withholding (save as required by law). Time for payment shall be of the essence.</p>
+            <p style="margin:0 0 12px 0"><strong>Instalment and project-based payment.</strong> Where the parties agree that the price for a project or fixed-term engagement is payable in instalments (including monthly instalments) rather than in full in advance, each instalment shall be invoiced and payable in accordance with the schedule set out in the Order or Proposal. Non-payment of any instalment when due shall be treated in the same manner as non-payment of any other sum under this Clause 4, and the Supplier may suspend performance of the Services until the overdue instalment (together with any interest and costs due under this Clause) is paid in full.</p>
+            <p style="margin:0 0 12px 0"><strong>Cross-border payment.</strong> Where the Buyer is based outside the United Kingdom, the Buyer is responsible for any bank charges, currency conversion costs, correspondent bank fees or withholding taxes imposed by its own bank, jurisdiction or intermediary banks, such that the Supplier receives the full invoiced amount in cleared funds.</p>
+            <p style="margin:0 0 8px 0">If the Buyer fails to pay any sum by the due date, the Supplier shall be entitled, without prejudice to any other right or remedy, to:</p>
+            <ul style="margin:0 0 8px 20px;padding:0">
+              <li>charge statutory interest at 8% per annum above the Bank of England base rate under sections 5A and 6 of the Late Payment of Commercial Debts (Interest) Act 1998;</li>
+              <li>recover fixed sum compensation of £40, £70 or £100 per invoice (depending on the amount of the debt) under section 5A of that Act; and</li>
+              <li>recover reasonable costs of debt recovery, including commercial recovery agents' and legal costs.</li>
+            </ul>
+            <p style="margin:0">The Supplier may suspend performance of the Services, in whole or in part, for as long as any sum properly due remains unpaid.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">5. PERFORMANCE AND ACCEPTANCE OF SERVICES</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0"><strong>Performance basis.</strong> Unless otherwise agreed, the Services are delivered online (e.g. via video call, digital platform or online programme). Where a Service is agreed to be delivered in person, this will be specified in the Order or Proposal.</p>
+            <p style="margin:0 0 12px 0"><strong>Timing.</strong> Any dates or times quoted for performance of the Services are estimates only. Time for performance shall not be of the essence unless expressly agreed by the Supplier in writing. The Supplier shall not be liable for any delay caused by a Force Majeure Event or by the Buyer's failure to provide timely instructions, information, access, personnel, or other assistance reasonably required for performance. Where such delay occurs, the Supplier shall be entitled to a reasonable extension of time.</p>
+            <p style="margin:0 0 12px 0"><strong>Staged performance.</strong> The Supplier may perform the Services in stages, sessions or milestones. Where specified in the Order or Proposal, each stage shall be treated as a separate performance for payment and acceptance purposes. A delay or failure affecting one stage shall not entitle the Buyer to terminate the remainder of the Contract unless it constitutes a material breach.</p>
+            <p style="margin:0 0 12px 0"><strong>Review and acceptance.</strong> Where a Deliverable (e.g. a report, framework, workshop material or written output) is provided as part of the Services, the Buyer shall review it within 5 Working Days of delivery and notify the Supplier in writing of any material non-conformity with the agreed scope. If the Buyer does not provide such notice within that period, or uses the Deliverable for its intended business purpose, the Deliverable shall be deemed accepted.</p>
+            <p style="margin:0 0 12px 0">If the Buyer validly rejects a Deliverable, the Supplier shall, as its first remedy and within a reasonable time, correct or re-perform the affected Services to achieve substantial conformity with the agreed scope. If the Supplier is unable to do so after a reasonable opportunity, the parties shall discuss an appropriate commercial remedy, which may include a proportionate reduction in fees or termination of the affected part of the Services.</p>
+            <p style="margin:0 0 12px 0"><strong>Coaching and live sessions.</strong> For live coaching, training or workshop sessions (as opposed to written Deliverables), performance is complete on delivery of the session itself; the review-and-acceptance mechanism above applies only to tangible Deliverables, not to the quality of a live session as such, which is instead governed by the reasonable care and skill standard in Clause 6.</p>
+            <p style="margin:0 0 12px 0"><strong>Rescheduling and cancellation of live sessions.</strong> The Buyer may reschedule a confirmed live session by giving the Supplier at least 48 hours' written notice before the scheduled start time, free of charge, subject to availability. Where the Buyer reschedules with less than 48 hours' notice, cancels a session, or fails to attend (a "no-show"), the Supplier may charge a fee of up to 100% of the fee for that session. The Supplier will use reasonable efforts to offer an alternative time before treating a session as forfeited. This clause does not apply where the session could not proceed due to a Force Majeure Event or a failure attributable to the Supplier.</p>
+            <p style="margin:0">Nothing in this Clause 5 limits the Supplier's obligation to perform the Services with reasonable care and skill, or excludes any liability that cannot lawfully be excluded under applicable law.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">6. WARRANTIES AND STATUTORY TERMS</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0"><strong>Standard of performance.</strong> The Supplier warrants that the Services shall be performed with reasonable care and skill, in accordance with the standard of a competent provider in the coaching, training and financial-literacy education sector.</p>
+            <p style="margin:0 0 12px 0"><strong>No outcome guarantee.</strong> The Supplier does not warrant or guarantee any particular financial result, outcome, business result or improvement arising from participation in the Services. All Services are provided on a best-efforts basis; results depend on factors outside the Supplier's control, including the Buyer's own implementation of any guidance discussed.</p>
+            <p style="margin:0 0 12px 0"><strong>Remedy.</strong> Where a failure to meet the standard in this Clause is validly notified within a reasonable time of the affected Service being performed, the Supplier shall, at its option, re-perform the affected Services or refund a proportionate part of the fees paid for them. This remedy is the Buyer's sole and exclusive remedy for breach of this warranty, save for any liability which cannot be limited or excluded by law.</p>
+            <p style="margin:0"><strong>Exclusion of other terms.</strong> Save as set out in these Terms, and save for any statutory terms that cannot lawfully be excluded between businesses, all other terms, conditions and warranties, whether express or implied by statute, common law or otherwise (including as to fitness for purpose or satisfactory quality), are excluded to the fullest extent permitted by law, subject to the reasonableness test under sections 3, 6, 7 and 11 and Schedule 2 of the Unfair Contract Terms Act 1977.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">7. INTELLECTUAL PROPERTY</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">All intellectual property rights in the Services, including any coaching frameworks, methodologies, course materials, workbooks, templates, recordings, presentations and any other content created or used by the Supplier in connection with the Services (whether pre-existing or developed for the Buyer), remain the exclusive property of the Supplier or its licensors.</p>
+            <p style="margin:0 0 12px 0">The Buyer is granted a non-exclusive, non-transferable, royalty-free licence to use such materials solely for the Buyer's internal business purposes, and solely for the duration of the Contract (or such longer period as the parties agree in writing).</p>
+            <p style="margin:0 0 8px 0">The Buyer shall not, and shall procure that its employees, contractors and representatives shall not:</p>
+            <ul style="margin:0 0 8px 20px;padding:0">
+              <li>copy, reproduce, distribute, resell, sub-licence or make available any Supplier materials to any third party;</li>
+              <li>reverse-engineer, decompile, adapt or create derivative works based on the Supplier's frameworks or methodologies, save to the extent such restriction is prohibited by law; or</li>
+              <li>use the Supplier's materials to create a competing product, service or offering.</li>
+            </ul>
+            <p style="margin:0 0 12px 0"><strong>Buyer materials.</strong> Where the Buyer provides its own data, documents or materials to the Supplier for the purpose of the Services, the Buyer retains all intellectual property rights in them, and grants the Supplier a licence to use them solely for the purpose of performing the Services.</p>
+            <p style="margin:0 0 12px 0"><strong>Feedback and case studies.</strong> The Supplier may reference the fact of the engagement (e.g. company name and a general description of the Services provided) in its marketing materials, unless the Buyer objects in writing. Any use of specific outcomes, quotes or case-study detail requires the Buyer's separate written consent.</p>
+            <p style="margin:0">Each party shall indemnify the other against all claims, liabilities and reasonable costs arising from any third-party allegation that the indemnifying party's pre-existing intellectual property, when used as contemplated by the Contract, infringes that third party's rights, provided that the indemnified party: (a) gives prompt written notice of the claim; (b) does not admit liability without consent; and (c) grants the indemnifying party sole conduct of the defence and settlement.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">8. LIMITATION OF LIABILITY</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0"><strong>Unlimited liabilities.</strong> Nothing in these Terms shall limit or exclude either party's liability for: (a) death or personal injury caused by its negligence; (b) fraud or fraudulent misrepresentation; (c) any liability which cannot lawfully be excluded or limited under English law; or (d) a Buyer's obligation to pay sums properly due under the Contract.</p>
+            <p style="margin:0 0 12px 0"><strong>Excluded losses.</strong> Subject to Clause 6 (Warranties) and the paragraph above, neither party shall be liable to the other, whether in contract, tort (including negligence), breach of statutory duty or otherwise, for any: (i) loss of profit; (ii) loss of business, revenue or contracts; (iii) loss of anticipated savings; (iv) loss of goodwill or reputation; (v) loss or corruption of data; or (vi) any indirect or consequential loss. For the avoidance of doubt, and without limiting Clause 6, no loss arising from the Buyer's own financial, investment, business or tax decisions — whether or not made following participation in the Services — shall give rise to any liability on the part of the Supplier.</p>
+            <p style="margin:0 0 12px 0"><strong>Aggregate cap.</strong> Subject to the above, the total aggregate liability of either party under or in connection with the Contract shall not exceed the total price paid or payable by the Buyer under the Contract in the twelve (12) months immediately preceding the event giving rise to the claim; and no claim shall be brought more than six (6) years after the cause of action arose.</p>
+            <p style="margin:0 0 12px 0"><strong>Interaction with Clause 6.</strong> For any claim relating to the standard of performance of the Services, the remedy set out in Clause 6 (re-performance or proportionate refund) is the Buyer's sole and exclusive remedy, and the aggregate cap in this Clause 8 does not create a separate or additional right to damages beyond that remedy.</p>
+            <p style="margin:0"><strong>Reasonableness.</strong> The parties acknowledge that, having regard to the nature of the Services, the availability of insurance and the price paid, the exclusions and limitations in these Terms are fair and reasonable within the meaning of sections 3, 6, 7 and 11 and Schedule 2 of the Unfair Contract Terms Act 1977.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">9. FORCE MAJEURE</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">Neither party shall be in breach of the Contract, or otherwise liable for any failure or delay in performance (other than the obligation to pay sums already due), to the extent that such failure or delay is caused by an event beyond its reasonable control (a "Force Majeure Event"), including acts of God, fire, flood, pandemic or epidemic, war, terrorism, civil commotion, governmental or regulatory action or restriction, export or import controls or sanctions, failure or unavailability of internet connectivity, hosting, video-conferencing or other online delivery platforms, cyberattack, failure of utilities or third-party infrastructure, and industrial action not affecting only that party's workforce.</p>
+            <p style="margin:0">The affected party shall notify the other within five (5) working days of the Force Majeure Event, use all reasonable endeavours to mitigate its effects (including, where practicable, rescheduling any affected live sessions) and resume performance as soon as practicable. If the Force Majeure Event continues for more than sixty (60) consecutive days, either party may terminate the affected Contract by giving thirty (30) days' written notice without liability (other than for sums accrued up to the termination date).</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">10. TERMINATION</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 8px 0">Without prejudice to any other rights and remedies, either party may terminate any Contract with immediate effect by written notice to the other if the other:</p>
+            <ul style="margin:0 0 8px 20px;padding:0">
+              <li>commits a material breach of the Contract and, where capable of remedy, fails to remedy it within thirty (30) days of written notice requiring it to do so;</li>
+              <li>suspends, or threatens to suspend, payment of its debts or is unable to pay its debts as they fall due within the meaning of section 123 of the Insolvency Act 1986;</li>
+              <li>commences negotiations with its creditors with a view to rescheduling its debts, makes any composition or scheme of arrangement, or has an administrator, administrative receiver, liquidator or similar officer appointed; or</li>
+              <li>ceases, or threatens to cease, to carry on business.</li>
+            </ul>
+            <p style="margin:0">On termination: all outstanding sums become immediately due and payable; each party shall return or, at the other's request, destroy confidential information received from the other; and the clauses on limitation of liability, intellectual property, confidentiality, data protection, anti-bribery and dispute resolution shall survive.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">11. DATA PROTECTION</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0">Each party shall comply with its obligations under applicable data protection law, including the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018, and, in respect of personal data of individuals located in the EU/EEA, the EU General Data Protection Regulation (EU GDPR), in each case to the extent applicable to that party's processing.</p>
+            <p style="margin:0 0 12px 0">Personal data is processed in accordance with the Supplier's Privacy Notice available at https://www.avansera.com/privacy.html, which sets out the information required by Articles 13 and 14 of the UK GDPR and (where applicable) the EU GDPR.</p>
+            <p style="margin:0">International transfers of personal data from the United Kingdom shall take place only on the basis of an adequacy regulation under section 17A of the Data Protection Act 2018, the UK International Data Transfer Agreement (IDTA), or equivalent safeguards under Chapter V of the UK GDPR. International transfers of personal data from the EU/EEA shall take place only on the basis of an adequacy decision or appropriate safeguards under Chapter V of the EU GDPR (such as Standard Contractual Clauses). Where the Buyer is located in Latin America, the parties shall agree appropriate contractual safeguards for any transfer of personal data prior to that transfer taking place.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">12. COMPLIANCE WITH LAW</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0">Each party shall comply with all applicable laws, statutes, regulations and codes relating to anti-bribery and anti-corruption including the Bribery Act 2010, modern slavery including (where applicable) the Modern Slavery Act 2015 (including section 54 transparency requirements for qualifying commercial organisations), economic and trade sanctions, and all anti-money laundering and counter-terrorist financing laws. Each party shall have in place adequate procedures to prevent bribery under section 7(2) of the Bribery Act 2010. Breach of this clause shall be a material breach entitling the other party to terminate the Contract with immediate effect.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">13. DISPUTE RESOLUTION AND GOVERNING LAW</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0"><strong>Dispute resolution.</strong> The parties shall seek to resolve any dispute by good-faith negotiation at senior management level for a period of thirty (30) days from written notice of the dispute.</p>
+            <p style="margin:0 0 12px 0">If the dispute is not resolved within that period, either party may commence proceedings in the courts of England and Wales, which shall have exclusive jurisdiction, regardless of the country in which the Buyer is incorporated or located.</p>
+            <p style="margin:0 0 12px 0"><strong>Governing law.</strong> These Terms and any Contract (including any non-contractual dispute or claim arising out of or in connection with them) are governed by the law of England and Wales.</p>
+            <p style="margin:0"><strong>Service of process.</strong> Notices shall be in writing and served by hand, by pre-paid recorded post or by email to the addresses set out in the Contract, and shall be deemed served in accordance with Part 6 of the Civil Procedure Rules.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:48px">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">14. GENERAL PROVISIONS</h2>
+          <div style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic">
+            <p style="margin:0 0 12px 0"><strong>Entire agreement.</strong> The Contract constitutes the entire agreement between the parties and supersedes all prior representations, agreements and understandings, whether oral or written. Each party acknowledges that in entering into the Contract it has not relied on any statement, representation, warranty or understanding other than those expressly set out. Nothing in this clause limits any liability for fraud or fraudulent misrepresentation.</p>
+            <p style="margin:0 0 12px 0"><strong>Variation.</strong> No variation of these Terms or any Contract shall be effective unless in writing and signed (which may include email confirmation) by authorised representatives of both parties.</p>
+            <p style="margin:0 0 12px 0"><strong>Severance.</strong> If any provision is held invalid, illegal or unenforceable, it shall be modified to the minimum extent necessary to make it enforceable, or if modification is not possible, severed; the remaining provisions continue in full force and effect.</p>
+            <p style="margin:0 0 12px 0"><strong>Waiver.</strong> No failure or delay in exercising any right or remedy shall operate as a waiver of that or any other right or remedy.</p>
+            <p style="margin:0 0 12px 0"><strong>Assignment.</strong> The Buyer shall not assign, transfer, sub-contract or otherwise deal with any of its rights and obligations under the Contract without the Supplier's prior written consent. The Supplier may at any time assign, mortgage, charge, sub-contract or deal in any manner with all or any of its rights or obligations under the Contract.</p>
+            <p style="margin:0 0 12px 0"><strong>Third-party rights.</strong> A person who is not a party to the Contract has no rights under the Contracts (Rights of Third Parties) Act 1999 to enforce any term.</p>
+            <p style="margin:0"><strong>Counterparts and electronic signatures.</strong> Any written Contract may be executed in any number of counterparts, each of which when executed is an original. Signatures delivered by PDF or qualified electronic signature are effective.</p>
+          </div>
+        </div>
+
+        <p style="font-size:0.85rem;font-weight:300;line-height:1.95;color:var(--grey-mid);background:var(--grey-pale);padding:20px 24px;border-left:2px solid var(--border-gold);font-style:italic;margin-bottom:48px">For queries about these Terms, contact: contact@avansera.com.</p>
+
         <div style="background:var(--charcoal);padding:32px 28px;border-top:2px solid var(--gold)">
           <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:#fff;margin-bottom:10px">Have <em style="color:var(--gold);font-style:italic">questions?</em></h3>
           <p style="font-size:0.75rem;font-weight:300;color:rgba(255,255,255,0.4);margin-bottom:22px;line-height:1.8">Contact us directly and we will be happy to help.</p>
@@ -141,22 +280,16 @@
 <footer role="contentinfo">
   <div class="footer-top">
     <div>
-      <span class="footer-brand"><em>Avansera</em></span>
-      <p class="footer-tagline">Institutional expertise, human scale. Empowering businesses and nonprofits to lead with financial confidence.</p>
-      <div class="footer-info">
-        <div class="footer-info-row"><strong>KVK:</strong> 99560917</div>
-        <div class="footer-info-row"><strong>BTW:</strong> NL005396120B80</div>
-        <div class="footer-info-row"><strong>E:</strong> <a href="mailto:contact@avansera.com" style="color:inherit;text-decoration:none">contact@avansera.com</a></div>
-        <div class="footer-info-row"><strong>T:</strong> <a href="tel:+310620878260" style="color:inherit;text-decoration:none">+31 06 2087 8260</a></div>
-        
-      </div>
+      <span class="footer-brand"><em>Avansera Ltd</em></span>
+      <p style="font-size:0.63rem;color:var(--gold);margin-bottom:8px">A company registered in England and Wales</p>
+      <p class="footer-tagline">Avansera is a firm dedicated to providing high-quality financial consultancy and education services to clients globally. We pride ourselves on our tailored solutions and value-based approach to business.</p>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul role="list">
         <li><a href="services/business-owners.html">For Business Owners</a></li>
         <li><a href="services/companies.html">For Companies</a></li>
-        <li><a href="services/nonprofits.html">For Nonprofits</a></li>
+        <li><a href="services/nonprofits.html">For the Public & Social Sectors</a></li>
         <li><a href="services.html">All Services</a></li>
       </ul>
     </div>
@@ -171,17 +304,29 @@
     <div class="footer-col">
       <div class="footer-col-title">Get Started</div>
       <ul role="list">
-        <li><a href="contact.html">Book a Free Call</a></li>
+        <li><a href="contact.html">Book a Call</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul role="list">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-info">
+        <div class="footer-info-row"><strong>Company number:</strong> 17368181</div>
+        <div class="footer-info-row"><strong>E:</strong> <a href="mailto:contact@avansera.com" style="color:inherit;text-decoration:none">contact@avansera.com</a></div>
+        <div class="footer-info-row"><strong>T:</strong> <a href="tel:+310620878260" style="color:inherit;text-decoration:none">+31 06 2087 8260</a></div>
+        <div class="footer-info-row"><strong>Address:</strong> 124 City Road, London EC1V 2NX</div>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">&#169; 2026 Avansera. All rights reserved.</p>
-    <div class="footer-legal">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </div>
   </div>
 </footer>
 <div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--black);border-top:2px solid var(--gold);padding:20px 40px;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
@@ -265,5 +410,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+  <script src="js/region-selector.js"></script>
 </body>
 </html>
