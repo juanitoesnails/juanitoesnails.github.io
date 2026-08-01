@@ -7,7 +7,13 @@
  * Architecture:
  * - Region detected from the browser's IANA timezone (Intl API)
  * - Language detected from navigator.language / navigator.languages
- * - Explicit choice stored in localStorage, always takes precedence
+ * - Explicit choice stored in localStorage under CHOICE_KEY, always takes precedence
+ * - Detected (non-explicit) result is ALSO cached, under DETECTED_KEY, so the
+ *   timezone/language computation only runs once per browser rather than on
+ *   every page load for visitors who haven't made an explicit choice yet.
+ * - SCHEMA_VERSION is bumped whenever the region/language logic changes, so
+ *   old cached "detected" values from a previous script version are ignored
+ *   automatically instead of silently persisting after a deploy.
  *
  * Regions: Latin America, North America, Europe, Africa, Other
  * Languages: Spanish + English for Latin America & Europe, English only for rest
@@ -15,6 +21,15 @@
 
 (function() {
   'use strict';
+
+  // Bump this whenever REGIONS / regionFromTimezone / detectDefaultLang
+  // logic changes. Cached "detected" entries from an older version are
+  // discarded automatically — this is what prevents the "stale logic served
+  // from a cached result" class of bug.
+  const SCHEMA_VERSION = 2;
+
+  const CHOICE_KEY = 'avansera_region';            // explicit user choice
+  const DETECTED_KEY = 'avansera_region_detected';  // cached auto-detection
 
   // Region definitions
   const REGIONS = {
@@ -127,38 +142,88 @@
     us: 'north-america'
   };
 
-  // Get stored region choice
-  function getStoredChoice() {
+  function safeGet(key) {
     try {
-      const stored = localStorage.getItem('avansera_region');
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (parsed && parsed.region && parsed.lang) {
-          // Migrate legacy region keys (e.g. "us" → "north-america")
-          if (LEGACY_REGION_KEYS[parsed.region]) {
-            parsed.region = LEGACY_REGION_KEYS[parsed.region];
-            saveChoice(parsed.region, parsed.lang);
-          }
-          return parsed;
-        }
-      }
+      return localStorage.getItem(key);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function safeSet(key, value) {
+    try {
+      localStorage.setItem(key, value);
+      return true;
+    } catch (e) {
+      // private browsing quota, disabled storage, etc.
+      return false;
+    }
+  }
+
+  function safeRemove(key) {
+    try {
+      localStorage.removeItem(key);
     } catch (e) {
       // ignore
+    }
+  }
+
+  // Get stored EXPLICIT region choice (user clicked an option)
+  function getStoredChoice() {
+    const stored = safeGet(CHOICE_KEY);
+    if (!stored) return null;
+    try {
+      const parsed = JSON.parse(stored);
+      if (parsed && parsed.region && parsed.lang) {
+        // Migrate legacy region keys (e.g. "us" → "north-america")
+        if (LEGACY_REGION_KEYS[parsed.region]) {
+          parsed.region = LEGACY_REGION_KEYS[parsed.region];
+          saveChoice(parsed.region, parsed.lang);
+        }
+        return parsed;
+      }
+    } catch (e) {
+      // corrupt value — drop it so we don't keep re-parsing garbage
+      safeRemove(CHOICE_KEY);
     }
     return null;
   }
 
-  // Save explicit choice
+  // Save explicit choice (user interaction)
   function saveChoice(region, lang) {
+    safeSet(CHOICE_KEY, JSON.stringify({
+      region: region,
+      lang: lang,
+      timestamp: Date.now()
+    }));
+  }
+
+  // Get a previously CACHED auto-detected result, if one exists and matches
+  // the current script version. Returns null if absent, corrupt, or stale.
+  function getCachedDetection() {
+    const stored = safeGet(DETECTED_KEY);
+    if (!stored) return null;
     try {
-      localStorage.setItem('avansera_region', JSON.stringify({
-        region: region,
-        lang: lang,
-        timestamp: Date.now()
-      }));
+      const parsed = JSON.parse(stored);
+      if (parsed && parsed.region && parsed.lang && parsed.schemaVersion === SCHEMA_VERSION) {
+        return parsed;
+      }
     } catch (e) {
-      // ignore (private browsing, etc.)
+      // fall through to null
     }
+    safeRemove(DETECTED_KEY);
+    return null;
+  }
+
+  // Cache an auto-detected (non-explicit) result so future page loads on
+  // this browser skip timezone/language detection entirely.
+  function cacheDetection(region, lang) {
+    safeSet(DETECTED_KEY, JSON.stringify({
+      region: region,
+      lang: lang,
+      schemaVersion: SCHEMA_VERSION,
+      timestamp: Date.now()
+    }));
   }
 
   // Timezones in the US / Canada (everything else in the Americas is
@@ -249,15 +314,27 @@
     return REGION_DEFAULT_LANG[region] || 'en';
   }
 
-  // Detect region and language entirely client-side.
-  // An explicit stored choice always takes precedence.
+  // Detect region and language.
+  // Priority:
+  //   1. Explicit stored user choice — always wins, never recomputed.
+  //   2. Cached auto-detected result (same schema version) — reused as-is,
+  //      so the timezone/language read only happens once per browser.
+  //   3. Fresh detection from timezone/navigator.language — computed once
+  //      and then cached for step 2 to pick up next time.
   function detectRegion() {
     const stored = getStoredChoice();
     if (stored) {
       return { region: stored.region, lang: stored.lang, source: 'stored' };
     }
+
+    const cached = getCachedDetection();
+    if (cached) {
+      return { region: cached.region, lang: cached.lang, source: 'cached' };
+    }
+
     const region = regionFromTimezone(getTimezone());
     const lang = detectDefaultLang(region);
+    cacheDetection(region, lang);
     return { region: region, lang: lang, source: 'detected' };
   }
 
@@ -349,10 +426,11 @@
         const region = this.dataset.region;
         const lang = this.dataset.lang;
         const url = this.dataset.url;
-        
-        // Save explicit choice
+
+        // Save explicit choice — this permanently overrides auto-detection
+        // (both live and any cached detection) from now on.
         saveChoice(region, lang);
-        
+
         // Navigate to page
         if (url) {
           window.location.href = url;
