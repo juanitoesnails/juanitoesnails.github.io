@@ -1,15 +1,15 @@
 /**
  * Avansera Region/Language Selector
- * 
- * JPMorgan-style dropdown with geo-detection via Cloudflare Worker.
+ *
+ * Dropdown with client-side region/language detection.
  * Auto-detects region but never overrides explicit user choice.
- * 
+ *
  * Architecture:
- * - Non-blocking: renders placeholder immediately, hydrates async
- * - Geo-detection via /api/geo (Cloudflare Worker) — silent failure to default
+ * - Region detected from the browser's IANA timezone (Intl API)
+ * - Language detected from navigator.language / navigator.languages
  * - Explicit choice stored in localStorage, always takes precedence
- * 
- * Regions: Latin America, US, Europe, Africa, Other
+ *
+ * Regions: Latin America, North America, Europe, Africa, Other
  * Languages: Spanish + English for Latin America & Europe, English only for rest
  */
 
@@ -23,8 +23,8 @@
       continents: ['SA'],
       languages: ['es', 'en']
     },
-    us: {
-      label: { en: 'North America', es: 'EE.UU.' },
+    'north-america': {
+      label: { en: 'North America', es: 'Norteamérica' },
       continents: ['NA'],
       languages: ['en']
     },
@@ -54,8 +54,8 @@
   // Default language per region (picked when no user choice exists)
   const REGION_DEFAULT_LANG = {
     'latin-america': 'es',
-    us: 'en',
-    europe: 'es',
+    'north-america': 'en',
+    europe: 'en',
     africa: 'en',
     other: 'en'
   };
@@ -122,6 +122,11 @@
     return targetLang === 'es' ? '/es/' : '/';
   }
 
+  // Legacy region keys (pre-North-America rename) → current keys
+  const LEGACY_REGION_KEYS = {
+    us: 'north-america'
+  };
+
   // Get stored region choice
   function getStoredChoice() {
     try {
@@ -129,6 +134,11 @@
       if (stored) {
         const parsed = JSON.parse(stored);
         if (parsed && parsed.region && parsed.lang) {
+          // Migrate legacy region keys (e.g. "us" → "north-america")
+          if (LEGACY_REGION_KEYS[parsed.region]) {
+            parsed.region = LEGACY_REGION_KEYS[parsed.region];
+            saveChoice(parsed.region, parsed.lang);
+          }
           return parsed;
         }
       }
@@ -151,64 +161,104 @@
     }
   }
 
-  // Map a continent code to a region (shared by geo fetch + cache read)
-  function regionFromContinent(continent) {
-    for (const [key, def] of Object.entries(REGIONS)) {
-      if (def.continents.length > 0 && def.continents.includes(continent)) {
-        return key;
-      }
+  // Timezones in the US / Canada (everything else in the Americas is
+  // treated as Latin America).
+  const NA_TIMEZONES = new Set([
+    // United States
+    'America/New_York', 'America/Chicago', 'America/Denver', 'America/Los_Angeles',
+    'America/Phoenix', 'America/Anchorage', 'America/Juneau', 'America/Sitka',
+    'America/Yakutat', 'America/Metlakatla', 'America/Nome', 'America/Adak',
+    'Pacific/Honolulu', 'America/Detroit', 'America/Boise', 'America/Menominee',
+    'America/Indiana/Indianapolis', 'America/Indiana/Vincennes', 'America/Indiana/Winamac',
+    'America/Indiana/Marengo', 'America/Indiana/Petersburg', 'America/Indiana/Vevay',
+    'America/Indiana/Tell_City', 'America/Indiana/Knox',
+    'America/Kentucky/Louisville', 'America/Kentucky/Monticello',
+    'America/North_Dakota/Center', 'America/North_Dakota/New_Salem', 'America/North_Dakota/Beulah',
+    // US territories
+    'Pacific/Guam', 'Pacific/Saipan', 'Pacific/Pago_Pago',
+    'America/Puerto_Rico', 'America/St_Thomas', 'America/St_Croix',
+    // Canada
+    'America/Toronto', 'America/Winnipeg', 'America/Regina', 'America/Swift_Current',
+    'America/Edmonton', 'America/Vancouver', 'America/Whitehorse', 'America/Yellowknife',
+    'America/Inuvik', 'America/Cambridge_Bay', 'America/Iqaluit', 'America/Pangnirtung',
+    'America/Halifax', 'America/Glace_Bay', 'America/Moncton', 'America/St_Johns',
+    'America/Goose_Bay', 'America/Blanc-Sablon'
+  ]);
+
+  // Get the browser's IANA timezone (e.g. "Europe/Amsterdam")
+  function getTimezone() {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || null;
+    } catch (e) {
+      return null;
     }
+  }
+
+  // Is this timezone in the US / Canada? (Otherwise it's Latin America.)
+  function isNorthAmerica(tz) {
+    if (tz === 'Pacific/Honolulu') return true;
+    if (
+      tz.startsWith('America/Indiana/') ||
+      tz.startsWith('America/Kentucky/') ||
+      tz.startsWith('America/North_Dakota/')
+    ) return true;
+    return NA_TIMEZONES.has(tz);
+  }
+
+  // Map a timezone to a region
+  function regionFromTimezone(tz) {
+    if (!tz) return DEFAULT_REGION;
+    // UTC is used by UK/IE browsers in some privacy modes
+    if (tz === 'UTC' || tz === 'Etc/UTC' || tz === 'Etc/GMT' ||
+        tz === 'Etc/GMT+0' || tz === 'Etc/GMT-0' || tz === 'Etc/GMT0') {
+      return 'europe';
+    }
+    if (tz.startsWith('Europe/')) return 'europe';
+    if (tz.startsWith('Africa/')) return 'africa';
+    if (tz === 'Pacific/Honolulu') return 'north-america';
+    if (tz.startsWith('America/')) return isNorthAmerica(tz) ? 'north-america' : 'latin-america';
+    // Asia, Australia, Pacific (except Honolulu), Indian, Atlantic, Antarctica → other
     return DEFAULT_REGION;
   }
 
-  // Detect region via Cloudflare Worker, or fallback
-  // Result is cached in sessionStorage so the /api/geo round-trip
-  // happens at most once per browser session, not on every navigation.
-  async function detectRegion() {
-    // Check explicit choice first
-    const stored = getStoredChoice();
-    if (stored) {
-      return { region: stored.region, lang: stored.lang, source: 'stored' };
-    }
-
-    // Reuse a previous geo result within this session
+  // Get the browser's preferred language
+  function getBrowserLang() {
     try {
-      const cached = sessionStorage.getItem('avansera_geo');
-      if (cached) {
-        const parsed = JSON.parse(cached);
-        if (parsed && parsed.region && parsed.lang) {
-          return { region: parsed.region, lang: parsed.lang, source: 'geo' };
-        }
+      const langs = (navigator.languages && navigator.languages.length)
+        ? navigator.languages
+        : [navigator.language];
+      for (const l of langs) {
+        const code = String(l).toLowerCase();
+        if (code.startsWith('es')) return 'es';
+        if (code.startsWith('en')) return 'en';
       }
     } catch (e) {
       // ignore
     }
+    return null;
+  }
 
-    // Try geo-detection
-    try {
-      const res = await fetch('/api/geo', { cache: 'no-store' });
-      if (!res.ok) throw new Error('Geo lookup failed');
-      const data = await res.json();
-      const continent = data.continent || null;
-
-      const detectedRegion = regionFromContinent(continent);
-      const detectedLang = REGION_DEFAULT_LANG[detectedRegion] || 'en';
-
-      // Cache for the rest of this session
-      try {
-        sessionStorage.setItem('avansera_geo', JSON.stringify({
-          region: detectedRegion,
-          lang: detectedLang,
-          timestamp: Date.now()
-        }));
-      } catch (e) {
-        // ignore
-      }
-
-      return { region: detectedRegion, lang: detectedLang, source: 'geo' };
-    } catch (err) {
-      return { region: DEFAULT_REGION, lang: 'en', source: 'fallback' };
+  // Pick the default language for a region: use the browser language
+  // if the region offers it, otherwise the region's fallback default.
+  function detectDefaultLang(region) {
+    const browserLang = getBrowserLang();
+    const regionDef = REGIONS[region];
+    if (browserLang && regionDef && regionDef.languages.indexOf(browserLang) !== -1) {
+      return browserLang;
     }
+    return REGION_DEFAULT_LANG[region] || 'en';
+  }
+
+  // Detect region and language entirely client-side.
+  // An explicit stored choice always takes precedence.
+  function detectRegion() {
+    const stored = getStoredChoice();
+    if (stored) {
+      return { region: stored.region, lang: stored.lang, source: 'stored' };
+    }
+    const region = regionFromTimezone(getTimezone());
+    const lang = detectDefaultLang(region);
+    return { region: region, lang: lang, source: 'detected' };
   }
 
   // Build and render the dropdown
@@ -341,11 +391,11 @@
   }
 
   // Initialise
-  async function init() {
+  function init() {
     const container = document.getElementById('region-selector');
     if (!container) return;
 
-    const state = await detectRegion();
+    const state = detectRegion();
     renderSelector(state);
   }
 

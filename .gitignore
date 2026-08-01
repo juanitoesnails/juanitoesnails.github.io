@@ -1,6 +1,5 @@
 .vscode/
 partials/
-workers/
 scripts/
 *.pyc
 __pycache__/
