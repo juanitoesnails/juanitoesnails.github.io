@@ -5,3 +5,11 @@ scripts/
 *.pyc
 __pycache__/
 brochures/
+
+# Unused heavy images (kept locally, not deployed)
+images/laurel.png
+images/logo.png
+
+# Local dev helper scripts
+fix_preloads.py
+optimize_images.py
