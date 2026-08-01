@@ -151,12 +151,37 @@
     }
   }
 
+  // Map a continent code to a region (shared by geo fetch + cache read)
+  function regionFromContinent(continent) {
+    for (const [key, def] of Object.entries(REGIONS)) {
+      if (def.continents.length > 0 && def.continents.includes(continent)) {
+        return key;
+      }
+    }
+    return DEFAULT_REGION;
+  }
+
   // Detect region via Cloudflare Worker, or fallback
+  // Result is cached in sessionStorage so the /api/geo round-trip
+  // happens at most once per browser session, not on every navigation.
   async function detectRegion() {
     // Check explicit choice first
     const stored = getStoredChoice();
     if (stored) {
       return { region: stored.region, lang: stored.lang, source: 'stored' };
+    }
+
+    // Reuse a previous geo result within this session
+    try {
+      const cached = sessionStorage.getItem('avansera_geo');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.region && parsed.lang) {
+          return { region: parsed.region, lang: parsed.lang, source: 'geo' };
+        }
+      }
+    } catch (e) {
+      // ignore
     }
 
     // Try geo-detection
@@ -165,16 +190,21 @@
       if (!res.ok) throw new Error('Geo lookup failed');
       const data = await res.json();
       const continent = data.continent || null;
-      
-      let detectedRegion = DEFAULT_REGION;
-      for (const [key, def] of Object.entries(REGIONS)) {
-        if (def.continents.length > 0 && def.continents.includes(continent)) {
-          detectedRegion = key;
-          break;
-        }
-      }
-      
+
+      const detectedRegion = regionFromContinent(continent);
       const detectedLang = REGION_DEFAULT_LANG[detectedRegion] || 'en';
+
+      // Cache for the rest of this session
+      try {
+        sessionStorage.setItem('avansera_geo', JSON.stringify({
+          region: detectedRegion,
+          lang: detectedLang,
+          timestamp: Date.now()
+        }));
+      } catch (e) {
+        // ignore
+      }
+
       return { region: detectedRegion, lang: detectedLang, source: 'geo' };
     } catch (err) {
       return { region: DEFAULT_REGION, lang: 'en', source: 'fallback' };
