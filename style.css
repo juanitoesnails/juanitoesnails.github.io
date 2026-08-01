@@ -591,12 +591,17 @@ footer { background: var(--black); padding: 72px 64px 20px; border-top: 2px soli
 }
 .footer-legal a:hover { color: var(--gold); }
 .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   text-align: center;
   padding-top: 20px;
   margin-top: 4px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
-.footer-bottom .footer-copy { font-size: 0.63rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+.footer-bottom .footer-copy { font-size: 0.63rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin: 0; }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeDown {
